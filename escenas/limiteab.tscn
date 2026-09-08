@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://crhh1hs6qsrxq"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_jqh5a"]
+
+[node name="limiteab" type="Node2D" unique_id=422581261]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=836507221]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=135528023]
+shape = SubResource("WorldBoundaryShape2D_jqh5a")

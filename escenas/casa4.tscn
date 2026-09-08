@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://bllie00nlxl5u"]
+
+[ext_resource type="Texture2D" uid="uid://c7kct1xunat3v" path="res://assets/houses/casa18.png" id="1_0xjd8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_euwp0"]
+size = Vector2(90, 39)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o2op0"]
+size = Vector2(30, 11)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3oava"]
+size = Vector2(60, 11)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7dqve"]
+size = Vector2(8, 49)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_11ymt"]
+size = Vector2(115, 45)
+
+[node name="casa4" type="Node2D" unique_id=1285820705]
+position = Vector2(330, 299)
+
+[node name="Casa18" type="Sprite2D" parent="." unique_id=43870442]
+position = Vector2(1, -68)
+texture = ExtResource("1_0xjd8")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=910780928]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=891334026]
+position = Vector2(26, -47.5)
+shape = SubResource("RectangleShape2D_euwp0")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=2029759471]
+position = Vector2(56, -5.5)
+shape = SubResource("RectangleShape2D_o2op0")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D" unique_id=1720999732]
+position = Vector2(-38, -5.5)
+shape = SubResource("RectangleShape2D_3oava")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D" unique_id=935916984]
+position = Vector2(67, -35)
+shape = SubResource("RectangleShape2D_7dqve")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="StaticBody2D" unique_id=1973636526]
+position = Vector2(-2.5, -56.5)
+shape = SubResource("RectangleShape2D_11ymt")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D" unique_id=802477428]
+position = Vector2(-64, -36.5)
+shape = SubResource("RectangleShape2D_7dqve")

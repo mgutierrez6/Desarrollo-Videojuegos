@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://c83utf0vj00b7"]
+
+[ext_resource type="Texture2D" uid="uid://d4j4tj1mscr35" path="res://assets/houses/casa23.png" id="1_rd80l"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_euwp0"]
+size = Vector2(104, 33)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o2op0"]
+size = Vector2(24, 11)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3oava"]
+size = Vector2(31, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7dqve"]
+size = Vector2(3, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_11ymt"]
+size = Vector2(66, 21)
+
+[node name="casa7" type="Node2D" unique_id=153141488]
+position = Vector2(344, 280)
+
+[node name="Casa23" type="Sprite2D" parent="." unique_id=1460542616]
+position = Vector2(-11, -68)
+texture = ExtResource("1_rd80l")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Casa23" unique_id=920216360]
+position = Vector2(11, 68)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Casa23/StaticBody2D" unique_id=709289917]
+position = Vector2(3, -46.5)
+shape = SubResource("RectangleShape2D_euwp0")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Casa23/StaticBody2D" unique_id=1900614561]
+position = Vector2(-37, -7.5)
+shape = SubResource("RectangleShape2D_o2op0")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Casa23/StaticBody2D" unique_id=1733111853]
+position = Vector2(39.5, -8)
+shape = SubResource("RectangleShape2D_3oava")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Casa23/StaticBody2D" unique_id=712157877]
+position = Vector2(-47.5, -22)
+shape = SubResource("RectangleShape2D_7dqve")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Casa23/StaticBody2D" unique_id=1910214177]
+position = Vector2(54, -23)
+shape = SubResource("RectangleShape2D_7dqve")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Casa23/StaticBody2D" unique_id=716595626]
+position = Vector2(0, -64.5)
+shape = SubResource("RectangleShape2D_11ymt")

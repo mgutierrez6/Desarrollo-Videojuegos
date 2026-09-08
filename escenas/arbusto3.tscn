@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://c4it0ahje5gdy"]
+
+[ext_resource type="Texture2D" uid="uid://dwig7q2moqk4p" path="res://assets/objetos/b2.png" id="1_cx40v"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3fh17"]
+radius = 11.0
+
+[node name="arbusto3" type="Node2D" unique_id=1027585266]
+position = Vector2(128, 70)
+
+[node name="B2" type="Sprite2D" parent="." unique_id=785516802]
+position = Vector2(1, -13)
+texture = ExtResource("1_cx40v")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="B2" unique_id=618789589]
+position = Vector2(0, -5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="B2/StaticBody2D" unique_id=1253812790]
+position = Vector2(-1, 9)
+shape = SubResource("CircleShape2D_3fh17")

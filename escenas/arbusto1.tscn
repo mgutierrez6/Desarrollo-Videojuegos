@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://18jyo5qur7eg"]
+
+[ext_resource type="Texture2D" uid="uid://cycfbjuki8pcp" path="res://assets/objetos/b1.png" id="1_ibiem"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_iqxnj"]
+radius = 12.0
+height = 24.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tq4ei"]
+radius = 12.0
+
+[node name="arbusto1" type="Node2D" unique_id=1027585266]
+position = Vector2(128, 70)
+
+[node name="B1" type="Sprite2D" parent="." unique_id=1370761504]
+position = Vector2(1, -18)
+texture = ExtResource("1_ibiem")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="B1" unique_id=618789589]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="B1/StaticBody2D" unique_id=1253812790]
+position = Vector2(-12, 8)
+shape = SubResource("CapsuleShape2D_iqxnj")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="B1/StaticBody2D" unique_id=157280781]
+position = Vector2(-13, 4)
+shape = SubResource("CapsuleShape2D_iqxnj")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="B1/StaticBody2D" unique_id=262605085]
+position = Vector2(11, 6)
+shape = SubResource("CapsuleShape2D_iqxnj")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="B1/StaticBody2D" unique_id=1784750939]
+position = Vector2(2, 9)
+shape = SubResource("CircleShape2D_tq4ei")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="B1/StaticBody2D" unique_id=579361685]
+position = Vector2(-6, 9)
+shape = SubResource("CircleShape2D_tq4ei")

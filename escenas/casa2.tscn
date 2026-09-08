@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://c6q5j6foed30s"]
+
+[ext_resource type="Texture2D" uid="uid://o5ixlnoosl8y" path="res://assets/houses/casa20.png" id="1_48wdi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_euwp0"]
+size = Vector2(78, 29)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o2op0"]
+size = Vector2(15, 18)
+
+[node name="casa2" type="Node2D" unique_id=908780360]
+position = Vector2(324, 139)
+
+[node name="Casa20" type="Sprite2D" parent="." unique_id=1384711045]
+position = Vector2(1, -56)
+texture = ExtResource("1_48wdi")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Casa20" unique_id=745764250]
+position = Vector2(-2, 50)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Casa20/StaticBody2D" unique_id=625595668]
+position = Vector2(2, -19.5)
+shape = SubResource("RectangleShape2D_euwp0")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Casa20/StaticBody2D" unique_id=1877050874]
+position = Vector2(33, -4)
+shape = SubResource("RectangleShape2D_o2op0")

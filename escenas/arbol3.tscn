@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://bv6bc0xfmhi6k"]
+
+[ext_resource type="Texture2D" uid="uid://dl0y4n4fwdue" path="res://assets/objetos/a3.png" id="1_vp7bu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_euwp0"]
+size = Vector2(16, 10)
+
+[node name="arbol3" type="Node2D" unique_id=1969035036]
+position = Vector2(352, 221)
+
+[node name="A3" type="Sprite2D" parent="." unique_id=1293939164]
+position = Vector2(0, -43)
+texture = ExtResource("1_vp7bu")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="A3" unique_id=1216647536]
+position = Vector2(-1, -2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="A3/StaticBody2D" unique_id=2057934596]
+position = Vector2(2, 43)
+shape = SubResource("RectangleShape2D_euwp0")
