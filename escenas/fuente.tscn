@@ -183,7 +183,6 @@ animations = [{
 position = Vector2(128, 128)
 
 [node name="F" type="Sprite2D" parent="." unique_id=1800907199]
-y_sort_enabled = true
 position = Vector2(0, -48)
 texture = ExtResource("1_e35hg")
 
@@ -204,27 +203,32 @@ position = Vector2(0, -43.351723)
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_3oava")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=80523556]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="F/StaticBody2D" unique_id=80523556]
 position = Vector2(-15, -73)
 sprite_frames = SubResource("SpriteFrames_euwp0")
-frame_progress = 0.15219526
+autoplay = "default"
+frame_progress = 0.964187
 
-[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="." unique_id=482901950]
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="F/StaticBody2D" unique_id=482901950]
 position = Vector2(17, -73)
 sprite_frames = SubResource("SpriteFrames_o2op0")
-frame_progress = 0.8041249
+autoplay = "default"
+frame_progress = 0.1322604
 
-[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="." unique_id=1347604586]
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="F/StaticBody2D" unique_id=1347604586]
 position = Vector2(-15, -57)
 sprite_frames = SubResource("SpriteFrames_3oava")
-frame_progress = 0.17819697
+autoplay = "default"
+frame_progress = 0.81126004
 
-[node name="AnimatedSprite2D5" type="AnimatedSprite2D" parent="." unique_id=1554249902]
+[node name="AnimatedSprite2D5" type="AnimatedSprite2D" parent="F/StaticBody2D" unique_id=1554249902]
 position = Vector2(17, -57)
 sprite_frames = SubResource("SpriteFrames_3oava")
-frame_progress = 0.30833542
+autoplay = "default"
+frame_progress = 0.6236772
 
-[node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="." unique_id=687148224]
+[node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="F/StaticBody2D" unique_id=687148224]
 position = Vector2(0.9940033, -57.50036)
 sprite_frames = SubResource("SpriteFrames_7dqve")
-frame_progress = 0.0067676934
+autoplay = "default"
+frame_progress = 0.17840727

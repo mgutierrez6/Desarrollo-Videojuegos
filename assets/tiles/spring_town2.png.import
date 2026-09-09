@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c6pukdf5fespc"
-path="res://.godot/imported/casa7.png-476ee8bec642005fb251503063c59511.ctex"
+uid="uid://bva62neeo74rl"
+path="res://.godot/imported/spring_town2.png-e112dd84439141bf93c4cf8c25069d58.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/houses/casa7.png"
-dest_files=["res://.godot/imported/casa7.png-476ee8bec642005fb251503063c59511.ctex"]
+source_file="res://assets/tiles/spring_town2.png"
+dest_files=["res://.godot/imported/spring_town2.png-e112dd84439141bf93c4cf8c25069d58.ctex"]
 
 [params]
 

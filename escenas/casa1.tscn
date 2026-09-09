@@ -3,19 +3,19 @@
 [ext_resource type="Texture2D" uid="uid://cqqe202sgss11" path="res://assets/houses/casa16.png" id="1_6uxrx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3oava"]
-size = Vector2(145, 34.5)
+size = Vector2(146, 34.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_11ymt"]
-size = Vector2(127, 21)
+size = Vector2(128, 21)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o2op0"]
-size = Vector2(33, 11)
+size = Vector2(34, 11)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_euwp0"]
-size = Vector2(63, 11)
+size = Vector2(64, 11)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7dqve"]
-size = Vector2(7, 23)
+size = Vector2(8, 23)
 
 [node name="Node2D" type="Node2D" unique_id=1367605375]
 y_sort_enabled = true
@@ -29,23 +29,23 @@ texture = ExtResource("1_6uxrx")
 position = Vector2(-3, 62)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Casa16/StaticBody2D" unique_id=1845867308]
-position = Vector2(6.5, -41.75)
+position = Vector2(6, -41.75)
 shape = SubResource("RectangleShape2D_3oava")
 
 [node name="CollisionShape2D6" type="CollisionShape2D" parent="Casa16/StaticBody2D" unique_id=1347264282]
-position = Vector2(-2.5, -68.5)
+position = Vector2(-3, -68.5)
 shape = SubResource("RectangleShape2D_11ymt")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Casa16/StaticBody2D" unique_id=605206565]
-position = Vector2(61.5, 0.5)
+position = Vector2(62, 0.5)
 shape = SubResource("RectangleShape2D_o2op0")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Casa16/StaticBody2D" unique_id=1019872773]
-position = Vector2(-34.5, 0.5)
+position = Vector2(-35, 0.5)
 shape = SubResource("RectangleShape2D_euwp0")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="Casa16/StaticBody2D" unique_id=1209445579]
-position = Vector2(-62.5, -13)
+position = Vector2(-63, -13)
 shape = SubResource("RectangleShape2D_7dqve")
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="Casa16/StaticBody2D" unique_id=113318506]

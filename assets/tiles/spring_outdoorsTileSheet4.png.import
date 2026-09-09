@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b4jxy6mfodnbo"
-path="res://.godot/imported/casa13.png-9f54814551ca6f90af42bdcf2b50ab85.ctex"
+uid="uid://bljycc52m0hio"
+path="res://.godot/imported/spring_outdoorsTileSheet4.png-82f8652999c9fe3d27732db71b9d313e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/houses/casa13.png"
-dest_files=["res://.godot/imported/casa13.png-9f54814551ca6f90af42bdcf2b50ab85.ctex"]
+source_file="res://assets/tiles/spring_outdoorsTileSheet4.png"
+dest_files=["res://.godot/imported/spring_outdoorsTileSheet4.png-82f8652999c9fe3d27732db71b9d313e.ctex"]
 
 [params]
 
