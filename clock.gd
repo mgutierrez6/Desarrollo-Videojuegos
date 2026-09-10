@@ -14,9 +14,6 @@ func _process(delta):
 	# Convertir el tiempo a ángulos (en radianes)
 	# Un círculo completo son 360 grados o TAU (2 * PI) radianes.
 	
-	# 60 segundos por vuelta
-	var angulo_segundos = (segundo / 60.0) * TAU
-	
 	# 60 minutos por vuelta + el avance proporcional de los segundos
 	var angulo_minutos = ((minuto + segundo / 60.0) / 60.0) * TAU
 	

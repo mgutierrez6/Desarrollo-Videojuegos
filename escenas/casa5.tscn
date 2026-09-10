@@ -15,6 +15,7 @@ size = Vector2(61, 12)
 size = Vector2(31, 12)
 
 [node name="casa5" type="Node2D" unique_id=502402986]
+y_sort_enabled = true
 position = Vector2(234, 235)
 
 [node name="Casa22" type="Sprite2D" parent="." unique_id=1372460579]
