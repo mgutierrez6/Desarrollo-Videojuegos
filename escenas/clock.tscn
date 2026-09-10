@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://db5ygm6ukqnsu"]
+
+[ext_resource type="Texture2D" uid="uid://bra62g1jvtb1g" path="res://assets/objetos/clock.png" id="1_ndsno"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_euwp0"]
+size = Vector2(46, 24)
+
+[node name="clock" type="Node2D" unique_id=711309300]
+y_sort_enabled = true
+position = Vector2(82, 80)
+
+[node name="Clock" type="Sprite2D" parent="." unique_id=879708328]
+position = Vector2(0, -38)
+texture = ExtResource("1_ndsno")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Clock" unique_id=715005356]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Clock/StaticBody2D" unique_id=2089520426]
+position = Vector2(0, 28)
+shape = SubResource("RectangleShape2D_euwp0")

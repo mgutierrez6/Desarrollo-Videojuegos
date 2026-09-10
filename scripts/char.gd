@@ -34,3 +34,6 @@ func update_animation(direction: Vector2) -> void:
 	else:
 		# Al detenerse, pausa la animación en el cuadro actual
 		animated_sprite.stop()
+
+func _on_camino_der_body_entered(body: Node2D) -> void:
+	get_tree().change_scene_to_file("res://escenas/puente_bosque.tscn")
