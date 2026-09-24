@@ -142,7 +142,7 @@ animations = [{
 size = Vector2(10, 9)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o2op0"]
-size = Vector2(12, 11)
+size = Vector2(22, 15)
 
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=1001296720 groups=["jugador"]]
 script = ExtResource("1_apusc")
@@ -152,11 +152,13 @@ sprite_frames = SubResource("SpriteFrames_euwp0")
 animation = &"down"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1770254115]
+visible = false
 position = Vector2(0, 11.5)
 shape = SubResource("RectangleShape2D_euwp0")
 
 [node name="Interaccion" type="Area2D" parent="." unique_id=594847690]
 
 [node name="col" type="CollisionShape2D" parent="Interaccion" unique_id=1691657562]
-position = Vector2(0, 21.5)
+visible = false
+position = Vector2(11, 11)
 shape = SubResource("RectangleShape2D_o2op0")

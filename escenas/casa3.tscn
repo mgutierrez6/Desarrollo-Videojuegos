@@ -17,6 +17,7 @@ position = Vector2(1, -53)
 texture = ExtResource("1_ia1ax")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Casa21" unique_id=1631997294]
+visible = false
 position = Vector2(-1, 53)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Casa21/StaticBody2D" unique_id=701853743]

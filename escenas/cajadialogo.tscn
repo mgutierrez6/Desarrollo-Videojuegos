@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://cis2mde65dc2"]
+
+[ext_resource type="Texture2D" uid="uid://71235q1jd30h" path="res://assets/ui/dialogo.png" id="1_6ad85"]
+[ext_resource type="Script" uid="uid://cyw07v1upfkva" path="res://scripts/cajadialogo.gd" id="1_d7i1a"]
+[ext_resource type="FontFile" uid="uid://blkal1k8kifcs" path="res://assets/ui/BoldPixels.ttf" id="3_gdfiy"]
+
+[node name="CajaDialogo" type="CanvasLayer" unique_id=1942879770]
+script = ExtResource("1_d7i1a")
+
+[node name="panel" type="NinePatchRect" parent="." unique_id=1071491661]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 25.0
+offset_top = -152.0
+offset_right = -28.0
+offset_bottom = -28.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 3
+size_flags_vertical = 10
+texture = ExtResource("1_6ad85")
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+
+[node name="label" type="RichTextLabel" parent="panel" unique_id=1018053024]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 22.0
+offset_top = 17.0
+offset_right = -22.0
+offset_bottom = -19.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0.41391832, 0.2701292, 0.2332739, 1)
+theme_override_colors/font_outline_color = Color(0.3372267, 0.19258446, 0.18519077, 1)
+theme_override_fonts/normal_font = ExtResource("3_gdfiy")
+theme_override_font_sizes/normal_font_size = 30

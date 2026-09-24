@@ -155,5 +155,6 @@ frame_progress = 0.0027772507
 position = Vector2(0, 15)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/StaticBody2D" unique_id=52659518]
+visible = false
 position = Vector2(0, -4)
 shape = SubResource("RectangleShape2D_euwp0")

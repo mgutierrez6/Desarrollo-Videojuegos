@@ -13,6 +13,7 @@ position = Vector2(1, -42)
 texture = ExtResource("1_1k62r")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="A4" unique_id=1717615081]
+visible = false
 position = Vector2(-1, 42)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="A4/StaticBody2D" unique_id=114423621]

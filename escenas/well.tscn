@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://dep647v8hk65g"]
+
+[ext_resource type="Script" uid="uid://bkgudv23n1wn3" path="res://scripts/well.gd" id="1_5gugk"]
+[ext_resource type="Texture2D" uid="uid://pcybypbbdyfq" path="res://assets/objetos/well2.png" id="1_16o0x"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_euwp0"]
+size = Vector2(37, 29)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_euwp0"]
+radius = 17.507141
+
+[node name="well" type="Node2D" unique_id=1511220395]
+y_sort_enabled = true
+position = Vector2(51, 39)
+script = ExtResource("1_5gugk")
+
+[node name="Well2" type="Sprite2D" parent="." unique_id=1279687402]
+position = Vector2(0, -33)
+texture = ExtResource("1_16o0x")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Well2" unique_id=1417256607]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Well2/StaticBody2D" unique_id=1001637044]
+visible = false
+position = Vector2(0.5, 17.5)
+shape = SubResource("RectangleShape2D_euwp0")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Well2/StaticBody2D" unique_id=1979454104]
+visible = false
+position = Vector2(1, 21)
+shape = SubResource("CircleShape2D_euwp0")

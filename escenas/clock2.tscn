@@ -19,6 +19,7 @@ position = Vector2(1, -38)
 texture = ExtResource("2_1fpr7")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Clock" unique_id=715005356]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Clock/StaticBody2D" unique_id=2089520426]
 position = Vector2(0, 28)
