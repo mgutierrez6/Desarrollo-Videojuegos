@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://boydelu5s0pli"]
+
+[ext_resource type="Script" uid="uid://8kngu8oqgm4i" path="res://scripts/inventario_ui.gd" id="1_p4y3u"]
+[ext_resource type="Texture2D" uid="uid://dqenqul5s852n" path="res://assets/ui/invent.png" id="2_rf5ym"]
+
+[node name="InventarioUI" type="CanvasLayer" unique_id=138131067]
+script = ExtResource("1_p4y3u")
+
+[node name="Panel" type="NinePatchRect" parent="." unique_id=733508138]
+anchors_preset = -1
+anchor_left = 0.053000003
+anchor_top = 0.080000006
+anchor_right = 0.94500005
+anchor_bottom = 0.512
+offset_left = -0.05600357
+offset_top = 0.15999603
+offset_right = 0.35998535
+offset_bottom = 0.22399902
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_rf5ym")
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel" unique_id=1698491196]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+offset_top = -1.0
+offset_bottom = 70.0
+grow_horizontal = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer" unique_id=1307233826]
+layout_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="Panel/MarginContainer/VBoxContainer" unique_id=1043188313]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+columns = 5
+
+[node name="PanelDescrip" type="NinePatchRect" parent="." unique_id=1138446554]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -514.0
+offset_top = 20.0
+offset_right = 514.0
+offset_bottom = 90.0
+grow_horizontal = 2
+texture = ExtResource("2_rf5ym")
+patch_margin_left = 10
+patch_margin_top = 10
+patch_margin_right = 10
+patch_margin_bottom = 10
+
+[node name="Descripcion" type="Label" parent="PanelDescrip" unique_id=1454541367]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 36)
+layout_mode = 0
+offset_left = -873.0
+offset_top = -574.0
+offset_right = 123.0
+offset_bottom = -538.0
+autowrap_mode = 3

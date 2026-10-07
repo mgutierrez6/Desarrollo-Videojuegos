@@ -4125,7 +4125,7 @@ y_sort_enabled = true
 position = Vector2(256, 381)
 
 [node name="Camera2D" type="Camera2D" parent="Jugador" unique_id=1240846151]
-zoom = Vector2(3, 3)
+zoom = Vector2(2.5, 2.5)
 limit_left = 110
 limit_top = 286
 limit_right = 1125

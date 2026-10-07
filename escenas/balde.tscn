@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://dg255ljk76dpm"]
+
+[ext_resource type="Texture2D" uid="uid://d0m60ff13l0i7" path="res://assets/objetos/balde.png" id="1_vc3s6"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_euwp0"]
+radius = 8.0
+
+[node name="balde" type="Node2D" unique_id=51487655]
+y_sort_enabled = true
+position = Vector2(18, 18)
+
+[node name="Balde" type="Sprite2D" parent="." unique_id=1253750932]
+position = Vector2(1, -9)
+texture = ExtResource("1_vc3s6")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Balde" unique_id=1612753194]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Balde/StaticBody2D" unique_id=1013222018]
+position = Vector2(-2, 2)
+shape = SubResource("CircleShape2D_euwp0")

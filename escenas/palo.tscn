@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://pksn60u8qwyk"]
+
+[ext_resource type="Texture2D" uid="uid://dt0m0l0ndn22m" path="res://assets/recolectables/palo.png" id="1_ggece"]
+[ext_resource type="Script" uid="uid://dm3oekclx2puo" path="res://scripts/ObjetoRecolectable.gd" id="1_hoiyr"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_euwp0"]
+a = Vector2(-2.3841858e-07, -9.899495)
+b = Vector2(0, 8.485281)
+
+[node name="Palo" type="Area2D" unique_id=691191485]
+script = ExtResource("1_hoiyr")
+
+[node name="Palo" type="Sprite2D" parent="." unique_id=122988209]
+texture = ExtResource("1_ggece")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1082333296]
+visible = false
+position = Vector2(-1, 0)
+rotation = 0.7853982
+shape = SubResource("SegmentShape2D_euwp0")
