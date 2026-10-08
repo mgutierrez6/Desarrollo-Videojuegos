@@ -19,6 +19,8 @@ config/icon="res://icon.svg"
 
 Global="*uid://cn233gf0pf2sp"
 GameManager="*uid://c1s225lkik73b"
+InspeccionUI="*uid://bkfm23qhku0sj"
+KeypadUi="*uid://c3i3oawv25d6q"
 
 [display]
 
@@ -71,3 +73,4 @@ inventario={
 
 textures/canvas_textures/default_texture_filter=0
 rendering_device/driver.windows="d3d12"
+environment/defaults/default_clear_color=Color(0, 0, 0, 1)

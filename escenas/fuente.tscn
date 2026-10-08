@@ -190,15 +190,18 @@ texture = ExtResource("1_e35hg")
 position = Vector2(0, 48)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="F/StaticBody2D" unique_id=583196723]
+visible = false
 position = Vector2(0, -29.198166)
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_o2op0")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="F/StaticBody2D" unique_id=1997157907]
+visible = false
 position = Vector2(-0.062942505, -41.647263)
 shape = SubResource("RectangleShape2D_euwp0")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="F/StaticBody2D" unique_id=733631558]
+visible = false
 position = Vector2(0, -43.351723)
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_3oava")

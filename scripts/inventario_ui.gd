@@ -6,6 +6,7 @@ const CASILLAS_TOTALES := COLUMNAS * FILAS      # 10
 const TAM_CASILLA := Vector2(110, 110)
 const SEP_H := 60    # espacio horizontal entre casillas
 const SEP_V := 20    # espacio vertical entre filas
+const FUENTE := preload("res://assets/ui/BoldPixels.ttf")
 
 @onready var panel = $Panel
 @onready var panel_desc = $PanelDescrip
@@ -16,6 +17,8 @@ func _ready():
 	panel.visible = false
 	panel_desc.visible = false
 	grilla.columns = COLUMNAS
+	lbl_info.add_theme_font_override("font", FUENTE)
+	lbl_info.add_theme_font_size_override("font_size", 20)
 	grilla.add_theme_constant_override("h_separation", SEP_H)
 	grilla.add_theme_constant_override("v_separation", SEP_V)
 	# ahora la grilla está directo en el MarginContainer: se centra en los dos ejes
@@ -49,7 +52,8 @@ func _crear_casilla(nombre: String) -> Button:
 	b.icon_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	b.vertical_icon_alignment = VERTICAL_ALIGNMENT_TOP
 	b.text = info["nombre"]
-	b.add_theme_font_size_override("font_size", 12)
+	b.add_theme_font_override("font", FUENTE)
+	b.add_theme_font_size_override("font_size", 16)
 	b.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
 	if nombre == GameManager.item_seleccionado:
 		b.modulate = Color(1, 1, 0.4)  # resaltado amarillo

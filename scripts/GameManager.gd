@@ -5,18 +5,23 @@ signal inventario_cambiado
 var datos_items = {
 	"Palo": {
 		"nombre": "Palo",
-		"textura": preload("res://assets/recolectables/palo.png"),
+		"textura": preload("res://assets/recolectables/palo2.png"),
 		"descripcion": "Un pedazo de madera."
 	},
 	"Pelota": {
 		"nombre": "Pelota",
-		"textura": preload("res://assets/recolectables/pelota3.png"),
+		"textura": preload("res://assets/recolectables/pelota2.png"),
 		"descripcion": "Pelota azul."
 	},
 	"Palanca": {
 		"nombre": "Palanca",
-		"textura": preload("res://assets/recolectables/palanca.png"),
+		"textura": preload("res://assets/recolectables/palanca2.png"),
 		"descripcion": "Un palo modificado para ser palanca."
+	},
+	"Llave": {
+		"nombre": "Llave",
+		"textura": preload("res://assets/recolectables/llaveChiqui.png"),
+		"descripcion": "Llave plateada."
 	}
 }
 

@@ -2,19 +2,28 @@
 
 [ext_resource type="Texture2D" uid="uid://dt0m0l0ndn22m" path="res://assets/recolectables/palo.png" id="1_ggece"]
 [ext_resource type="Script" uid="uid://dm3oekclx2puo" path="res://scripts/ObjetoRecolectable.gd" id="1_hoiyr"]
+[ext_resource type="Texture2D" uid="uid://0naibxkt6lci" path="res://assets/recolectables/palo2.png" id="3_58bo0"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_euwp0"]
-a = Vector2(-2.3841858e-07, -9.899495)
+a = Vector2(1.013279e-06, -11.313709)
 b = Vector2(0, 8.485281)
 
 [node name="Palo" type="Area2D" unique_id=691191485]
+y_sort_enabled = true
 script = ExtResource("1_hoiyr")
 
 [node name="Palo" type="Sprite2D" parent="." unique_id=122988209]
+visible = false
 texture = ExtResource("1_ggece")
+
+[node name="Palo2" type="Sprite2D" parent="." unique_id=273711605]
+position = Vector2(0, 15.000002)
+scale = Vector2(0.091569774, 0.08648256)
+texture = ExtResource("3_58bo0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1082333296]
 visible = false
-position = Vector2(-1, 0)
+position = Vector2(-1, 16)
 rotation = 0.7853982
+scale = Vector2(0.99999994, 0.99999994)
 shape = SubResource("SegmentShape2D_euwp0")

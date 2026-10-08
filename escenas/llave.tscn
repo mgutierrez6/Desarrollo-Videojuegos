@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://cml6borkjrtem"]
+
+[ext_resource type="Texture2D" uid="uid://pj4fqw3udr7" path="res://assets/recolectables/llaveChiqui.png" id="1_4cdqx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_euwp0"]
+size = Vector2(1.1647096, 2.4258747)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_euwp0"]
+radius = 4.3507614
+height = 13.329565
+
+[node name="Llave" type="Area2D" unique_id=1543005407]
+
+[node name="LlaveChiqui" type="Sprite2D" parent="." unique_id=1733067992]
+position = Vector2(0, 6.9999995)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_4cdqx")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="LlaveChiqui" unique_id=1644455132]
+position = Vector2(0, -76.08695)
+scale = Vector2(10.869565, 10.869565)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LlaveChiqui/StaticBody2D" unique_id=209864477]
+visible = false
+position = Vector2(0.02542758, 6.9532366)
+shape = SubResource("RectangleShape2D_euwp0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=304186811]
+visible = false
+position = Vector2(0, 7)
+shape = SubResource("CapsuleShape2D_euwp0")

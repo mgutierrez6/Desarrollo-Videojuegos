@@ -1,19 +1,32 @@
 [gd_scene format=3 uid="uid://ca26ve2dftnxq"]
 
-[ext_resource type="Texture2D" uid="uid://b5n3aw3dgef35" path="res://assets/recolectables/pelota3.png" id="1_ljmr4"]
+[ext_resource type="Texture2D" uid="uid://bsphdshpgxr3l" path="res://assets/recolectables/pelota2.png" id="1_ljmr4"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_o2op0"]
+radius = 11.428572
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_euwp0"]
-radius = 13.333333
+radius = 6.6666665
 
 [node name="Pelota" type="Area2D" unique_id=126264978]
 y_sort_enabled = true
-scale = Vector2(0.3, 0.3)
 
-[node name="Pelota3" type="Sprite2D" parent="." unique_id=365582958]
-position = Vector2(0, -7.6293945e-06)
+[node name="Pelota2" type="Sprite2D" parent="." unique_id=274440216]
+position = Vector2(0, 11)
+scale = Vector2(0.06852253, 0.067567565)
 texture = ExtResource("1_ljmr4")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=877157386]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=782552221]
 visible = false
-position = Vector2(0, 2.3841872e-07)
+position = Vector2(9.536743e-07, 11)
+scale = Vector2(0.7, 0.7)
+shape = SubResource("CircleShape2D_o2op0")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1196783634]
+position = Vector2(9.536743e-07, 11)
+scale = Vector2(0.7, 0.7)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=877157386]
+visible = false
+scale = Vector2(0.9999998, 0.9999998)
 shape = SubResource("CircleShape2D_euwp0")
