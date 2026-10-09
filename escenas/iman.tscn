@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://cqpcccerm6fnc"]
+
+[ext_resource type="Script" uid="uid://dm3oekclx2puo" path="res://scripts/ObjetoRecolectable.gd" id="1_7u3nn"]
+[ext_resource type="Texture2D" uid="uid://dj7sx1u11ypl5" path="res://assets/recolectables/imanChiqui.png" id="2_h7nmq"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_o2op0"]
+radius = 29.02136
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_euwp0"]
+radius = 13.3399315
+
+[node name="iman" type="Area2D" unique_id=125142757]
+script = ExtResource("1_7u3nn")
+nombre_item = "Iman"
+
+[node name="ImanChiqui" type="Sprite2D" parent="." unique_id=94657]
+position = Vector2(0.20947266, 35.228405)
+texture = ExtResource("2_h7nmq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1449768710]
+visible = false
+position = Vector2(0.20947266, 34.77682)
+shape = SubResource("CircleShape2D_o2op0")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=479796399]
+position = Vector2(0.20947266, 35.228405)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=2074827609]
+visible = false
+position = Vector2(-1.3547363, -1.3547363)
+shape = SubResource("CircleShape2D_euwp0")

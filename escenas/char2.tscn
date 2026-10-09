@@ -1,6 +1,5 @@
 [gd_scene format=3 uid="uid://563x1gxxsm67"]
 
-[ext_resource type="Script" uid="uid://c16ti7mgyupai" path="res://scripts/char2.gd" id="1_jvg3u"]
 [ext_resource type="Texture2D" uid="uid://4lck2u81im2x" path="res://assets/char/girl2.png" id="1_wyogr"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jvg3u"]
@@ -138,23 +137,26 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_euwp0"]
-size = Vector2(10, 8)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o2op0"]
+size = Vector2(18, 44)
 
-[node name="CharacterBody2D" type="CharacterBody2D" unique_id=80872815]
-position = Vector2(48, 20)
-script = ExtResource("1_jvg3u")
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_euwp0"]
+size = Vector2(18, 28)
+
+[node name="CharacterBody2D" type="Area2D" unique_id=563777500]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=602397421]
-position = Vector2(0, -15)
+position = Vector2(0, -19)
 sprite_frames = SubResource("SpriteFrames_o2op0")
 animation = &"down"
 frame_progress = 0.0027772507
 
-[node name="StaticBody2D" type="StaticBody2D" parent="AnimatedSprite2D" unique_id=1839740880]
-position = Vector2(0, 15)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=620263139]
+position = Vector2(0, -9)
+shape = SubResource("RectangleShape2D_o2op0")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/StaticBody2D" unique_id=52659518]
-visible = false
-position = Vector2(0, -4)
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1839740880]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=52659518]
+position = Vector2(0, -17)
 shape = SubResource("RectangleShape2D_euwp0")

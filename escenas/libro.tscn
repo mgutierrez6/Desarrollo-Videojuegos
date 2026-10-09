@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://cltmh2omhkhmj"]
+
+[ext_resource type="Texture2D" uid="uid://bfprj21l70epw" path="res://assets/recolectables/lost book.png" id="1_cimxy"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cimxy"]
+radius = 27.47886
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o2op0"]
+size = Vector2(14.180954, 15.105906)
+
+[node name="libro" type="Area2D" unique_id=436740979]
+
+[node name="LostBook" type="Sprite2D" parent="." unique_id=803358800]
+position = Vector2(0.59965134, 18.799126)
+texture = ExtResource("1_cimxy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=929281441]
+visible = false
+position = Vector2(4.9742374, 30.020327)
+shape = SubResource("CircleShape2D_cimxy")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1926635076]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=503693276]
+visible = false
+position = Vector2(0.25045013, 18.619446)
+shape = SubResource("RectangleShape2D_o2op0")

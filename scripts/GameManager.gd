@@ -22,7 +22,32 @@ var datos_items = {
 		"nombre": "Llave",
 		"textura": preload("res://assets/recolectables/llaveChiqui.png"),
 		"descripcion": "Llave plateada."
-	}
+	},
+	"Cinta": {
+		"nombre": "Cinta aislante",
+		"textura": preload("res://assets/recolectables/cinta.png"),
+		"descripcion": "Pega casi cualquier cosa."
+	},
+	"Iman": {
+		"nombre": "Imán",
+		"textura": preload("res://assets/recolectables/iman.png"),
+		"descripcion": "Atrae el metal."
+	},
+	"Palo con cinta": {
+		"nombre": "Palo con cinta",
+		"textura": preload("res://assets/recolectables/palo2.png"),
+		"descripcion": "Un palo con cinta enrollada en la punta."
+	},
+	"Iman con cinta": {
+		"nombre": "Iman con cinta",
+		"textura": preload("res://assets/recolectables/iman.png"),
+		"descripcion": "Un imán con cinta pegada, listo para pegarlo a algo."
+	},
+	"Palo magnetico": {
+		"nombre": "Palo magnético",
+		"textura": preload("res://assets/recolectables/paloiman.png"),
+		"descripcion": "Un palo con un imán pegado. Sirve para alcanzar metales."
+	},
 }
 
 # Lista de nombres o IDs de los objetos recolectados
@@ -34,8 +59,19 @@ var flags: Dictionary = {}   # estado del mundo: "pozo_revisado", "puerta1_abier
 # Las claves van en ORDEN ALFABÉTICO: "A+B", nunca "B+A"
 var recetas: Dictionary = {
 	"Palo+Pelota": "Palanca",
+	"Cinta+Palo": "Palo con cinta",
+	"Cinta+Iman": "Iman con cinta",
+	"Iman con cinta+Palo": "Palo magnetico",
+	"Iman+Palo con cinta": "Palo magnetico",
 	# "Cuerda+Iman": "Pescador magnetico",
 }
+
+signal objetivo_cambiado(texto: String)
+var objetivo_actual: String = ""
+
+func set_objetivo(texto: String) -> void:
+	objetivo_actual = texto
+	objetivo_cambiado.emit(texto)
 
 func agregar_item(item_nombre: String):
 	if not item_nombre in inventario:

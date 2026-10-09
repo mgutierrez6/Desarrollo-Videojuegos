@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="proy"
-run/main_scene="uid://b4mur55h3ks3d"
+run/main_scene="uid://bvbbaurx7ycy8"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -21,6 +21,8 @@ Global="*uid://cn233gf0pf2sp"
 GameManager="*uid://c1s225lkik73b"
 InspeccionUI="*uid://bkfm23qhku0sj"
 KeypadUi="*uid://c3i3oawv25d6q"
+EleccionUi="*uid://clt7f8jwgliqe"
+ObjetivoUi="*uid://c3mi1g28sind1"
 
 [display]
 

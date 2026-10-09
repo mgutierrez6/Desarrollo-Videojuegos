@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bvbbaurx7ycy8"]
 
 [ext_resource type="Texture2D" uid="uid://b0321tkufe302" path="res://assets/tiles/int/farmhouse_tiles_withoutFurniture.png" id="1_10n7g"]
+[ext_resource type="Script" uid="uid://cml48ahat30hd" path="res://scripts/test_room.gd" id="1_bmpqh"]
 [ext_resource type="PackedScene" uid="uid://6w42qa16t3n7" path="res://escenas/char.tscn" id="1_c615h"]
 [ext_resource type="Texture2D" uid="uid://c5tntea8dgj5e" path="res://assets/tiles/int/farmhouse_tiles.png" id="2_rut0o"]
 [ext_resource type="Texture2D" uid="uid://4bi8fiehiebf" path="res://assets/tiles/int/townInterior.png" id="3_daloh"]
@@ -8,14 +9,19 @@
 [ext_resource type="Texture2D" uid="uid://cotlnxsuxl36p" path="res://assets/tiles/int/townInterior_2.png" id="5_dn22t"]
 [ext_resource type="Texture2D" uid="uid://cw1jmu2s40d3b" path="res://assets/tiles/int/wallpapers_2.png" id="6_rut0o"]
 [ext_resource type="PackedScene" uid="uid://pksn60u8qwyk" path="res://escenas/palo.tscn" id="8_3ljis"]
-[ext_resource type="PackedScene" uid="uid://ca26ve2dftnxq" path="res://escenas/pelota2.tscn" id="9_5cc8q"]
-[ext_resource type="Script" uid="uid://dm3oekclx2puo" path="res://scripts/ObjetoRecolectable.gd" id="10_vto7x"]
-[ext_resource type="PackedScene" uid="uid://cml6borkjrtem" path="res://escenas/llave.tscn" id="11_xcmlt"]
+[ext_resource type="Texture2D" uid="uid://ck85dt573f62t" path="res://assets/tiles/int/pared.png" id="8_lsjg5"]
 [ext_resource type="PackedScene" uid="uid://cf4kcegcbuwgq" path="res://escenas/foto.tscn" id="12_bmpqh"]
 [ext_resource type="Script" uid="uid://bts1ilccp60jh" path="res://scripts/keypad_puerta.gd" id="13_5cc8q"]
 [ext_resource type="Script" uid="uid://b4gv3dpgxwinm" path="res://scripts/item_gate.gd" id="13_xjot5"]
 [ext_resource type="PackedScene" uid="uid://boydelu5s0pli" path="res://escenas/inventarioui.tscn" id="15_xcmlt"]
 [ext_resource type="PackedScene" uid="uid://cis2mde65dc2" path="res://escenas/cajadialogo.tscn" id="16_bmpqh"]
+[ext_resource type="PackedScene" uid="uid://563x1gxxsm67" path="res://escenas/char2.tscn" id="18_xjot5"]
+[ext_resource type="PackedScene" uid="uid://cfe3ia1or6v3p" path="res://escenas/cinta.tscn" id="19_htqrx"]
+[ext_resource type="Script" uid="uid://brut0mryax1kt" path="res://scripts/npc.gd" id="19_lsjg5"]
+[ext_resource type="PackedScene" uid="uid://cltmh2omhkhmj" path="res://escenas/libro.tscn" id="20_eg2l0"]
+[ext_resource type="Script" uid="uid://du47wn6gexhp2" path="res://scripts/etapa_dialogo.gd" id="20_htqrx"]
+[ext_resource type="Script" uid="uid://cfbtdnlup44q3" path="res://scripts/inspeccionable.gd" id="21_eg2l0"]
+[ext_resource type="Texture2D" uid="uid://bfprj21l70epw" path="res://assets/recolectables/lost book.png" id="22_dg6bl"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xj708"]
 texture = ExtResource("1_10n7g")
@@ -162,6 +168,7 @@ texture = ExtResource("1_10n7g")
 6:8/0 = 0
 7:8/0 = 0
 8:8/0 = 0
+8:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -4.961941, 8, -9.4886265, 7.747595)
 9:8/0 = 0
 10:8/0 = 0
 11:8/0 = 0
@@ -232,6 +239,10 @@ texture = ExtResource("1_10n7g")
 1:19/0 = 0
 2:19/0 = 0
 3:19/0 = 0
+8:7/0 = 0
+8:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -4.961941, 8, -9.4886265, 7.747595)
+8:6/0 = 0
+8:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -4.961941, 8, -9.4886265, 7.747595)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jodbn"]
 texture = ExtResource("2_rut0o")
@@ -1453,6 +1464,7 @@ texture = ExtResource("3_daloh")
 20:27/0 = 0
 21:27/0 = 0
 22:27/0 = 0
+22:27/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 0.26115608, -6.5288715, 0.08705139)
 23:27/0 = 0
 23:27/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8)
 24:27/0 = 0
@@ -4672,6 +4684,14 @@ texture = ExtResource("6_rut0o")
 14:5/0 = 0
 15:5/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dg6bl"]
+texture = ExtResource("8_lsjg5")
+margins = Vector2i(6, 1)
+texture_region_size = Vector2i(17, 17)
+0:0/0 = 0
+0:1/0 = 0
+0:2/0 = 0
+
 [sub_resource type="TileSet" id="TileSet_euwp0"]
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_xj708")
@@ -4680,9 +4700,7 @@ sources/2 = SubResource("TileSetAtlasSource_3ljis")
 sources/3 = SubResource("TileSetAtlasSource_5cc8q")
 sources/4 = SubResource("TileSetAtlasSource_vto7x")
 sources/5 = SubResource("TileSetAtlasSource_daloh")
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_o2op0"]
-radius = 13.509529
+sources/6 = SubResource("TileSetAtlasSource_dg6bl")
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_euwp0"]
 radius = 15.489299
@@ -4693,20 +4711,54 @@ size = Vector2(39.86963, 36.21347)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8uah3"]
 size = Vector2(22.70964, 36.25582)
 
+[sub_resource type="Resource" id="Resource_euwp0"]
+script = ExtResource("20_htqrx")
+flags_requeridos = Array[String](["vecina_dio_iman"])
+texto = Array[String](["Gracias de nuevo por la ayuda."])
+metadata/_custom_type_script = "uid://du47wn6gexhp2"
+
+[sub_resource type="Resource" id="Resource_o2op0"]
+script = ExtResource("20_htqrx")
+flags_requeridos = Array[String](["compu_abierta"])
+flags_prohibidos = Array[String](["vecina_dio_iman"])
+texto = Array[String](["Funcionó! Muchas gracias.", "Tomá, esto te puede servir. Lo encontré tirado y no sé para qué es."])
+flags_a_activar = Array[String](["vecina_dio_iman"])
+item_a_dar = "Iman"
+objetivo_nuevo = "Busca qué hacer con el imán"
+metadata/_custom_type_script = "uid://du47wn6gexhp2"
+
+[sub_resource type="Resource" id="Resource_3oava"]
+script = ExtResource("20_htqrx")
+flags_requeridos = Array[String](["vecina_hablada"])
+texto = Array[String](["Siempre la anoto en un cuaderno, pero mi hermana estuvo ordenando...", "Fijate en la biblioteca o en la mesa."])
+objetivo_nuevo = "Busca el cuaderno"
+metadata/_custom_type_script = "uid://du47wn6gexhp2"
+
+[sub_resource type="Resource" id="Resource_7dqve"]
+script = ExtResource("20_htqrx")
+texto = Array[String](["Hola!! necesito entrar a la computadora... pero... olvide la contraseña", "Seguro la anoté en algún cuaderno. Me ayudás a buscarlo?"])
+flags_a_activar = Array[String](["vecina_hablada"])
+metadata/_custom_type_script = "uid://du47wn6gexhp2"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_txsnm"]
+size = Vector2(28.72702, 37.98953)
+
 [node name="TestRoom" type="Node2D" unique_id=1945337766]
+y_sort_enabled = true
+script = ExtResource("1_bmpqh")
 
 [node name="TileMap" type="TileMap" parent="." unique_id=616048875]
 tile_set = SubResource("TileSet_euwp0")
 format = 2
-layer_0/tile_data = PackedInt32Array(65535, 0, 0, 131071, 0, 1, 196607, 0, 2, 262143, 0, 3, 327679, 0, 4, 0, 65536, 0, 65536, 65536, 1, 131072, 65536, 2, 196608, 65536, 3, 262144, 65536, 4, 1, 131072, 0, 65537, 131072, 1, 131073, 131072, 2, 196609, 131072, 3, 2, 196608, 0, 65538, 196608, 1, 131074, 196608, 2, 196610, 196608, 3, 3, 262144, 0, 65539, 262144, 1, 131075, 262144, 2, 196611, 262144, 3, 4, 327680, 0, 65540, 327680, 1, 131076, 327680, 2, 196612, 327680, 3, 5, 393216, 0, 65541, 393216, 1, 131077, 393216, 2, 196613, 393216, 3, 6, 458752, 0, 65542, 262144, 1, 131078, 262144, 2, 196614, 262144, 3, 7, 196608, 0, 65543, 196608, 1, 131079, 196608, 2, 196615, 196608, 3, 262151, 2031618, 20, 8, 262144, 0, 65544, 262144, 1, 131080, 262144, 2, 196616, 262144, 3, 262152, 1966082, 17, 9, 524288, 0, 65545, 524288, 1, 131081, 524288, 2, 196617, 524288, 3, 262153, 524288, 4, 262154, 589824, 4, 65546, 589824, 1, 131082, 589824, 2, 196618, 589824, 3, 327690, 1966082, 17, 393226, 1966082, 18, 393215, 0, 5, 524287, 0, 7, 589823, 0, 8, 655359, 0, 9, 327680, 1966082, 17, 393216, 1966082, 18, 458752, 2031618, 18, 327681, 1966082, 18, 393217, 1966082, 19, 458753, 1966082, 18, 262145, 1966082, 17, 262146, 2031618, 20, 327682, 2031618, 21, 393218, 2031618, 19, 262147, 1966082, 17, 327683, 1966082, 18, 393219, 1966082, 19, 262148, 2031618, 17, 327684, 2031618, 18, 393220, 2031618, 19, 262149, 1966082, 17, 327685, 1966082, 18, 393221, 1966082, 19, 262150, 2031618, 17, 327686, 2031618, 18, 393222, 2031618, 19, 327687, 2031618, 21, 393223, 1966082, 19, 458759, 1966082, 18, 327688, 1966082, 18, 393224, 1966082, 19, 458760, 1966082, 18, 327689, 1966082, 17, 393225, 1966082, 18, 524295, 1966082, 19, 524296, 1966082, 19, 458754, 2031618, 18, 10, 589824, 0, 65547, 655360, 1, 131083, 655360, 2, 196619, 655360, 3, 262155, 655360, 4, 327691, 2031618, 17, 393227, 2031618, 18, 458758, 2031618, 18, 524294, 2031618, 19, 458756, 2031618, 18, 524292, 2031618, 19, 458757, 1966082, 18, 524293, 1966082, 19, 524290, 2031618, 19, 458755, 1966082, 18, 524291, 1966082, 19, 524288, 2031618, 19, 524289, 1966082, 19, 11, 655360, 0, 65548, 720896, 1, 131084, 720897, 4, 196620, 720897, 4, 262156, 720896, 4, 327692, 262144, 1, 393228, 262144, 2, 458761, 2031618, 18, 524297, 2031618, 19, 458762, 1966082, 18, 524298, 1966082, 19, 458763, 1966082, 18, 524299, 1966082, 19, 589824, 2031618, 18, 655360, 2031618, 19, 589825, 1966082, 18, 655361, 1966082, 19, 589826, 1966082, 18, 655362, 1966082, 19, 589827, 1966082, 18, 655363, 1966082, 19, 589828, 1966082, 18, 655364, 1966082, 19, 589829, 1966082, 18, 655365, 1966082, 19, 589830, 2031618, 18, 655366, 2031618, 19, 589831, 1966082, 18, 655367, 1966082, 19, 589832, 1966082, 18, 655368, 1966082, 19, 589833, 2031618, 18, 655369, 2031618, 19, 589834, 1966082, 18, 655370, 1966082, 19, 589835, 1966082, 18, 655371, 1966082, 19, 524300, 2031618, 17, 589836, 1966082, 18, 655372, 1966082, 19, 524301, 2031618, 17, 589837, 2031618, 18, 655373, 2031618, 19, 524302, 2031618, 17, 589838, 1966082, 18, 655374, 1966082, 19, 524303, 2031618, 17, 589839, 2031618, 18, 655375, 2031618, 19, 131087, 0, 0, 196623, 0, 1, 262159, 720896, 268435460, 327695, 262144, 1, 393231, 262144, 2, 458767, 262144, 3, 131088, 65536, 0, 196624, 65536, 1, 262160, 65536, 2, 327696, 65536, 3, 393232, 65536, 4, 458768, 1966082, 17, 524304, 1966082, 18, 589840, 2031618, 18, 655376, 2031618, 19, 131089, 131072, 0, 196625, 131072, 1, 262161, 131072, 2, 327697, 131072, 3, 393233, 1966082, 17, 458769, 1966082, 18, 524305, 1966082, 19, 589841, 1966082, 18, 655377, 1966082, 19, 131090, 458752, 0, 196626, 262144, 1, 262162, 393220, 1, 327698, 393220, 2, 393234, 393220, 3, 458770, 2031618, 18, 524306, 2031618, 19, 589842, 2031618, 18, 655378, 2031618, 19, 131091, 262144, 0, 196627, 262144, 1, 262163, 262144, 2, 327699, 262144, 3, 393235, 1966082, 17, 458771, 1966082, 18, 524307, 1966082, 19, 589843, 1966082, 18, 655379, 1966082, 19, 524308, 1966082, 18, 589844, 2031618, 18, 655380, 2031618, 19, 524309, 1966082, 18, 589845, 2031618, 18, 655381, 2031618, 19, 524310, 1966082, 19, 589846, 1966082, 18, 655382, 1966082, 19, 524311, 2031618, 19, 589847, 2031618, 18, 655383, 2031618, 19, 327700, 262144, 3, 393236, 1966082, 17, 458772, 2031618, 18, 327701, 262144, 3, 393237, 1966082, 17, 458773, 2031618, 18, 327702, 262144, 3, 393238, 1966082, 17, 458774, 1966082, 18, 327703, 262144, 3, 393239, 1966082, 17, 458775, 1966082, 18, 131093, 262144, 0, 196629, 262144, 1, 262165, 262144, 2, 131094, 262144, 0, 196630, 262144, 1, 262166, 262144, 2, 131095, 262144, 0, 196631, 262144, 1, 262167, 262144, 2, 131092, 262144, 0, 196628, 262144, 1, 262164, 262144, 2, 131096, 262144, 0, 196632, 262144, 1, 262168, 262144, 2, 327704, 262144, 3, 393240, 1966082, 17, 458776, 1966082, 18, 524312, 1966082, 19, 589848, 1966082, 18, 655384, 1966082, 19, 131098, 1, 268435456, 131097, 65537, 268435456, 196633, 65537, 268435457, 262169, 65537, 268435458, 327705, 65537, 268435459, 393241, 65537, 268435460, 458777, 2031618, 17, 524313, 2031618, 18, 589849, 2031618, 18, 655385, 2031618, 18, 196634, 1, 268435457, 262170, 1, 268435458, 327706, 1, 268435459, 393242, 1, 268435460, 458778, 720897, 4, 524314, 720897, 4, 589850, 720897, 4, 458764, 262144, 3, 262157, 2, 0, 327693, 262144, 1, 393229, 262144, 2, 458765, 262144, 3, 262158, 2, 0, 327694, 262144, 1, 393230, 262144, 2, 458766, 262144, 3, 458751, 1, 5)
+layer_0/tile_data = PackedInt32Array(65535, 0, 0, 131071, 0, 1, 196607, 0, 2, 262143, 0, 3, 327679, 0, 4, 0, 65536, 0, 65536, 65536, 1, 131072, 65536, 2, 196608, 65536, 3, 262144, 65536, 4, 1, 131072, 0, 65537, 131072, 1, 131073, 131072, 2, 196609, 131072, 3, 2, 196608, 0, 65538, 196608, 1, 131074, 196608, 2, 196610, 196608, 3, 3, 262144, 0, 65539, 262144, 1, 131075, 262144, 2, 196611, 262144, 3, 4, 327680, 0, 65540, 327680, 1, 131076, 327680, 2, 196612, 327680, 3, 5, 393216, 0, 65541, 393216, 1, 131077, 393216, 2, 196613, 393216, 3, 6, 458752, 0, 65542, 262144, 1, 131078, 262144, 2, 196614, 262144, 3, 7, 196608, 0, 65543, 196608, 1, 131079, 196608, 2, 196615, 196608, 3, 262151, 2031618, 20, 8, 262144, 0, 65544, 262144, 1, 131080, 262144, 2, 196616, 262144, 3, 262152, 1966082, 17, 9, 524288, 0, 65545, 524288, 1, 131081, 524288, 2, 196617, 524288, 3, 262153, 524288, 4, 262154, 589824, 4, 65546, 589824, 1, 131082, 589824, 2, 196618, 589824, 3, 327690, 1966082, 17, 393226, 1966082, 18, 393215, 0, 5, 524287, 0, 7, 589823, 0, 8, 655359, 0, 9, 327680, 1966082, 17, 393216, 1966082, 18, 458752, 2031618, 18, 327681, 1966082, 18, 393217, 1966082, 19, 458753, 1966082, 18, 262145, 1966082, 17, 262146, 2031618, 20, 327682, 2031618, 21, 393218, 2031618, 19, 262147, 1966082, 17, 327683, 1966082, 18, 393219, 1966082, 19, 262148, 2031618, 17, 327684, 2031618, 18, 393220, 2031618, 19, 262149, 1966082, 17, 327685, 1966082, 18, 393221, 1966082, 19, 262150, 2031618, 17, 327686, 2031618, 18, 393222, 2031618, 19, 327687, 2031618, 21, 393223, 1966082, 19, 458759, 1966082, 18, 327688, 1966082, 18, 393224, 1966082, 19, 458760, 1966082, 18, 327689, 1966082, 17, 393225, 1966082, 18, 524295, 1966082, 19, 524296, 1966082, 19, 458754, 2031618, 18, 10, 589824, 0, 65547, 655360, 1, 131083, 655360, 2, 196619, 655360, 3, 262155, 655360, 4, 327691, 2031618, 17, 393227, 2031618, 18, 458758, 2031618, 18, 524294, 2031618, 19, 458756, 2031618, 18, 524292, 2031618, 19, 458757, 1966082, 18, 524293, 1966082, 19, 524290, 2031618, 19, 458755, 1966082, 18, 524291, 1966082, 19, 524288, 2031618, 19, 524289, 1966082, 19, 11, 655360, 0, 65548, 720896, 1, 131084, 720897, 4, 196620, 720897, 4, 262156, 720896, 4, 327692, 262144, 1, 393228, 262144, 2, 458761, 2031618, 18, 524297, 2031618, 19, 458762, 1966082, 18, 524298, 1966082, 19, 458763, 1966082, 18, 524299, 1966082, 19, 589824, 2031618, 18, 655360, 2031618, 19, 589825, 1966082, 18, 655361, 1966082, 19, 589826, 1966082, 18, 655362, 1966082, 19, 589827, 1966082, 18, 655363, 1966082, 19, 589828, 1966082, 18, 655364, 1966082, 19, 589829, 1966082, 18, 655365, 1966082, 19, 589830, 2031618, 18, 655366, 2031618, 19, 589831, 1966082, 18, 655367, 1966082, 19, 589832, 1966082, 18, 655368, 1966082, 19, 589833, 2031618, 18, 655369, 2031618, 19, 589834, 1966082, 18, 655370, 1966082, 19, 589835, 1966082, 18, 655371, 1966082, 19, 524300, 2031618, 17, 589836, 1966082, 18, 655372, 1966082, 19, 524301, 2031618, 17, 589837, 2031618, 18, 655373, 2031618, 19, 524302, 2031618, 17, 589838, 1966082, 18, 655374, 1966082, 19, 524303, 2031618, 17, 589839, 2031618, 18, 655375, 2031618, 19, 131087, 0, 0, 196623, 0, 1, 262159, 720896, 268435460, 327695, 524288, 6, 393231, 262144, 2, 458767, 262144, 3, 131088, 65536, 0, 196624, 65536, 1, 262160, 65536, 2, 327696, 65536, 3, 393232, 65536, 4, 458768, 1966082, 17, 524304, 1966082, 18, 589840, 2031618, 18, 655376, 2031618, 19, 131089, 131072, 0, 196625, 131072, 1, 262161, 131072, 2, 327697, 131072, 3, 393233, 1966082, 17, 458769, 1966082, 18, 524305, 1966082, 19, 589841, 1966082, 18, 655377, 1966082, 19, 131090, 458752, 0, 196626, 262144, 1, 262162, 393220, 1, 327698, 393220, 2, 393234, 393220, 3, 458770, 2031618, 18, 524306, 2031618, 19, 589842, 2031618, 18, 655378, 2031618, 19, 131091, 262144, 0, 196627, 262144, 1, 262163, 262144, 2, 327699, 262144, 3, 393235, 1966082, 17, 458771, 1966082, 18, 524307, 1966082, 19, 589843, 1966082, 18, 655379, 1966082, 19, 524308, 1966082, 18, 589844, 2031618, 18, 655380, 2031618, 19, 524309, 1966082, 18, 589845, 2031618, 18, 655381, 2031618, 19, 524310, 1966082, 19, 589846, 1966082, 18, 655382, 1966082, 19, 524311, 2031618, 19, 589847, 2031618, 18, 655383, 2031618, 19, 327700, 262144, 3, 393236, 1966082, 17, 458772, 2031618, 18, 327701, 262144, 3, 393237, 1966082, 17, 458773, 2031618, 18, 327702, 262144, 3, 393238, 1966082, 17, 458774, 1966082, 18, 327703, 262144, 3, 393239, 1966082, 17, 458775, 1966082, 18, 131093, 262144, 0, 196629, 262144, 1, 262165, 262144, 2, 131094, 262144, 0, 196630, 262144, 1, 262166, 262144, 2, 131095, 262144, 0, 196631, 262144, 1, 262167, 262144, 2, 131092, 262144, 0, 196628, 262144, 1, 262164, 262144, 2, 131096, 262144, 0, 196632, 262144, 1, 262168, 262144, 2, 327704, 262144, 3, 393240, 1966082, 17, 458776, 1966082, 18, 524312, 1966082, 19, 589848, 1966082, 18, 655384, 1966082, 19, 131098, 1, 268435456, 131097, 65537, 268435456, 196633, 65537, 268435457, 262169, 65537, 268435458, 327705, 65537, 268435459, 393241, 65537, 268435460, 458777, 2031618, 17, 524313, 2031618, 18, 589849, 2031618, 18, 655385, 2031618, 18, 196634, 1, 268435457, 262170, 1, 268435458, 327706, 1, 268435459, 393242, 1, 268435460, 458778, 720897, 4, 524314, 720897, 4, 589850, 720897, 4, 458764, 262144, 3, 262157, 2, 0, 327693, 262144, 1, 393229, 262144, 2, 458765, 262144, 3, 262158, 2, 0, 327694, 524288, 6, 393230, 524288, 7, 458766, 524288, 8, 458751, 1, 5)
 layer_1/name = "Layer1"
-layer_1/tile_data = PackedInt32Array(327682, 1376258, 26, 393218, 1507330, 27, 327683, 1572866, 26, 393219, 1572866, 27, 393220, 1441794, 27, 393217, 1441794, 27, 655360, 1, 11, 655361, 65537, 11, 655371, 1, 268435467, 655370, 65537, 268435467, 655374, 720897, 1342177286, 655373, 720897, 1342177285, 655372, 720897, 1342177286, 655375, 720897, 1073741830, 655377, 1, 1610612743, 655376, 1, 1610612743, 655378, 1, 1610612743, 655379, 1, 1610612743, 655380, 1, 1610612743, 655381, 1, 1610612743, 655382, 1, 1610612743, 655383, 1, 1610612743, 655384, 1, 1610612743, 655385, 1, 1610612743, 262165, 2, 20, 327701, 2, 21, 393237, 2, 22, 262166, 2, 20, 327702, 2, 21, 393238, 2, 22, 262167, 2, 20, 327703, 2, 21, 393239, 2, 22, 262168, 262146, 18, 327704, 262146, 19, 393240, 262146, 20, 262164, 196610, 18, 327700, 196610, 19, 393236, 196610, 20, 458773, 983042, 19, 524309, 983042, 20, 589845, 983042, 21, 458774, 1048578, 19, 524310, 1048578, 20, 589846, 1048578, 21, 458775, 1114114, 19, 524311, 1114114, 20, 589847, 1114114, 21, 327692, 65536, 805306379, 327695, 65536, 536870923, 327693, 524288, 536870922, 327694, 524288, 805306378, 262157, 2, 0, 262158, 2, 0, 262159, 2, 0, 262156, 2, 0, 196612, 327682, 21, 262148, 327682, 22, 196613, 393218, 21, 262149, 393218, 22)
+layer_1/tile_data = PackedInt32Array(327682, 1376258, 26, 393218, 1507330, 27, 327683, 1572866, 26, 393219, 1572866, 27, 393220, 1441794, 27, 393217, 1441794, 27, 655360, 720897, 1342177285, 655361, 720897, 1342177285, 655371, 720897, 1342177285, 655370, 720897, 1342177285, 655374, 720897, 1342177286, 655373, 720897, 1342177285, 655372, 720897, 1342177285, 655375, 720897, 1073741830, 655377, 1, 1610612743, 655376, 1, 1610612743, 655378, 1, 1610612743, 655379, 1, 1610612743, 655380, 1, 1610612743, 655381, 1, 1610612743, 655382, 1, 1610612743, 655383, 1, 1610612743, 655384, 1, 1610612743, 655385, 1, 1610612743, 262165, 2, 20, 327701, 2, 21, 393237, 2, 22, 262166, 2, 20, 327702, 2, 21, 393238, 2, 22, 262167, 2, 20, 327703, 2, 21, 393239, 2, 22, 262168, 262146, 18, 327704, 262146, 19, 393240, 262146, 20, 262164, 196610, 18, 327700, 196610, 19, 393236, 196610, 20, 458773, 983042, 19, 524309, 983042, 20, 589845, 983042, 21, 458774, 1048578, 19, 524310, 1048578, 20, 589846, 1048578, 21, 458775, 1114114, 19, 524311, 1114114, 20, 589847, 1114114, 21, 327692, 65537, 805306379, 327695, 65537, 536870923, 327693, 524288, 536870922, 327694, 524288, 805306378, 262157, 2, 0, 262158, 2, 0, 262159, 2, 0, 262156, 2, 0, 196612, 327682, 21, 262148, 327682, 22, 196613, 393218, 21, 262149, 393218, 22, 655362, 720897, 1342177285, 655363, 720897, 1342177285, 655364, 720897, 1342177285, 655365, 720897, 1342177285, 655366, 720897, 1342177285, 655367, 720897, 1342177285, 655368, 720897, 1342177285, 655369, 720897, 1342177285)
 layer_2/name = "Layer2"
 layer_2/tile_data = PackedInt32Array(196621, 2, 0, 196622, 2, 0, 262156, 720896, 4, 262159, 720896, 268435460, 196612, 720898, 27, 196613, 786434, 27)
 
 [node name="Jugador" parent="." unique_id=1001296720 instance=ExtResource("1_c615h")]
 y_sort_enabled = true
-position = Vector2(106, 78)
+position = Vector2(133.76799, 84.12915)
 
 [node name="Camera2D" type="Camera2D" parent="Jugador" unique_id=1442948265]
 zoom = Vector2(2.5, 2.5)
@@ -4716,26 +4768,9 @@ limit_right = 430
 limit_bottom = 176
 
 [node name="Palo" parent="." unique_id=691191485 instance=ExtResource("8_3ljis")]
-position = Vector2(156.71994, 129.19998)
+position = Vector2(170.37009, 55.75427)
 rotation = 0.705113
-
-[node name="Pelota" parent="." unique_id=126264978 instance=ExtResource("9_5cc8q")]
-y_sort_enabled = false
-position = Vector2(53.599976, 125.56)
-script = ExtResource("10_vto7x")
-nombre_item = "Pelota"
-
-[node name="Llave" parent="." unique_id=1543005407 instance=ExtResource("11_xcmlt")]
-position = Vector2(51.059067, 85.75174)
-rotation = -0.7330383
-skew = 0.090757124
-script = ExtResource("10_vto7x")
-nombre_item = "Llave"
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Llave" unique_id=1098959853]
-visible = false
-position = Vector2(0.14931917, 7.9385753)
-shape = SubResource("CircleShape2D_o2op0")
+scale = Vector2(0.77, 0.77)
 
 [node name="Foto" parent="." unique_id=972745586 instance=ExtResource("12_bmpqh")]
 position = Vector2(346.44003, 125.03998)
@@ -4748,6 +4783,9 @@ shape = SubResource("CircleShape2D_euwp0")
 [node name="PC" type="Area2D" parent="." unique_id=221236349]
 position = Vector2(346.44003, 125.03998)
 script = ExtResource("13_5cc8q")
+codigo = "4821"
+flag = "compu_abierta"
+txt_exito = "La computadora se desbloqueó. Hay que avisarle a la chica."
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PC" unique_id=1512178238]
 visible = false
@@ -4758,11 +4796,53 @@ shape = SubResource("RectangleShape2D_euwp0")
 position = Vector2(586, 467)
 script = ExtResource("13_xjot5")
 flag = "puerta_abierta"
+txt_exito = ""
+txt_ya_resuelto = ""
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Puerta" unique_id=150173177]
+visible = false
 position = Vector2(-289.72806, -385.01227)
 shape = SubResource("RectangleShape2D_8uah3")
 
 [node name="InventarioUI" parent="." unique_id=138131067 instance=ExtResource("15_xcmlt")]
 
 [node name="CajaDialogo" parent="." unique_id=1942879770 instance=ExtResource("16_bmpqh")]
+
+[node name="girl2" parent="." unique_id=80872815 instance=ExtResource("18_xjot5")]
+y_sort_enabled = true
+position = Vector2(104.54683, 84.70529)
+script = ExtResource("19_lsjg5")
+etapas = Array[ExtResource("20_htqrx")]([SubResource("Resource_euwp0"), SubResource("Resource_o2op0"), SubResource("Resource_3oava"), SubResource("Resource_7dqve")])
+
+[node name="cinta" parent="." unique_id=2072226499 instance=ExtResource("19_htqrx")]
+position = Vector2(48.140236, 90.37743)
+scale = Vector2(0.3, 0.3)
+
+[node name="libro" parent="." unique_id=436740979 instance=ExtResource("20_eg2l0")]
+position = Vector2(369.69098, 134.07709)
+rotation = 3.6704273
+scale = Vector2(0.5, 0.5)
+skew = 0.24783675
+script = ExtResource("21_eg2l0")
+imagen = ExtResource("22_dg6bl")
+texto = "Un cuaderno lleno de listas de compras. En la última página hay una línea subrayada:
+\"Clave compu: 4821\""
+
+[node name="Agujero" type="Area2D" parent="." unique_id=597849427]
+position = Vector2(232.84213, 112.673706)
+script = ExtResource("13_xjot5")
+item_requerido = "Palo magnetico"
+consumir_item = false
+flag = "agujero_pescado"
+txt_sin_item = "Hay un agujero en la pared. Algo metálico brilla adentro, pero no llego con la mano."
+txt_item_incorrecto = "Con eso no lo alcanzo."
+txt_exito = "¡El imán lo atrajo! Era una llave."
+txt_ya_resuelto = "Ya no queda nada adentro."
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Agujero" unique_id=1763898262]
+visible = false
+position = Vector2(-1.045639, 9.446335)
+shape = SubResource("RectangleShape2D_txsnm")
+
+[connection signal="desbloqueado" from="Puerta" to="." method="_on_puerta_desbloqueado"]
+[connection signal="ya_resuelto" from="Puerta" to="." method="_on_puerta_ya_resuelto"]

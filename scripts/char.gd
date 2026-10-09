@@ -2,13 +2,12 @@ extends CharacterBody2D
 
 # Velocidad de movimiento en píxeles por segundo
 @export var speed: float = 90.0
-
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var interaccion = $Interaccion
 
 func _physics_process(_delta: float) -> void:
-	# SI LA CAJA DE DIÁLOGO ESTÁ ABIERTA, FRENAMOS AL PERSONAJE
-	if Global.caja_dialogo and Global.caja_dialogo.visible_dialogo:
+	# si esta haciendo algo se bloquea (dialogo, inventario...)
+	if Global.jugador_bloqueado():
 		velocity = Vector2.ZERO
 		animated_sprite.stop()
 		move_and_slide()
@@ -49,7 +48,7 @@ func update_animation(direction: Vector2) -> void:
 		
 func _unhandled_input(event: InputEvent) -> void:
 	# Si la caja de diálogo ya está en pantalla, no hacer nada acá
-	if Global.caja_dialogo and Global.caja_dialogo.visible_dialogo:
+	if Global.jugador_bloqueado():
 		return
 
 	if event.is_action_pressed("interactuar"):
@@ -66,11 +65,10 @@ func _unhandled_input(event: InputEvent) -> void:
 				get_viewport().set_input_as_handled() # Consume la tecla E para que no se duplique
 				break
 
-func _on_camino_der_body_entered(body: Node2D) -> void:
+func _on_camino_der_body_entered(_body: Node2D) -> void:
 	Global.punto_spawn = "desde_main"
 	get_tree().change_scene_to_file("res://escenas/puente_bosque.tscn")
 
-
-func _on_camino_izq_puente_body_entered(body: Node2D) -> void:
+func _on_camino_izq_puente_body_entered(_body: Node2D) -> void:
 	Global.punto_spawn = "desde_puente"
 	get_tree().change_scene_to_file("res://escenas/juego.scn")

@@ -25,7 +25,7 @@ func _id() -> String:
 
 func _unhandled_input(event):
 	if jugador_cerca and event.is_action_pressed("interactuar"):
-		if Global.caja_dialogo and Global.caja_dialogo.visible_dialogo:
+		if Global.jugador_bloqueado():
 			return
 		recolectar()
 		get_viewport().set_input_as_handled()

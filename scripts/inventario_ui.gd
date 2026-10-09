@@ -7,6 +7,9 @@ const TAM_CASILLA := Vector2(110, 110)
 const SEP_H := 60    # espacio horizontal entre casillas
 const SEP_V := 20    # espacio vertical entre filas
 const FUENTE := preload("res://assets/ui/BoldPixels.ttf")
+var abierto: bool:
+	get:
+		return panel.visible
 
 @onready var panel = $Panel
 @onready var panel_desc = $PanelDescrip
@@ -14,6 +17,7 @@ const FUENTE := preload("res://assets/ui/BoldPixels.ttf")
 @onready var lbl_info: Label = %Descripcion
 
 func _ready():
+	Global.inventario_ui = self 
 	panel.visible = false
 	panel_desc.visible = false
 	grilla.columns = COLUMNAS
