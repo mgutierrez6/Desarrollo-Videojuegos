@@ -3,9 +3,6 @@
 [ext_resource type="Texture2D" uid="uid://e8rirjg8cg6i" path="res://assets/recolectables/cintaChiqui.png" id="1_8rtww"]
 [ext_resource type="Script" uid="uid://dm3oekclx2puo" path="res://scripts/ObjetoRecolectable.gd" id="1_bb5uh"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_o2op0"]
-radius = 41.278034
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_euwp0"]
 radius = 11.751921
 
@@ -16,11 +13,6 @@ nombre_item = "Cinta"
 [node name="CintaChiqui" type="Sprite2D" parent="." unique_id=1325069089]
 position = Vector2(1.267952, 27.697365)
 texture = ExtResource("1_8rtww")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=81518498]
-visible = false
-position = Vector2(0.34265137, 38.80101)
-shape = SubResource("CircleShape2D_o2op0")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1858377176]
 position = Vector2(1.267952, 27.697365)

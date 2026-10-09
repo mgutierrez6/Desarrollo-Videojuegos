@@ -4702,11 +4702,14 @@ sources/4 = SubResource("TileSetAtlasSource_vto7x")
 sources/5 = SubResource("TileSetAtlasSource_daloh")
 sources/6 = SubResource("TileSetAtlasSource_dg6bl")
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_euwp0"]
-radius = 15.489299
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_11ymt"]
+size = Vector2(20, 34.776978)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cimxy"]
+size = Vector2(15.945404, 16.188301)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_euwp0"]
-size = Vector2(39.86963, 36.21347)
+size = Vector2(32.20911, 34.132645)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8uah3"]
 size = Vector2(22.70964, 36.25582)
@@ -4738,7 +4741,17 @@ metadata/_custom_type_script = "uid://du47wn6gexhp2"
 script = ExtResource("20_htqrx")
 texto = Array[String](["Hola!! necesito entrar a la computadora... pero... olvide la contraseña", "Seguro la anoté en algún cuaderno. Me ayudás a buscarlo?"])
 flags_a_activar = Array[String](["vecina_hablada"])
+objetivo_nuevo = "Busca el cuaderno"
 metadata/_custom_type_script = "uid://du47wn6gexhp2"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3oava"]
+size = Vector2(2.7386394, 12.511057)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7dqve"]
+size = Vector2(46.427532, 81.15187)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o2op0"]
+size = Vector2(32.966125, 33.839058)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_txsnm"]
 size = Vector2(28.72702, 37.98953)
@@ -4772,13 +4785,19 @@ position = Vector2(170.37009, 55.75427)
 rotation = 0.705113
 scale = Vector2(0.77, 0.77)
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Palo" unique_id=315595352]
+visible = false
+position = Vector2(7.1772833, 21.892385)
+rotation = -0.6981317
+shape = SubResource("RectangleShape2D_11ymt")
+
 [node name="Foto" parent="." unique_id=972745586 instance=ExtResource("12_bmpqh")]
 position = Vector2(346.44003, 125.03998)
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Foto" unique_id=575725727]
 visible = false
-position = Vector2(-0.8411865, 7.2902527)
-shape = SubResource("CircleShape2D_euwp0")
+position = Vector2(-3.6887512, 3.2765808)
+shape = SubResource("RectangleShape2D_cimxy")
 
 [node name="PC" type="Area2D" parent="." unique_id=221236349]
 position = Vector2(346.44003, 125.03998)
@@ -4789,7 +4808,7 @@ txt_exito = "La computadora se desbloqueó. Hay que avisarle a la chica."
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PC" unique_id=1512178238]
 visible = false
-position = Vector2(-266.5975, -62.074303)
+position = Vector2(-270.0074, -60.503166)
 shape = SubResource("RectangleShape2D_euwp0")
 
 [node name="Puerta" type="Area2D" parent="." unique_id=147463544]
@@ -4814,9 +4833,19 @@ position = Vector2(104.54683, 84.70529)
 script = ExtResource("19_lsjg5")
 etapas = Array[ExtResource("20_htqrx")]([SubResource("Resource_euwp0"), SubResource("Resource_o2op0"), SubResource("Resource_3oava"), SubResource("Resource_7dqve")])
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="girl2" unique_id=1975912696]
+visible = false
+position = Vector2(3.7249374, -10.884575)
+shape = SubResource("RectangleShape2D_3oava")
+
 [node name="cinta" parent="." unique_id=2072226499 instance=ExtResource("19_htqrx")]
 position = Vector2(48.140236, 90.37743)
 scale = Vector2(0.3, 0.3)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cinta" unique_id=1522292864]
+visible = false
+position = Vector2(0.58236694, 53.20935)
+shape = SubResource("RectangleShape2D_7dqve")
 
 [node name="libro" parent="." unique_id=436740979 instance=ExtResource("20_eg2l0")]
 position = Vector2(369.69098, 134.07709)
@@ -4827,6 +4856,13 @@ script = ExtResource("21_eg2l0")
 imagen = ExtResource("22_dg6bl")
 texto = "Un cuaderno lleno de listas de compras. En la última página hay una línea subrayada:
 \"Clave compu: 4821\""
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="libro" unique_id=1442848937]
+visible = false
+position = Vector2(-0.21557617, 26.19516)
+rotation = 0.8988447
+scale = Vector2(0.99999946, 0.9999994)
+shape = SubResource("RectangleShape2D_o2op0")
 
 [node name="Agujero" type="Area2D" parent="." unique_id=597849427]
 position = Vector2(232.84213, 112.673706)

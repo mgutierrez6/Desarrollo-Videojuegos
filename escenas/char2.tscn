@@ -137,11 +137,11 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_o2op0"]
-size = Vector2(18, 44)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_euwp0"]
-size = Vector2(18, 28)
+size = Vector2(13, 25.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3oava"]
+size = Vector2(12.5, 3.75)
 
 [node name="CharacterBody2D" type="Area2D" unique_id=563777500]
 
@@ -151,12 +151,14 @@ sprite_frames = SubResource("SpriteFrames_o2op0")
 animation = &"down"
 frame_progress = 0.0027772507
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=620263139]
-position = Vector2(0, -9)
-shape = SubResource("RectangleShape2D_o2op0")
-
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1839740880]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=52659518]
-position = Vector2(0, -17)
+visible = false
+position = Vector2(0.5, -17.25)
 shape = SubResource("RectangleShape2D_euwp0")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=1220858440]
+visible = false
+position = Vector2(1, -6)
+shape = SubResource("RectangleShape2D_3oava")

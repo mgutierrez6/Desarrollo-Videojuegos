@@ -8,9 +8,6 @@
 a = Vector2(1.013279e-06, -11.313709)
 b = Vector2(0, 8.485281)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_euwp0"]
-radius = 15.0
-
 [node name="Palo" type="Area2D" unique_id=691191485]
 y_sort_enabled = true
 script = ExtResource("1_hoiyr")
@@ -24,14 +21,10 @@ position = Vector2(0, 15.000002)
 scale = Vector2(0.091569774, 0.08648256)
 texture = ExtResource("3_58bo0")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1082333296]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Palo2" unique_id=1082333296]
 visible = false
-position = Vector2(-1, 16)
-rotation = 0.7853982
-scale = Vector2(0.99999994, 0.99999994)
+position = Vector2(-10.920634, 11.563004)
+rotation = 0.81396186
+scale = Vector2(11.246416, 11.246416)
+skew = -0.057127357
 shape = SubResource("SegmentShape2D_euwp0")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=1969331226]
-visible = false
-position = Vector2(5, 22)
-shape = SubResource("CircleShape2D_euwp0")
