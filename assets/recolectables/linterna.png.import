@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b41o7gbyd4yoi"
-path="res://.godot/imported/Bushes.png-cd54a15b3710d45b6972d9d7f8258eb9.ctex"
+uid="uid://cqyxvb8e77x0w"
+path="res://.godot/imported/linterna.png-576534bbb3f8a8f1cbd28dd7093ff157.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/objetos/Bushes.png"
-dest_files=["res://.godot/imported/Bushes.png-cd54a15b3710d45b6972d9d7f8258eb9.ctex"]
+source_file="res://assets/recolectables/linterna.png"
+dest_files=["res://.godot/imported/linterna.png-576534bbb3f8a8f1cbd28dd7093ff157.ctex"]
 
 [params]
 

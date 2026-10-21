@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d2mfyrbp50wmh"
-path="res://.godot/imported/arbol1.png-3e8fc7c248b4341d9531eafc445b5325.ctex"
+uid="uid://bawdx3q1l02cf"
+path="res://.godot/imported/pilas.png-192d96572dc16f4b8acd6027ecbdaac4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/objetos/arbol1.png"
-dest_files=["res://.godot/imported/arbol1.png-3e8fc7c248b4341d9531eafc445b5325.ctex"]
+source_file="res://assets/recolectables/pilas.png"
+dest_files=["res://.godot/imported/pilas.png-192d96572dc16f4b8acd6027ecbdaac4.ctex"]
 
 [params]
 

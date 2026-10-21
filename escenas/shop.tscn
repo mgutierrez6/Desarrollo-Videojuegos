@@ -3,19 +3,20 @@
 [ext_resource type="Texture2D" uid="uid://beshm6c4yfw7j" path="res://assets/houses/shop.png" id="1_f8v1v"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_euwp0"]
-size = Vector2(137, 74)
+size = Vector2(137, 53)
 
 [node name="Node2D" type="Node2D" unique_id=985143112]
 y_sort_enabled = true
-position = Vector2(247, 195)
+position = Vector2(-1, 35)
 
 [node name="Shop" type="Sprite2D" parent="." unique_id=1720625434]
 position = Vector2(2, -54)
 texture = ExtResource("1_f8v1v")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Shop" unique_id=127152069]
+position = Vector2(-2, 54)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Shop/StaticBody2D" unique_id=1915938024]
 visible = false
-position = Vector2(1, 18)
+position = Vector2(2, -27.5)
 shape = SubResource("RectangleShape2D_euwp0")

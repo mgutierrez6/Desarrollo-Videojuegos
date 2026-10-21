@@ -14,3 +14,12 @@ extends Resource
 @export var item_a_dar: String = ""
 @export var items_a_quitar: Array[String] = []
 @export var objetivo_nuevo: String = ""
+
+@export_group("Elección (opcional)")
+@export var pregunta: String = ""
+@export var opciones: Array[String] = []
+@export var respuestas: Array[String] = []   # una por opción, mismo orden
+@export var flag_eleccion: String = ""       # guarda flag_eleccion_0, _1, _2
+
+@export_group("Animación")
+@export var anim_reposo_despues: String = ""   # pose de reposo desde ahora (ej: "parado")

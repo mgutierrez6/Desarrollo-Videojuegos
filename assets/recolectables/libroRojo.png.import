@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://1uylos5m6pci"
-path="res://.godot/imported/arbol4.png-20df62cb26a55be17fd0229ffb1c1419.ctex"
+uid="uid://brkuv0cpfgfwr"
+path="res://.godot/imported/libroRojo.png-285a68042b859a2b8c3ac4236fe735ff.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/objetos/arbol4.png"
-dest_files=["res://.godot/imported/arbol4.png-20df62cb26a55be17fd0229ffb1c1419.ctex"]
+source_file="res://assets/recolectables/libroRojo.png"
+dest_files=["res://.godot/imported/libroRojo.png-285a68042b859a2b8c3ac4236fe735ff.ctex"]
 
 [params]
 

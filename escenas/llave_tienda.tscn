@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://dgl0ajmcl6lv4"]
+
+[ext_resource type="Script" uid="uid://dm3oekclx2puo" path="res://scripts/ObjetoRecolectable.gd" id="1_odok2"]
+[ext_resource type="Texture2D" uid="uid://d3dd5gm7cxkb3" path="res://assets/recolectables/llave.png" id="2_0y0hk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_euwp0"]
+size = Vector2(13.000137, 5.862808)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3tk5j"]
+radius = 22.216316
+
+[node name="Llave tienda" type="Area2D" unique_id=2072226499]
+script = ExtResource("1_odok2")
+nombre_item = "Cinta"
+
+[node name="Llave" type="Sprite2D" parent="." unique_id=716063929]
+position = Vector2(0.71258545, 27.677525)
+texture = ExtResource("2_0y0hk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=213739475]
+visible = false
+position = Vector2(0.07532501, 28.059887)
+shape = SubResource("RectangleShape2D_euwp0")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1858377176]
+position = Vector2(1.267952, 27.697365)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=605859040]
+visible = false
+position = Vector2(-0.93805695, 0.6576538)
+shape = SubResource("CircleShape2D_3tk5j")

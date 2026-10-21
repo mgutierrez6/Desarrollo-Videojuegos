@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d0m60ff13l0i7"
-path="res://.godot/imported/balde.png-d3ab650680b31e3a25880beaa8c4aa41.ctex"
+uid="uid://qpoocgigp4gp"
+path="res://.godot/imported/linternaPrendida.png-822fba3f995cca65cbfbfc226ef68e79.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/objetos/balde.png"
-dest_files=["res://.godot/imported/balde.png-d3ab650680b31e3a25880beaa8c4aa41.ctex"]
+source_file="res://assets/recolectables/linternaPrendida.png"
+dest_files=["res://.godot/imported/linternaPrendida.png-822fba3f995cca65cbfbfc226ef68e79.ctex"]
 
 [params]
 

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dg255ljk76dpm"]
 
-[ext_resource type="Texture2D" uid="uid://d0m60ff13l0i7" path="res://assets/objetos/balde.png" id="1_vc3s6"]
+[ext_resource type="Texture2D" uid="uid://d0m60ff13l0i7" path="res://assets/recolectables/balde.png" id="1_vc3s6"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_euwp0"]
 radius = 8.0

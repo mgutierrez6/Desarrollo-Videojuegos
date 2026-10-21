@@ -48,6 +48,27 @@ var datos_items = {
 		"textura": preload("res://assets/recolectables/paloiman.png"),
 		"descripcion": "Un palo con un imán pegado. Sirve para alcanzar metales."
 	},
+		"Linterna": {
+		"nombre": "Linterna",
+		"textura": preload("res://assets/recolectables/linterna.png"),
+		"descripcion": "Le hacen falta pilas para funcionar."
+	},
+		"LinternaPrendida": {
+		"nombre": "Linterna con pilas",
+		"textura": preload("res://assets/recolectables/linternaPrendida.png"),
+		"descripcion": "Ilumina lugares oscuros."
+	},
+	"Balde": {
+		"nombre": "Balde",
+		"textura": preload("res://assets/recolectables/balde.png"),
+		"descripcion": "El balde que nos prestó vicky."
+	},
+	"Llave de la tienda": {
+		"nombre": "Llave de la tienda",
+		"textura": preload("res://assets/recolectables/llave.png"),
+		"descripcion": "Una llave chica y mojada."
+	},
+	
 }
 
 # Lista de nombres o IDs de los objetos recolectados
@@ -63,6 +84,7 @@ var recetas: Dictionary = {
 	"Cinta+Iman": "Iman con cinta",
 	"Iman con cinta+Palo": "Palo magnetico",
 	"Iman+Palo con cinta": "Palo magnetico",
+	"Linterna+Pilas": "LinternaPrendida",
 	# "Cuerda+Iman": "Pescador magnetico",
 }
 

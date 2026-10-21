@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d12vupx75itt1"
-path="res://.godot/imported/arboles.png-af0e93d84d75fe084ab4814d5082825a.ctex"
+uid="uid://3pqc78pkmfrq"
+path="res://.godot/imported/lil.png-725e602346938def012c449c9f878f5a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/objetos/arboles.png"
-dest_files=["res://.godot/imported/arboles.png-af0e93d84d75fe084ab4814d5082825a.ctex"]
+source_file="res://assets/char/lil.png"
+dest_files=["res://.godot/imported/lil.png-725e602346938def012c449c9f878f5a.ctex"]
 
 [params]
 

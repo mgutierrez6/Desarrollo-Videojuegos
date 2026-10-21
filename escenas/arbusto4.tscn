@@ -6,6 +6,7 @@
 radius = 11.0
 
 [node name="arbusto4" type="Node2D" unique_id=1027585266]
+y_sort_enabled = true
 position = Vector2(128, 70)
 
 [node name="B4" type="Sprite2D" parent="." unique_id=1775091412]

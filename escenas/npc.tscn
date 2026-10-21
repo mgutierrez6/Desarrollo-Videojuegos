@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://563x1gxxsm67"]
+
+[ext_resource type="Script" uid="uid://brut0mryax1kt" path="res://scripts/npc.gd" id="1_jvg3u"]
+[ext_resource type="Texture2D" uid="uid://4lck2u81im2x" path="res://assets/char/girl2.png" id="1_wyogr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cdksc"]
+atlas = ExtResource("1_wyogr")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_o2op0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cdksc")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_euwp0"]
+size = Vector2(13, 16.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3oava"]
+size = Vector2(14.25, 14.875)
+
+[node name="CharacterBody2D" type="Area2D" unique_id=563777500]
+script = ExtResource("1_jvg3u")
+animaciones_npc = SubResource("SpriteFrames_o2op0")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=602397421]
+position = Vector2(0, -19)
+sprite_frames = SubResource("SpriteFrames_o2op0")
+animation = &"idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=52659518]
+visible = false
+position = Vector2(0.5, -12.75)
+shape = SubResource("RectangleShape2D_euwp0")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1839740880]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=1220858440]
+visible = false
+position = Vector2(0.125, -10.5625)
+shape = SubResource("RectangleShape2D_3oava")

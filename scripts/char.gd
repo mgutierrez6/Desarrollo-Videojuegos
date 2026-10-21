@@ -61,8 +61,8 @@ func _unhandled_input(event: InputEvent) -> void:
 				objetivo = objetivo.get_parent()
 			
 			if objetivo.has_method("interactuar"):
-				objetivo.interactuar()
 				get_viewport().set_input_as_handled() # Consume la tecla E para que no se duplique
+				objetivo.interactuar()
 				break
 
 func _on_camino_der_body_entered(_body: Node2D) -> void:

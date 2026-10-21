@@ -66,8 +66,8 @@ func ocultar_mensaje() -> void:
 func _unhandled_input(event: InputEvent) -> void:
 	if eligiendo:
 		if event.is_action_pressed("interactuar") and Engine.get_process_frames() != _frame_eleccion:
-			_confirmar_foco()
 			get_viewport().set_input_as_handled()
+			_confirmar_foco()
 		return
 	if visible_dialogo and event.is_action_pressed("interactuar"):
 		avanzar_dialogo()
