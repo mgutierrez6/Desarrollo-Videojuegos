@@ -1,13 +1,18 @@
 extends CanvasLayer
-# Autoload (ObjetivoUi): muestra el objetivo actual arriba a la izquierda,
-# con el mismo recuadro, fuente y color que la caja de diálogo.
+# Autoload (ObjetivoUi): objetivos arriba a la izquierda, una línea por "voz", cada una con su color.
 
 const TEXTURA := preload("res://assets/ui/dialogo.png")
 const FUENTE := preload("res://assets/ui/BoldPixels.ttf")
-const COLOR_TEXTO := Color(0.41391832, 0.2701292, 0.2332739, 1)
+
+const ORDEN := ["pueblo", "aislado", "sistema"]
+const COLORES := {
+	"pueblo": Color(0.41391832, 0.2701292, 0.2332739, 1),   # Marrón de siempre
+	"aislado": Color(0.605, 0.242, 0.69, 1.0),            # Violeta más claro
+	"sistema": Color(0.0, 0.65, 0.78, 1.0),                # Celeste frío más claro
+}
 
 var _panel: PanelContainer
-var _label: Label
+var _caja: VBoxContainer
 
 func _ready() -> void:
 	layer = 5
@@ -29,21 +34,42 @@ func _ready() -> void:
 	_panel.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
 	add_child(_panel)
 
-	_label = Label.new()
-	_label.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	_label.custom_minimum_size = Vector2(280, 0)
-	_label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
-	_label.add_theme_font_override("font", FUENTE)
-	_label.add_theme_font_size_override("font_size", 20)
-	_label.add_theme_color_override("font_color", COLOR_TEXTO)
-	_panel.add_child(_label)
+	_caja = VBoxContainer.new()
+	_caja.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	_caja.add_theme_constant_override("separation", 4)
+	_panel.add_child(_caja)
 
-	GameManager.objetivo_cambiado.connect(_on_cambio)
-	_on_cambio(GameManager.objetivo_actual)
+	GameManager.objetivos_cambiados.connect(_actualizar)
+	_actualizar()
 
-func _on_cambio(texto: String) -> void:
-	_panel.visible = texto != ""
-	_label.text = "Objetivo:\n- " + texto.replace("\n", "\n- ")
+func _crear_linea(texto: String, color: Color, con_borde: bool = false) -> Label:
+	var l := Label.new()
+	l.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	l.custom_minimum_size = Vector2(280, 0)
+	l.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	l.add_theme_font_override("font", FUENTE)
+	l.add_theme_font_size_override("font_size", 20)
+	l.add_theme_color_override("font_color", color)
+	l.text = texto
+	return l
+
+func _actualizar() -> void:
+	for h in _caja.get_children():
+		_caja.remove_child(h)
+		h.queue_free()
+	var hay := false
+	for f in ORDEN:
+		if GameManager.objetivos.has(f):
+			hay = true
+	if hay:
+		_caja.add_child(_crear_linea("Objetivo:", COLORES["pueblo"], false))
+	for f in ORDEN:
+		if GameManager.objetivos.has(f):
+			var t: String = GameManager.objetivos[f]
+			# Aplica borde si es aislado o sistema
+			var necesita_borde: bool = (f == "aislado" or f == "sistema")
+			_caja.add_child(_crear_linea("- " + t.replace("\n", "\n- "), COLORES[f], necesita_borde))
+	_panel.visible = hay
 	_panel.reset_size()
 	# destello al cambiar, para que se note
 	_panel.modulate = Color(1, 1, 0.5)

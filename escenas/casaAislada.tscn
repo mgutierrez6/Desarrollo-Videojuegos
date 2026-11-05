@@ -1,5 +1,6 @@
 [gd_scene format=4 uid="uid://de11teuea1cly"]
 
+[ext_resource type="Script" uid="uid://cml48ahat30hd" path="res://scripts/casa_aislado.gd" id="1_m4ves"]
 [ext_resource type="Texture2D" uid="uid://b0321tkufe302" path="res://assets/tiles/int/farmhouse_tiles_withoutFurniture.png" id="2_xf5wp"]
 [ext_resource type="Texture2D" uid="uid://c5tntea8dgj5e" path="res://assets/tiles/int/farmhouse_tiles.png" id="3_e6vfx"]
 [ext_resource type="Texture2D" uid="uid://4bi8fiehiebf" path="res://assets/tiles/int/townInterior.png" id="4_t2mty"]
@@ -16,7 +17,9 @@
 [ext_resource type="Script" uid="uid://dcnaamlh3jqhh" path="res://scripts/oscuridad.gd" id="17_ju58c"]
 [ext_resource type="PackedScene" uid="uid://cfe3ia1or6v3p" path="res://escenas/cinta.tscn" id="19_nnmk2"]
 [ext_resource type="PackedScene" uid="uid://cltmh2omhkhmj" path="res://escenas/libro.tscn" id="20_dtp2u"]
+[ext_resource type="PackedScene" uid="uid://563x1gxxsm67" path="res://escenas/npc.tscn" id="20_s7sfm"]
 [ext_resource type="Script" uid="uid://cfbtdnlup44q3" path="res://scripts/inspeccionable.gd" id="21_40u6q"]
+[ext_resource type="Texture2D" uid="uid://cbm6de0moaapb" path="res://assets/char/boy2.png" id="21_owl2s"]
 [ext_resource type="Texture2D" uid="uid://bfprj21l70epw" path="res://assets/recolectables/lost book.png" id="22_xxxwy"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xj708"]
@@ -4726,8 +4729,24 @@ gradient = SubResource("Gradient_ju58c")
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_ju58c"]
 gradient = SubResource("Gradient_37yll")
 
-[node name="TestRoom" type="Node2D" unique_id=1945337766]
+[sub_resource type="AtlasTexture" id="AtlasTexture_xf5wp"]
+atlas = ExtResource("21_owl2s")
+region = Rect2(32, 0, 16, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_e6vfx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xf5wp")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[node name="CasaAislado" type="Node2D" unique_id=1945337766]
 y_sort_enabled = true
+script = ExtResource("1_m4ves")
 
 [node name="Layer0" type="TileMapLayer" parent="." unique_id=857448155]
 use_parent_material = true
@@ -4770,17 +4789,19 @@ shape = SubResource("RectangleShape2D_euwp0")
 [node name="Puerta" type="Area2D" parent="." unique_id=147463544]
 position = Vector2(296, 97)
 script = ExtResource("10_37yll")
+escena = "uid://b4mur55h3ks3d"
+punto_spawn = "desde_aislado"
+pregunta = "Queres salir?"
+opcion_si = "Salir"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Puerta" unique_id=150173177]
 visible = false
-position = Vector2(-289.72806, -385.01227)
+position = Vector2(0, -13)
 shape = SubResource("RectangleShape2D_8uah3")
 
 [node name="InventarioUI" parent="." unique_id=138131067 instance=ExtResource("14_bshbo")]
-visible = false
 
 [node name="CajaDialogo" parent="." unique_id=1942879770 instance=ExtResource("15_pgjqb")]
-visible = false
 
 [node name="cinta" parent="." unique_id=2072226499 instance=ExtResource("19_nnmk2")]
 position = Vector2(71, 104)
@@ -4890,3 +4911,10 @@ scale = Vector2(0.017910788, 14.007336)
 color = Color(1, 1, 0.78431374, 1)
 energy = 0.25
 texture = SubResource("GradientTexture1D_ju58c")
+
+[node name="SpawnEntrada" type="Marker2D" parent="." unique_id=1235902483]
+position = Vector2(296, 101)
+
+[node name="Aislado" parent="." unique_id=563777500 instance=ExtResource("20_s7sfm")]
+position = Vector2(106, 92)
+animaciones_npc = SubResource("SpriteFrames_e6vfx")

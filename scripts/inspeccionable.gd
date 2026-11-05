@@ -13,3 +13,6 @@ func interactuar() -> void:
 	if flag_visto != "":
 		GameManager.flags[flag_visto] = true
 	inspeccionado.emit()
+
+func hay_algo_para_hacer() -> bool:
+	return flag_visto == "" or not GameManager.flags.get(flag_visto, false)

@@ -1,30 +1,36 @@
 [gd_scene format=3 uid="uid://pksn60u8qwyk"]
 
-[ext_resource type="Texture2D" uid="uid://dt0m0l0ndn22m" path="res://assets/recolectables/palo.png" id="1_ggece"]
 [ext_resource type="Script" uid="uid://dm3oekclx2puo" path="res://scripts/ObjetoRecolectable.gd" id="1_hoiyr"]
 [ext_resource type="Texture2D" uid="uid://0naibxkt6lci" path="res://assets/recolectables/palo2.png" id="3_58bo0"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_euwp0"]
+size = Vector2(217.70343, 32.703915)
+
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_euwp0"]
-a = Vector2(1.013279e-06, -11.313709)
-b = Vector2(0, 8.485281)
+a = Vector2(0.7071066, -10.606603)
+b = Vector2(0, 8.485283)
 
 [node name="Palo" type="Area2D" unique_id=691191485]
 y_sort_enabled = true
 script = ExtResource("1_hoiyr")
-
-[node name="Palo" type="Sprite2D" parent="." unique_id=122988209]
-visible = false
-texture = ExtResource("1_ggece")
 
 [node name="Palo2" type="Sprite2D" parent="." unique_id=273711605]
 position = Vector2(0, 15.000002)
 scale = Vector2(0.091569774, 0.08648256)
 texture = ExtResource("3_58bo0")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Palo2" unique_id=1082333296]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=351170861]
 visible = false
-position = Vector2(-10.920634, 11.563004)
-rotation = 0.81396186
-scale = Vector2(11.246416, 11.246416)
-skew = -0.057127357
+position = Vector2(-6.4074993e-07, 15)
+rotation = -0.7766715
+scale = Vector2(0.091569774, 0.086482555)
+shape = SubResource("RectangleShape2D_euwp0")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=854703757]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1082333296]
+visible = false
+position = Vector2(-1, 16)
+rotation = 0.7853982
+scale = Vector2(0.9999999, 0.9999999)
 shape = SubResource("SegmentShape2D_euwp0")

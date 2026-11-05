@@ -14,6 +14,7 @@ extends Resource
 @export var item_a_dar: String = ""
 @export var items_a_quitar: Array[String] = []
 @export var objetivo_nuevo: String = ""
+@export_enum("pueblo", "aislado", "sistema") var fuente_objetivo: String = "pueblo"
 
 @export_group("Elección (opcional)")
 @export var pregunta: String = ""
@@ -23,3 +24,7 @@ extends Resource
 
 @export_group("Animación")
 @export var anim_reposo_despues: String = ""   # pose de reposo desde ahora (ej: "parado")
+
+
+@export_group("Guía")
+@export var marca_pendiente := false     # mostrar "!" mientras esta etapa sea la activa

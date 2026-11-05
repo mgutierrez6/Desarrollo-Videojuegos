@@ -1,14 +1,13 @@
 [gd_scene format=4 uid="uid://bvbbaurx7ycy8"]
 
 [ext_resource type="Texture2D" uid="uid://b0321tkufe302" path="res://assets/tiles/int/farmhouse_tiles_withoutFurniture.png" id="1_10n7g"]
-[ext_resource type="Script" uid="uid://cml48ahat30hd" path="res://scripts/test_room.gd" id="1_bmpqh"]
+[ext_resource type="Script" uid="uid://cml48ahat30hd" path="res://scripts/casa_aislado.gd" id="1_bmpqh"]
 [ext_resource type="PackedScene" uid="uid://6w42qa16t3n7" path="res://escenas/char.tscn" id="1_c615h"]
 [ext_resource type="Texture2D" uid="uid://c5tntea8dgj5e" path="res://assets/tiles/int/farmhouse_tiles.png" id="2_rut0o"]
 [ext_resource type="Texture2D" uid="uid://4bi8fiehiebf" path="res://assets/tiles/int/townInterior.png" id="3_daloh"]
 [ext_resource type="Texture2D" uid="uid://deq4ogkr0ek7o" path="res://assets/tiles/int/walls_and_floors.png" id="4_jkio5"]
 [ext_resource type="Texture2D" uid="uid://cotlnxsuxl36p" path="res://assets/tiles/int/townInterior_2.png" id="5_dn22t"]
 [ext_resource type="Texture2D" uid="uid://cw1jmu2s40d3b" path="res://assets/tiles/int/wallpapers_2.png" id="6_rut0o"]
-[ext_resource type="PackedScene" uid="uid://pksn60u8qwyk" path="res://escenas/palo.tscn" id="8_3ljis"]
 [ext_resource type="Texture2D" uid="uid://ck85dt573f62t" path="res://assets/tiles/int/pared.png" id="8_lsjg5"]
 [ext_resource type="PackedScene" uid="uid://cf4kcegcbuwgq" path="res://escenas/foto.tscn" id="12_bmpqh"]
 [ext_resource type="Script" uid="uid://bts1ilccp60jh" path="res://scripts/keypad_puerta.gd" id="13_5cc8q"]
@@ -4699,9 +4698,6 @@ sources/4 = SubResource("TileSetAtlasSource_vto7x")
 sources/5 = SubResource("TileSetAtlasSource_daloh")
 sources/6 = SubResource("TileSetAtlasSource_dg6bl")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_11ymt"]
-size = Vector2(20, 34.776978)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cimxy"]
 size = Vector2(15.945404, 16.188301)
 
@@ -4749,17 +4745,6 @@ limit_left = -16
 limit_top = -8
 limit_right = 430
 limit_bottom = 176
-
-[node name="Palo" parent="." unique_id=691191485 instance=ExtResource("8_3ljis")]
-position = Vector2(170.37009, 55.75427)
-rotation = 0.705113
-scale = Vector2(0.77, 0.77)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Palo" unique_id=315595352]
-visible = false
-position = Vector2(7.1772833, 21.892385)
-rotation = -0.6981317
-shape = SubResource("RectangleShape2D_11ymt")
 
 [node name="Foto" parent="." unique_id=972745586 instance=ExtResource("12_bmpqh")]
 position = Vector2(346.44003, 125.03998)

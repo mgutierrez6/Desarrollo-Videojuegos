@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://0qurkfg6reqc" path="res://scripts/char.gd" id="1_apusc"]
 [ext_resource type="Texture2D" uid="uid://b38w2ousberv5" path="res://assets/char/girl.png" id="2_apusc"]
+[ext_resource type="Script" uid="uid://bqfekwr20y7j1" path="res://scripts/label.gd" id="3_n5qcy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_n5qcy"]
 atlas = ExtResource("2_apusc")
@@ -162,3 +163,7 @@ shape = SubResource("RectangleShape2D_euwp0")
 visible = false
 position = Vector2(11, 11)
 shape = SubResource("RectangleShape2D_o2op0")
+
+[node name="Label" type="Node2D" parent="." unique_id=723661536]
+script = ExtResource("3_n5qcy")
+usos_para_aprender = 3

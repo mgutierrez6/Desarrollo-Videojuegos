@@ -3,6 +3,14 @@ extends CanvasLayer
 signal _opcion_elegida(indice: int)
 signal dialogo_terminado
 
+# Cada voz: color del texto (null = el original), tinte de la caja y cuánto oscurece la pantalla.
+# La caja se tiñe SUAVE para que siga viéndose; el color fuerte va en el texto.
+const VOCES := {
+	"pueblo":  {"texto": null, "caja": Color(1.0, 1.0, 1.0), "oscurece": 0.0},
+	"aislado": {"texto": Color(0.699, 0.251, 0.765, 1.0), "caja": Color(0.31, 0.173, 0.141, 0.58), "oscurece": 0.0},
+	"sistema": {"texto": Color(0.55, 0.95, 1.0), "caja": Color(0.14, 0.30, 0.36), "oscurece": 0.6},
+}
+
 var eligiendo: bool = false
 var _frame_eleccion := -1
 var _frame_cierre := -1
@@ -14,6 +22,10 @@ var _textos_opc: Array[String] = []
 @onready var panel: NinePatchRect = $panel
 @onready var label: RichTextLabel = $panel/label
 
+var _overlay: ColorRect
+var _voz_actual := "pueblo"
+var _color_texto_original: Color
+
 var visible_dialogo: bool = false
 var paginas_dialogo: Array = []
 var indice_pagina: int = 0
@@ -21,9 +33,36 @@ var tween_texto: Tween
 
 func _ready() -> void:
 	Global.caja_dialogo = self
+	_color_texto_original = label.get_theme_color("default_color")
 	panel.hide()
+	_crear_overlay()
 
-func iniciar_dialogo(lista_textos: Array) -> void:
+func _crear_overlay() -> void:
+	_overlay = ColorRect.new()
+	_overlay.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	_overlay.color = Color(0, 0, 0, 0)
+	_overlay.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	_overlay.hide()
+	add_child(_overlay)
+	move_child(_overlay, 0)       # detrás de la caja
+
+func _color_texto() -> Color:
+	var t = VOCES[_voz_actual]["texto"]
+	return t if t is Color else _color_texto_original
+
+func _aplicar_voz(voz: String) -> void:
+	_voz_actual = voz if VOCES.has(voz) else "pueblo"
+	var v: Dictionary = VOCES[_voz_actual]
+	panel.self_modulate = v["caja"]
+	label.add_theme_color_override("default_color", _color_texto())
+	if v["oscurece"] > 0.0:
+		_overlay.color = Color(0, 0, 0, v["oscurece"])
+		_overlay.show()
+	else:
+		_overlay.hide()
+
+func iniciar_dialogo(lista_textos: Array, voz: String = "pueblo") -> void:
+	_aplicar_voz(voz)
 	paginas_dialogo = lista_textos
 	indice_pagina = 0
 	panel.show()
@@ -34,10 +73,10 @@ func mostrar_pagina_actual() -> void:
 	var texto_actual = paginas_dialogo[indice_pagina]
 	label.text = texto_actual
 	label.visible_characters = 0
-	
+
 	if tween_texto and tween_texto.is_running():
 		tween_texto.kill()
-		
+
 	tween_texto = create_tween()
 	var tiempo = texto_actual.length() * 0.03
 	tween_texto.tween_property(label, "visible_characters", texto_actual.length(), tiempo)
@@ -60,6 +99,7 @@ func ocultar_mensaje() -> void:
 	if tween_texto and tween_texto.is_running():
 		tween_texto.kill()
 	panel.hide()
+	_overlay.hide()
 	visible_dialogo = false
 	dialogo_terminado.emit()
 
@@ -70,15 +110,16 @@ func _unhandled_input(event: InputEvent) -> void:
 			_confirmar_foco()
 		return
 	if visible_dialogo and event.is_action_pressed("interactuar"):
-		avanzar_dialogo()
 		get_viewport().set_input_as_handled()
+		avanzar_dialogo()
 
-# Uso: var i = await Global.caja_dialogo.elegir("¿Entrás?", ["Entrar", "No entrar"])
-func elegir(pregunta: String, opciones: Array) -> int:
+# Uso: var i = await Global.caja_dialogo.elegir("¿Entrás?", ["Entrar", "No entrar"], "aislado")
+func elegir(pregunta: String, opciones: Array, voz: String = "pueblo") -> int:
 	if eligiendo or Engine.get_process_frames() == _frame_cierre:
 		return -1
 	eligiendo = true
 	_frame_eleccion = Engine.get_process_frames()
+	_aplicar_voz(voz)
 
 	# la pregunta sale en la caja de diálogo
 	paginas_dialogo = [pregunta]
@@ -88,6 +129,7 @@ func elegir(pregunta: String, opciones: Array) -> int:
 
 	# las opciones salen en un segundo cuadro con el mismo estilo
 	_construir_panel_opciones()
+	_panel_opc.self_modulate = VOCES[_voz_actual]["caja"]
 	for b in _botones:
 		b.queue_free()
 	_botones.clear()
@@ -117,6 +159,7 @@ func elegir(pregunta: String, opciones: Array) -> int:
 		tween_texto.kill()
 	_panel_opc.hide()
 	panel.hide()
+	_overlay.hide()
 	eligiendo = false
 	_frame_cierre = Engine.get_process_frames()
 	return indice
@@ -151,10 +194,10 @@ func _crear_boton_opcion(i: int) -> Button:
 	var b = Button.new()
 	b.flat = true
 	b.alignment = HORIZONTAL_ALIGNMENT_LEFT
-	# misma fuente y color que el texto del diálogo
+	# misma fuente y color que el texto del diálogo (según la voz)
 	b.add_theme_font_override("font", label.get_theme_font("normal_font"))
 	b.add_theme_font_size_override("font_size", label.get_theme_font_size("normal_font_size"))
-	b.add_theme_color_override("font_color", label.get_theme_color("default_color"))
+	b.add_theme_color_override("font_color", _color_texto())
 	b.add_theme_color_override("font_focus_color", Color(1, 1, 0.4))
 	b.add_theme_color_override("font_hover_color", Color(1, 1, 0.4))
 	# sin fondos ni recuadro de foco: solo texto

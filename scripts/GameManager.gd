@@ -68,7 +68,21 @@ var datos_items = {
 		"textura": preload("res://assets/recolectables/llave.png"),
 		"descripcion": "Una llave chica y mojada."
 	},
-	
+	"Pilas": {
+		"nombre": "Pilas",
+		"textura": preload("res://assets/recolectables/pilas.png"),
+		"descripcion": "Un par de pilas."
+	},
+	"Cuerda": {
+		"nombre": "Cuerda",
+		"textura": preload("res://assets/recolectables/cuerda.png"),
+		"descripcion": "Una cuerda enrollada."
+	},
+	"Llave de la caja": {
+		"nombre": "Llave de la caja",
+		"textura": preload("res://assets/recolectables/llaveChiqui.png"),
+		"descripcion": "Una llave con restos de óxido."
+	},
 }
 
 # Lista de nombres o IDs de los objetos recolectados
@@ -88,12 +102,23 @@ var recetas: Dictionary = {
 	# "Cuerda+Iman": "Pescador magnetico",
 }
 
-signal objetivo_cambiado(texto: String)
-var objetivo_actual: String = ""
+signal objetivos_cambiados
 
-func set_objetivo(texto: String) -> void:
-	objetivo_actual = texto
-	objetivo_cambiado.emit(texto)
+# un objetivo por "voz": pueblo, aislado, sistema
+var objetivos: Dictionary = {}
+var objetivo_actual: String:
+	get:
+		return objetivos.get("pueblo", "")
+
+func set_objetivo(texto: String, fuente: String = "pueblo") -> void:
+	if texto == "":
+		objetivos.erase(fuente)
+	else:
+		objetivos[fuente] = texto
+	objetivos_cambiados.emit()
+
+func quitar_objetivo(fuente: String) -> void:
+	set_objetivo("", fuente)
 
 func agregar_item(item_nombre: String):
 	if not item_nombre in inventario:

@@ -16,16 +16,42 @@ signal etapa_ejecutada(etapa: EtapaDialogo)
 @export var anim_hablando: String = ""        # mientras habla (ej: "parado"); vacío = no cambia
 @export var volver_a_reposo := true           # al terminar, vuelve a su pose de reposo
 
+@export_group("Guía")
+@export var altura_marca := 52.0              # altura de la "!" sobre el NPC
+
 var _ocupado := false
 var _reposo := ""
+var _marca: Label
 
 func _ready() -> void:
 	_aplicar_animaciones()
 	if Engine.is_editor_hint():
 		return
+	_crear_marca()
 	# recuerda la pose entre escenas
 	_reposo = GameManager.flags.get("anim_" + String(name), anim_reposo)
 	_reproducir(_reposo)
+
+func _crear_marca() -> void:
+	_marca = Label.new()
+	_marca.text = "!"
+	_marca.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	_marca.custom_minimum_size = Vector2(16, 0)
+	_marca.add_theme_font_size_override("font_size", 14)
+	_marca.add_theme_color_override("font_color", Color(1.0, 0.902, 0.431, 1.0))
+	_marca.add_theme_color_override("font_outline_color", Color.BLACK)
+	_marca.add_theme_constant_override("outline_size", 4)
+	_marca.position = Vector2(-8, -altura_marca)
+	_marca.z_index = 10
+	_marca.visible = false
+	add_child(_marca)
+
+func _process(_delta: float) -> void:
+	if Engine.is_editor_hint() or _marca == null:
+		return
+	_marca.visible = hay_algo_para_hacer()
+	if _marca.visible:
+		_marca.position = Vector2(-8, -altura_marca + sin(Time.get_ticks_msec() / 200.0) * 1.8)
 
 func _sprite() -> AnimatedSprite2D:
 	return get_node_or_null("AnimatedSprite2D") as AnimatedSprite2D
@@ -52,13 +78,29 @@ func _reproducir(nombre: String) -> void:
 		nombre = todas[0]
 	sprite.play(nombre)
 
+func _indice_etapa_actual() -> int:
+	for i in range(etapas.size()):
+		if etapas[i] != null and _cumple(etapas[i]):
+			return i
+	return -1
+
+# true mientras haya una etapa nueva que todavía no escuchaste
+func hay_algo_para_hacer() -> bool:
+	if _ocupado:
+		return false
+	var i := _indice_etapa_actual()
+	if i < 0 or not etapas[i].marca_pendiente:
+		return false
+	return GameManager.flags.get("etapa_vista_" + String(name), -1) != i
+
 func interactuar() -> void:
 	if _ocupado or not Global.caja_dialogo or Global.jugador_bloqueado():
 		return
-	for e in etapas:
-		if e != null and _cumple(e):
-			await _hablar(e)
-			return
+	var i := _indice_etapa_actual()
+	if i < 0:
+		return
+	await _hablar(etapas[i])
+	GameManager.flags["etapa_vista_" + String(name)] = i
 
 func _hablar(e: EtapaDialogo) -> void:
 	_ocupado = true
@@ -96,16 +138,22 @@ func _cumple(e: EtapaDialogo) -> bool:
 
 func _ejecutar(e: EtapaDialogo) -> void:
 	_ocupado = true
+	
+	# 1. Diálogo principal con la fuente del objetivo
 	if not e.texto.is_empty():
-		Global.caja_dialogo.iniciar_dialogo(e.texto)
+		Global.caja_dialogo.iniciar_dialogo(e.texto, e.fuente_objetivo)
 		await Global.caja_dialogo.dialogo_terminado
+
+	# 2. Elección / Pregunta (si usa la caja de diálogo o EleccionUi)
 	if e.pregunta != "" and not e.opciones.is_empty():
-		var i = await EleccionUi.elegir(e.pregunta, e.opciones)
+		var i = await Global.caja_dialogo.elegir(e.pregunta, e.opciones, e.fuente_objetivo)
 		if e.flag_eleccion != "" and i >= 0:
 			GameManager.flags[e.flag_eleccion + "_" + str(i)] = true
 		if i >= 0 and i < e.respuestas.size() and e.respuestas[i] != "":
-			Global.caja_dialogo.iniciar_dialogo([e.respuestas[i]])
+			Global.caja_dialogo.iniciar_dialogo([e.respuestas[i]], e.fuente_objetivo)
 			await Global.caja_dialogo.dialogo_terminado
+
+	# 3. Flags e Items
 	for f in e.flags_a_activar:
 		GameManager.flags[f] = true
 	for it in e.items_a_quitar:
@@ -113,8 +161,11 @@ func _ejecutar(e: EtapaDialogo) -> void:
 	if e.item_a_dar != "":
 		GameManager.agregar_item(e.item_a_dar)
 		var nombre = GameManager.datos_items.get(e.item_a_dar, {}).get("nombre", e.item_a_dar)
-		Global.caja_dialogo.iniciar_dialogo(["Recibiste: " + nombre])
+		Global.caja_dialogo.iniciar_dialogo(["Recibiste: " + nombre], e.fuente_objetivo)
+
+	# 4. Actualizar objetivo
 	if e.objetivo_nuevo != "":
-		GameManager.set_objetivo(e.objetivo_nuevo)
+		GameManager.set_objetivo(e.objetivo_nuevo, e.fuente_objetivo)
+
 	_ocupado = false
 	etapa_ejecutada.emit(e)

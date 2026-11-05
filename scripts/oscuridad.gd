@@ -38,6 +38,16 @@ func _ready() -> void:
 
 	if dar_linterna_para_probar:
 		GameManager.agregar_item(item_linterna)
+		
+	if not GameManager.tiene_item(item_linterna):
+		if not GameManager.flags.get("pensado_oscuro", false):
+			GameManager.flags["pensado_oscuro"] = true
+			await get_tree().create_timer(0.8).timeout
+			if Global.caja_dialogo:
+				Global.caja_dialogo.iniciar_dialogo(["Está muy oscuro. Necesito una luz."])
+			GameManager.set_objetivo("Conseguir luz para la casa")
+	else:
+		Consejos.mostrar("tip_linterna", "Elegí la linterna en el inventario (E) y cerrá con E para encenderla.")
 
 func _process(delta: float) -> void:
 	if _luz == null:

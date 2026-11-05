@@ -13,11 +13,22 @@ signal ya_resuelto       # interactuó cuando ya estaba resuelto
 @export_multiline var txt_exito: String = "¡Funcionó!"
 @export_multiline var txt_ya_resuelto: String = "Ya está resuelto."
 
+var _firma_tocado := ""
+
+func _firma() -> String:
+	return str(GameManager.inventario) + "|" + GameManager.item_seleccionado
+
+func hay_algo_para_hacer() -> bool:
+	if GameManager.flags.get(flag, false):
+		return false
+	return _firma_tocado != _firma()
+
 func _decir(t: String) -> void:
 	if t != "" and Global.caja_dialogo:
 		Global.caja_dialogo.iniciar_dialogo([t])
 
 func interactuar() -> void:
+	_firma_tocado = _firma()
 	if GameManager.flags.get(flag, false):
 		_decir(txt_ya_resuelto)
 		ya_resuelto.emit()
