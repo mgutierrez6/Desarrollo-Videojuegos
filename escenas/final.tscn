@@ -1,3 +1,8 @@
 [gd_scene format=3 uid="uid://dhqshh0qbestm"]
 
-[node name="Node2D" type="Node2D" unique_id=1158575701]
+[ext_resource type="Script" uid="uid://2bcuw7grhsf0" path="res://scripts/final.gd" id="1_lcbl7"]
+
+[node name="epilogo" type="Control" unique_id=1431441888]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_lcbl7")

@@ -95,6 +95,7 @@ func _empezar() -> void:
 	for n in get_parent().get_children():
 		if n is Area2D and n.get("etapas") != null:
 			_npcs.append(n)
+	GameManager.set_objetivo("Todo está en orden", "pueblo")
 	GameManager.set_objetivo("Al reloj de la plaza", _guia)
 	_activo = true
 

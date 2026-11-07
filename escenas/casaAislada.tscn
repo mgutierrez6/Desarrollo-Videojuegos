@@ -4767,6 +4767,7 @@ animations = [{
 script = ExtResource("23_t2mty")
 flags_requeridos = Array[String](["caja_abierta"])
 texto = Array[String](["Ahí está todo...", "Ahora tenes que ir al reloj, el de la plaza... ya entenderas"])
+fuente_objetivo = "aislado"
 marca_pendiente = true
 metadata/_custom_type_script = "uid://du47wn6gexhp2"
 
@@ -4774,6 +4775,7 @@ metadata/_custom_type_script = "uid://du47wn6gexhp2"
 script = ExtResource("23_t2mty")
 flags_requeridos = Array[String](["aislado_conocido"])
 texto = Array[String](["La caja... Los registros. Ahí está todo."])
+fuente_objetivo = "aislado"
 metadata/_custom_type_script = "uid://du47wn6gexhp2"
 
 [sub_resource type="Resource" id="Resource_qfucr"]
@@ -4836,10 +4838,8 @@ position = Vector2(0, -13)
 shape = SubResource("RectangleShape2D_8uah3")
 
 [node name="InventarioUI" parent="." unique_id=138131067 instance=ExtResource("14_bshbo")]
-visible = false
 
 [node name="CajaDialogo" parent="." unique_id=1942879770 instance=ExtResource("15_pgjqb")]
-visible = false
 
 [node name="cinta" parent="." unique_id=2072226499 instance=ExtResource("19_nnmk2")]
 position = Vector2(75, 106)
