@@ -24,6 +24,8 @@ func _process(_delta):
 	horas_sprite.rotation = (((hora % 12) + minuto / 60.0) / 12.0) * TAU
 
 func _codigo() -> String:
+	if GameManager.flags.get("confianza_aislado", false):
+		return "314419"
 	return "%02d%02d" % [hora_congelada, minuto_congelado]
 
 func hay_algo_para_hacer() -> bool:

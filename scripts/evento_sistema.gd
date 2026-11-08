@@ -17,6 +17,15 @@ const TEXTO_CUENTA := {
 	"aislado": "No te vayas... %d",
 }
 
+const TINTE_NPC := {
+	"sistema": Color(0.25, 0.5, 0.6, 0.55),
+	"aislado": Color(0.5, 0.3, 0.6, 0.55),
+}
+const PISTA := {
+	"sistema": "Mirá las agujas del reloj",
+	"aislado": "Lo que abrió la puerta, y después la caja",
+}
+var _pista_dada := false
 var _ola: Node2D
 var _mod: CanvasModulate
 var _jugador: Node2D
@@ -87,8 +96,14 @@ func _empezar() -> void:
 	_ola.set_script(preload("res://scripts/ola_reinicio.gd"))
 	_ola.set("color", COLOR_OLA[_perseguidor])
 	get_parent().add_child(_ola)
-	_x0 = minf(_jugador.global_position.x, reloj.global_position.x) - distancia_inicial
+	if GameManager.flags.has("evento_x0"):
+		_x0 = GameManager.flags["evento_x0"]
+		_t = GameManager.flags.get("evento_t", 0.0)
+	else:
+		_x0 = minf(_jugador.global_position.x, reloj.global_position.x) - distancia_inicial
+		GameManager.flags["evento_x0"] = _x0
 	_vel = (reloj.global_position.x - _x0) / segundos
+	_pista_dada = _t / segundos >= 0.5
 	_ola.set("borde_x", _x0)
 	_mod = CanvasModulate.new()
 	get_parent().add_child(_mod)
@@ -103,11 +118,16 @@ func _process(delta: float) -> void:
 	if not _activo:
 		return
 	_t += delta
+	GameManager.flags["evento_t"] = _t
 	var borde := _x0 + _vel * _t
 	_ola.set("borde_x", borde)
 	var progreso := clampf(_t / segundos, 0.0, 1.0)
 	_mod.color = Color.WHITE.lerp(Color(0.55, 0.5, 0.7), progreso)
-
+	
+	if progreso >= 0.5 and not _pista_dada:
+		_pista_dada = true
+		GameManager.set_objetivo(PISTA[_guia], _guia)
+	
 	var restante := int(ceil(segundos - _t))
 	if restante != _ultimo:
 		_ultimo = restante
@@ -116,7 +136,7 @@ func _process(delta: float) -> void:
 	for n in _npcs:
 		if is_instance_valid(n) and not _tenidos.has(n) and n.global_position.x < borde:
 			_tenidos[n] = true
-			create_tween().tween_property(n, "modulate", Color(0.25, 0.5, 0.6, 0.55), 0.4)
+			create_tween().tween_property(n, "modulate", TINTE_NPC[_perseguidor], 0.4)
 
 	_pulso_en -= delta
 	if _pulso_en <= 0.0:
@@ -146,21 +166,34 @@ func _terminar(resuelto: bool) -> void:
 	GameManager.flags["evento_terminado"] = true
 	GameManager.quitar_objetivo("sistema")
 	GameManager.quitar_objetivo("aislado")
+	await GameManager.quitar_objetivo("pueblo")
 	var c = Global.caja_dialogo
 	if resuelto:
-		c.iniciar_dialogo(["Dejalo detenido. Que puedan despertar."], "aislado")
+		var rompe := _guia == "aislado"
+		var linea := "Rompelo. Así nadie vuelve a repetir el día." if rompe else "Dejalo detenido. Que puedan despertar."
+		c.iniciar_dialogo([linea], "aislado")
 		await c.dialogo_terminado
 		c.iniciar_dialogo(["Reiniciá. Es lo único que los mantiene a salvo."], "sistema")
 		await c.dialogo_terminado
-		var i: int = await c.elegir("El panel espera una orden.", ["Reiniciar el reloj", "Dejarlo detenido"], "sistema")
-		GameManager.flags["final_" + str(maxi(i, 0))] = true
+		var i: int = await c.elegir("El panel espera una orden.",
+				["Reiniciar el reloj", "Romperlo" if rompe else "Dejarlo detenido"], "sistema")
+		if i == 1 and rompe:
+			GlitchFx.activar(get_tree()).fuerza(0.5, 3.0)
+			c.iniciar_dialogo(["Advertencia: la ruptura es irreversible.",
+					"Sin el reinicio, no puedo garantizar su seguridad."], "sistema")
+			await c.dialogo_terminado
+			GameManager.flags["final_roto"] = true
+		elif i == 1:
+			GameManager.flags["final_1"] = true
+		else:
+			GameManager.flags["final_0"] = true
 	else:
 		if _perseguidor == "sistema":
 			c.iniciar_dialogo(["Reinicio completado."], "sistema")
+			GameManager.flags["final_tiempo_sistema"] = true
 		else:
 			c.iniciar_dialogo(["...Quedate. Por favor."], "aislado")
+			GameManager.flags["final_tiempo_aislado"] = true
 		await c.dialogo_terminado
-		GameManager.flags["final_0"] = true
-		GameManager.flags["final_por_tiempo"] = true
 	await get_tree().create_timer(0.5).timeout
 	get_tree().change_scene_to_file(escena_final)

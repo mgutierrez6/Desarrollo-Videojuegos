@@ -10,7 +10,15 @@ signal abierta
 @export var imagen: Texture2D
 @export_multiline var txt_candado := "Una caja con candado y un teclado."
 @export_multiline var txt_llave := "El candado cede."
-@export_multiline var registro := "REGISTRO DEL PUEBLO. Año 2. El aislado detuvo el reloj para que nadie repitiera el día. El pueblo quedó trabado en el mismo día. El Sistema reinició la jornada y cerró la escalera."
+@export_multiline var registro := "SISTEMA. REGISTRO DE EVENTOS.
+Año 2.
+· Incidente: #### accede al reloj de la plaza.
+· Resultado: el día no avanza. Se repite.
+· Acción: reinicio automático habilitado. Se ejecuta cuando el reloj vuelve a andar.
+· Acción: acceso inferior cerrado.
+· Control: panel en la base del reloj.
+· Estado: estable.
+(copia no autorizada)"
 @export var objetivo_final := "Salir de la casa"
 
 var _usando := false
