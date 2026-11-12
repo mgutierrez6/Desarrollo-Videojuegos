@@ -10168,7 +10168,7 @@ pitch_scale = 0.86
 max_distance = 736.0
 script = ExtResource("53_jdkq3")
 primer_golpe = 3.0
-flag_detener = "puerta_aislado_abierta-"
+flag_detener = "puerta_aislado_abierta"
 
 [node name="PuertaAislado" type="Area2D" parent="." unique_id=2134483750]
 position = Vector2(447, 689)

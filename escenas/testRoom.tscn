@@ -9,8 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://cotlnxsuxl36p" path="res://assets/tiles/int/townInterior_2.png" id="5_dn22t"]
 [ext_resource type="Texture2D" uid="uid://cw1jmu2s40d3b" path="res://assets/tiles/int/wallpapers_2.png" id="6_rut0o"]
 [ext_resource type="Texture2D" uid="uid://ck85dt573f62t" path="res://assets/tiles/int/pared.png" id="8_lsjg5"]
-[ext_resource type="PackedScene" uid="uid://cf4kcegcbuwgq" path="res://escenas/foto.tscn" id="12_bmpqh"]
-[ext_resource type="Script" uid="uid://bts1ilccp60jh" path="res://scripts/keypad_puerta.gd" id="13_5cc8q"]
+[ext_resource type="Script" uid="uid://db6ci3uufkqis" path="res://scripts/pc.gd" id="11_xjot5"]
 [ext_resource type="Script" uid="uid://jnmneqdstby0" path="res://scripts/cambio_escena.gd" id="13_xjot5"]
 [ext_resource type="PackedScene" uid="uid://boydelu5s0pli" path="res://escenas/inventarioui.tscn" id="15_xcmlt"]
 [ext_resource type="PackedScene" uid="uid://cis2mde65dc2" path="res://escenas/cajadialogo.tscn" id="16_bmpqh"]
@@ -4698,11 +4697,8 @@ sources/4 = SubResource("TileSetAtlasSource_vto7x")
 sources/5 = SubResource("TileSetAtlasSource_daloh")
 sources/6 = SubResource("TileSetAtlasSource_dg6bl")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_cimxy"]
-size = Vector2(15.945404, 16.188301)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_euwp0"]
-size = Vector2(26.202806, 17.149963)
+size = Vector2(32.113945, 22.772308)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8uah3"]
 size = Vector2(22.70964, 36.25582)
@@ -4746,24 +4742,13 @@ limit_top = -8
 limit_right = 430
 limit_bottom = 176
 
-[node name="Foto" parent="." unique_id=972745586 instance=ExtResource("12_bmpqh")]
-position = Vector2(346.44003, 125.03998)
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Foto" unique_id=575725727]
-visible = false
-position = Vector2(-3.6887512, 3.2765808)
-shape = SubResource("RectangleShape2D_cimxy")
-
 [node name="PC" type="Area2D" parent="." unique_id=221236349]
-position = Vector2(346.44003, 125.03998)
-script = ExtResource("13_5cc8q")
-codigo = "4821"
-flag = "compu_abierta"
-txt_exito = "La computadora se desbloqueó. Hay que avisarle a la chica."
+position = Vector2(80.26766, 66.90671)
+script = ExtResource("11_xjot5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PC" unique_id=1512178238]
 visible = false
-position = Vector2(-266.63104, -54.624268)
+position = Vector2(0.07222748, 0.09938812)
 shape = SubResource("RectangleShape2D_euwp0")
 
 [node name="Puerta" type="Area2D" parent="." unique_id=147463544]
@@ -4784,7 +4769,7 @@ shape = SubResource("RectangleShape2D_8uah3")
 [node name="CajaDialogo" parent="." unique_id=1942879770 instance=ExtResource("16_bmpqh")]
 
 [node name="libro" parent="." unique_id=436740979 instance=ExtResource("20_eg2l0")]
-position = Vector2(369.69098, 134.07709)
+position = Vector2(80.39065, 116.49614)
 rotation = 3.6704273
 scale = Vector2(0.5, 0.5)
 skew = 0.24783675

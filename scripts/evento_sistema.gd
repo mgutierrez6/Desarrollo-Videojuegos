@@ -107,9 +107,11 @@ func _empezar() -> void:
 	_ola.set("borde_x", _x0)
 	_mod = CanvasModulate.new()
 	get_parent().add_child(_mod)
-	for n in get_parent().get_children():
-		if n is Area2D and n.get("etapas") != null:
-			_npcs.append(n)
+	var grupo := get_parent().get_node_or_null("NPCs")
+	if grupo:
+		for n in grupo.get_children():
+			if n is Node2D:
+				_npcs.append(n)
 	GameManager.set_objetivo("Todo está en orden", "pueblo")
 	GameManager.set_objetivo("Al reloj de la plaza", _guia)
 	_activo = true
