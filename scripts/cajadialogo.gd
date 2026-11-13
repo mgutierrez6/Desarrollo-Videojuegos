@@ -6,9 +6,9 @@ signal dialogo_terminado
 # Cada voz: color del texto (null = el original), tinte de la caja y cuánto oscurece la pantalla.
 # La caja se tiñe SUAVE para que siga viéndose; el color fuerte va en el texto.
 const VOCES := {
-	"pueblo":  {"texto": null, "caja": Color(1.0, 1.0, 1.0), "oscurece": 0.0},
-	"aislado": {"texto": Color(0.699, 0.251, 0.765, 1.0), "caja": Color(0.31, 0.173, 0.141, 0.58), "oscurece": 0.0},
-	"sistema": {"texto": Color(0.55, 0.95, 1.0), "caja": Color(0.14, 0.30, 0.36), "oscurece": 0.6},
+	"pueblo":  {"texto": null, "caja": Color(1.0, 1.0, 1.0), "oscurece": 0.0, "vel": 0.03, "temblor": false},
+	"aislado": {"texto": Color(0.88, 0.76, 1.0), "caja": Color(0.20, 0.12, 0.30, 1.0), "oscurece": 0.0, "vel": 0.055, "temblor": true},
+	"sistema": {"texto": Color(0.55, 0.95, 1.0), "caja": Color(0.14, 0.30, 0.36), "oscurece": 0.6, "vel": 0.03, "temblor": false},
 }
 
 var eligiendo: bool = false
@@ -70,17 +70,18 @@ func iniciar_dialogo(lista_textos: Array, voz: String = "pueblo") -> void:
 	mostrar_pagina_actual()
 
 func mostrar_pagina_actual() -> void:
-	var texto_actual = paginas_dialogo[indice_pagina]
-	label.text = texto_actual
+	var base: String = paginas_dialogo[indice_pagina]
+	var v: Dictionary = VOCES[_voz_actual]
+	label.bbcode_enabled = true
+	label.text = ("[shake rate=12.0 level=1 connected=0]%s[/shake]" % base) if v["temblor"] else base
 	label.visible_characters = 0
 
 	if tween_texto and tween_texto.is_running():
 		tween_texto.kill()
 
 	tween_texto = create_tween()
-	var tiempo = texto_actual.length() * 0.03
-	tween_texto.tween_property(label, "visible_characters", texto_actual.length(), tiempo)
-
+	tween_texto.tween_property(label, "visible_characters", base.length(), base.length() * v["vel"])
+	
 func avanzar_dialogo() -> void:
 	# Si todavía está escribiendo la frase actual, la completa
 	if tween_texto and tween_texto.is_running():

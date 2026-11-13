@@ -2,13 +2,20 @@ extends CanvasLayer
 # Cartelitos de ayuda (cada uno aparece una sola vez) y pista si el jugador no avanza.
 
 const FUENTE := preload("res://assets/ui/BoldPixels.ttf")
-@export var segundos_sin_avanzar := 75.0
+@export var segundos_sin_avanzar := 50.0
 
-# objetivo del pueblo -> pista que sale si el jugador se queda trabado
 var pistas := {
-	"Hablá con Luis": "Luis está frente a la tienda. Acercate y apretá F.",
-	"Encontrá la llave de Luis": "Algo brilla en la fuente de la plaza.",
-	"Buscá algo largo": "Hay un palo tirado cerca de la plaza.",
+	"Averiguar dónde estás": "Hablá con la gente del pueblo: acercate y apretá F.",
+	"Conocer el pueblo": "Luis está frente a la tienda. Acercate y apretá F.",
+	"Ayudar al señor con su llave": "Algo brilla en la fuente de la plaza. Y hay un palo tirado cerca.",
+	"Seguir explorando el pueblo": "Hay una pila de piedras que parece esconder algo.",
+	"Conseguir luz para la casa": "A la linterna le faltan pilas. Buscalas por el pueblo.",
+	"Volver a la casa de abajo": "La linterna ya funciona. Volvé a la casa de abajo.",
+	"Descubrir quién golpea": "Los golpes vienen de abajo. Buscá una puerta.",
+	"Escuchá el ritmo de los golpes": "Contá los golpes de cada tanda. Siempre se repiten igual.",
+	"Entrar a la casa": "La puerta ya está abierta. Volvé y entrá.",
+	"Abrir la caja de los registros": "Hay un agujero en la pared con algo metálico. Necesitás algo largo y magnético.",
+	"Salir de la casa": "Ya tenés lo que buscabas. Salí por la puerta.",
 }
 
 var _label: Label
@@ -63,14 +70,16 @@ func _process(delta: float) -> void:
 		return
 	_t += _reloj
 	_reloj = 0.0
-	# "progreso" = cambia el inventario, los flags o el objetivo (moverse no cuenta)
-	var firma := str(GameManager.inventario.size()) + "|" + str(GameManager.flags.size()) + "|" + GameManager.objetivo_actual
+	# "progreso" = cambia el inventario, los flags o algún objetivo (moverse no cuenta)
+	var firma := str(GameManager.inventario.size()) + "|" + str(GameManager.flags.size()) + "|" + str(GameManager.objetivos)
 	if firma != _firma:
 		_firma = firma
 		_t = 0.0
 		return
 	if _t >= segundos_sin_avanzar and not Global.jugador_bloqueado():
 		_t = 0.0
-		var p: String = pistas.get(GameManager.objetivo_actual, "")
-		if p != "":
-			_decir(p, 6.0)
+		# hay un objetivo por voz (pueblo, aislado, sistema): sale la pista del primero que tenga una
+		for texto in GameManager.objetivos.values():
+			if pistas.has(texto):
+				_decir(pistas[texto], 6.0)
+				break

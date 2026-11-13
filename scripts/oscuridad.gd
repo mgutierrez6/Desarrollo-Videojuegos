@@ -13,9 +13,6 @@ extends Node
 @export var escala_encendida := 0.9
 @export_range(0.0, 2.0) var energia_encendida := 1.0
 
-@export_group("Prueba")
-@export var dar_linterna_para_probar := true
-
 var _luz: PointLight2D
 
 func _ready() -> void:
@@ -35,9 +32,6 @@ func _ready() -> void:
 	_luz.texture_scale = maxf(escala_apagada, 0.01)
 	_luz.energy = energia_apagada
 	jugador.add_child(_luz)
-
-	if dar_linterna_para_probar:
-		GameManager.agregar_item(item_linterna)
 		
 	if not GameManager.tiene_item(item_linterna):
 		if not GameManager.flags.get("pensado_oscuro", false):

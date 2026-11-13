@@ -4,7 +4,7 @@ extends Node2D
 @onready var minutos_sprite = $Min
 
 @export var hora_congelada := 4        # 1 a 12
-@export var minuto_congelado := 20
+@export var minuto_congelado := 36
 
 var _usando := false
 
@@ -52,7 +52,10 @@ func _interactuar() -> void:
 		return
 	if not GameManager.flags.get("reloj_leido", false):
 		GameManager.flags["reloj_leido"] = true
-		await _decir(["El reloj está detenido.", "Marca las %d y %02d." % [hora_congelada, minuto_congelado], "En la base hay un panel con teclado."])
+		if GameManager.flags.get("confianza_aislado", false):
+			await _decir(["El reloj está detenido.", "En la base hay un panel con teclado."])
+		else:
+			await _decir(["El reloj está detenido.", "Marca las 04:#6.", "En la base hay un panel con teclado."])
 		return
 	var ok = await KeypadUi.abrir(_codigo())
 	if ok:

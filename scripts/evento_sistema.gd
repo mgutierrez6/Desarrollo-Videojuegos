@@ -71,11 +71,6 @@ func _introduccion() -> void:
 		if String(k).begins_with("etapa_vista_"):
 			GameManager.flags.erase(k)
 	GameManager.flags["reloj_congelado"] = true
-	GameManager.flags["anim_Luis"] = "buscando"
-	var luis = get_parent().get_node_or_null("Luis")
-	if luis:
-		luis.set("_reposo", "buscando")
-		luis.call("_reproducir", "buscando")
 
 	await voz().decir(["Contacto con el aislado: registrado.",
 			"Usuario detectado: %s." % SistemaVoz.usuario()])
