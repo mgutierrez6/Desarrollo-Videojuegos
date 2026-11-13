@@ -92,7 +92,7 @@ func _introduccion() -> void:
 		await voz().decir(["Bien. Al reloj de la plaza. Ahora."])
 	else:
 		c.iniciar_dialogo(["Al reloj de la plaza. Rápido. No te frenes."], "aislado")
-	await c.dialogo_terminado
+		await c.dialogo_terminado
 
 func _empezar() -> void:
 	_perseguidor = "aislado" if _guia == "sistema" else "sistema"
@@ -209,11 +209,11 @@ func _terminar(resuelto: bool) -> void:
 			GameManager.flags["final_0"] = true
 	else:
 		if _perseguidor == "sistema":
-			c.iniciar_dialogo(["Reinicio completado."], "sistema")
+			await voz().decir(["Reinicio completado."])
 			GameManager.flags["final_tiempo_sistema"] = true
 		else:
 			c.iniciar_dialogo(["...Quedate. Por favor."], "aislado")
+			await c.dialogo_terminado
 			GameManager.flags["final_tiempo_aislado"] = true
-		await c.dialogo_terminado
 	await get_tree().create_timer(0.5).timeout
-	get_tree().change_scene_to_file(escena_final)
+	Transicion.ir_a(escena_final, 1.5)

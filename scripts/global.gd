@@ -15,4 +15,6 @@ func jugador_bloqueado() -> bool:
 		return true
 	if sistema_hablando:
 		return true
+	if Transicion.activa:
+		return true
 	return false

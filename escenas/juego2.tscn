@@ -1,63 +1,63 @@
-[gd_scene format=4 uid="uid://vphor468gcjv"]
+[gd_scene format=4 uid="uid://daot0utuocnlk"]
 
-[ext_resource type="Script" uid="uid://b7hnacvihrjh2" path="res://scripts/juego.gd" id="1_kh320"]
-[ext_resource type="Script" uid="uid://1xqjge12dw6" path="res://scripts/evento_sistema.gd" id="2_qta50"]
-[ext_resource type="Texture2D" uid="uid://n52cs6bs785t" path="res://assets/tiles/grass.png" id="3_pa1ld"]
-[ext_resource type="Texture2D" uid="uid://enbvey3ltps0" path="res://assets/tiles/grass2.png" id="4_fwr1j"]
-[ext_resource type="Texture2D" uid="uid://6l4mkja2uk84" path="res://assets/tiles/Bushes.png" id="5_3mvtv"]
-[ext_resource type="Texture2D" uid="uid://nnakqhmn5u0f" path="res://assets/tiles/tree2_spring.png" id="6_4ormu"]
-[ext_resource type="Texture2D" uid="uid://c0osngenmvcyj" path="res://assets/tiles/plantas.png" id="7_s1hp7"]
-[ext_resource type="PackedScene" uid="uid://boydelu5s0pli" path="res://escenas/inventarioui.tscn" id="8_5lmwc"]
-[ext_resource type="PackedScene" uid="uid://cis2mde65dc2" path="res://escenas/cajadialogo.tscn" id="9_oo57o"]
-[ext_resource type="Texture2D" uid="uid://cr3mo2fqen0e6" path="res://assets/tiles/spring_outdoorsTileSheet2.png" id="10_vqvqp"]
-[ext_resource type="Texture2D" uid="uid://bqps7rno67345" path="res://assets/tiles/spring_outdoorsTileSheet.png" id="11_rvnp2"]
-[ext_resource type="Texture2D" uid="uid://dmqvnbe8wvxj2" path="res://assets/objetos/mesa.png" id="12_1h4ok"]
-[ext_resource type="Texture2D" uid="uid://bljycc52m0hio" path="res://assets/tiles/spring_outdoorsTileSheet4.png" id="13_cu11m"]
-[ext_resource type="Texture2D" uid="uid://dmxt2w0xrjoyj" path="res://assets/tiles/spring_daisyextras.png" id="14_vwqsm"]
-[ext_resource type="Texture2D" uid="uid://bva62neeo74rl" path="res://assets/tiles/spring_town2.png" id="15_pecqb"]
-[ext_resource type="PackedScene" uid="uid://6w42qa16t3n7" path="res://escenas/char.tscn" id="16_g6d3h"]
-[ext_resource type="PackedScene" uid="uid://d1gqpppd7oni7" path="res://escenas/casa1.tscn" id="17_nnid0"]
-[ext_resource type="PackedScene" uid="uid://bltxofkhr0eo7" path="res://escenas/shop.tscn" id="18_pftcv"]
-[ext_resource type="PackedScene" uid="uid://c6q5j6foed30s" path="res://escenas/casa2.tscn" id="19_7f8j7"]
-[ext_resource type="PackedScene" uid="uid://eht80v84wjwl" path="res://escenas/casa3.tscn" id="20_o0s8y"]
-[ext_resource type="PackedScene" uid="uid://bllie00nlxl5u" path="res://escenas/casa4.tscn" id="21_ojst2"]
-[ext_resource type="PackedScene" uid="uid://cftddxhqqceos" path="res://escenas/casa5.tscn" id="22_ggbwm"]
-[ext_resource type="PackedScene" uid="uid://d0pbmeex2l2yu" path="res://escenas/casa6.tscn" id="23_64f7j"]
-[ext_resource type="PackedScene" uid="uid://c83utf0vj00b7" path="res://escenas/casa7.tscn" id="24_xhxea"]
-[ext_resource type="PackedScene" uid="uid://cce618xwmd22v" path="res://escenas/limiteder.tscn" id="25_wsstl"]
-[ext_resource type="PackedScene" uid="uid://be72p8wdxa66l" path="res://escenas/limitear.tscn" id="26_u5hk6"]
-[ext_resource type="PackedScene" uid="uid://crhh1hs6qsrxq" path="res://escenas/limiteab.tscn" id="27_lti20"]
-[ext_resource type="PackedScene" uid="uid://di47nbthfey2a" path="res://escenas/limiteizq.tscn" id="28_igijh"]
-[ext_resource type="PackedScene" uid="uid://x4jfn32yclgv" path="res://escenas/fuente.tscn" id="29_anpbs"]
-[ext_resource type="PackedScene" uid="uid://dfidmc7tx2qpd" path="res://escenas/clock2.tscn" id="30_an77h"]
-[ext_resource type="PackedScene" uid="uid://d21lcl25yvwrw" path="res://escenas/piedra.tscn" id="31_s1ct4"]
-[ext_resource type="Script" uid="uid://no607n1fv58c" path="res://scripts/piedra.gd" id="32_xb6mg"]
-[ext_resource type="PackedScene" uid="uid://dep647v8hk65g" path="res://escenas/well.tscn" id="33_7emkw"]
-[ext_resource type="Script" uid="uid://jnmneqdstby0" path="res://scripts/cambio_escena.gd" id="34_482ye"]
-[ext_resource type="PackedScene" uid="uid://dcovayo1r435e" path="res://escenas/arbol2.tscn" id="35_l1cmj"]
-[ext_resource type="PackedScene" uid="uid://b6kdx6xnocrqr" path="res://escenas/arbol5.tscn" id="36_204t6"]
-[ext_resource type="PackedScene" uid="uid://slf4v2lnkca" path="res://escenas/arbol1.tscn" id="37_6f5b3"]
-[ext_resource type="PackedScene" uid="uid://cnnwbkyfn13v8" path="res://escenas/arbusto2.tscn" id="38_6jcbq"]
-[ext_resource type="PackedScene" uid="uid://0pvnnbc661ed" path="res://escenas/arbusto4.tscn" id="39_poqc8"]
-[ext_resource type="PackedScene" uid="uid://563x1gxxsm67" path="res://escenas/npc.tscn" id="40_a2btc"]
-[ext_resource type="Texture2D" uid="uid://4lck2u81im2x" path="res://assets/char/girl2.png" id="41_k25ol"]
-[ext_resource type="Script" uid="uid://du47wn6gexhp2" path="res://scripts/etapa_dialogo.gd" id="42_6hie0"]
-[ext_resource type="Texture2D" uid="uid://3pqc78pkmfrq" path="res://assets/char/lil.png" id="43_paqr2"]
-[ext_resource type="Texture2D" uid="uid://d2518k7oaank3" path="res://assets/char/luis.png" id="44_yahbl"]
-[ext_resource type="PackedScene" uid="uid://cqpcccerm6fnc" path="res://escenas/iman.tscn" id="45_6agn7"]
-[ext_resource type="PackedScene" uid="uid://dg255ljk76dpm" path="res://escenas/balde.tscn" id="46_orfor"]
-[ext_resource type="PackedScene" uid="uid://dgl0ajmcl6lv4" path="res://escenas/llave_tienda.tscn" id="47_7nvps"]
-[ext_resource type="Script" uid="uid://yhagg865deil" path="res://scripts/llave_tienda.gd" id="48_07s31"]
-[ext_resource type="Script" uid="uid://b4gv3dpgxwinm" path="res://scripts/item_gate.gd" id="49_jamxd"]
-[ext_resource type="PackedScene" uid="uid://pksn60u8qwyk" path="res://escenas/palo.tscn" id="50_hfk3k"]
-[ext_resource type="PackedScene" uid="uid://ca26ve2dftnxq" path="res://escenas/pelota2.tscn" id="51_8c6eg"]
-[ext_resource type="AudioStream" uid="uid://cls0glqyj524" path="res://assets/sounds/door-knock1.mp3" id="52_hsr8l"]
-[ext_resource type="Script" uid="uid://c34akmfs76k8k" path="res://scripts/knock.gd" id="53_jdkq3"]
-[ext_resource type="Script" uid="uid://3deoxe4fidr2" path="res://scripts/puerta_aislado.gd" id="54_3rhct"]
-[ext_resource type="PackedScene" uid="uid://bboasvaiiv84d" path="res://escenas/pilas.tscn" id="55_g28h1"]
+[ext_resource type="Script" uid="uid://b7hnacvihrjh2" path="res://scripts/juego.gd" id="1_u060p"]
+[ext_resource type="Script" uid="uid://1xqjge12dw6" path="res://scripts/evento_sistema.gd" id="2_q32ob"]
+[ext_resource type="Texture2D" uid="uid://n52cs6bs785t" path="res://assets/tiles/grass.png" id="3_xshi2"]
+[ext_resource type="Texture2D" uid="uid://enbvey3ltps0" path="res://assets/tiles/grass2.png" id="4_0liwk"]
+[ext_resource type="Texture2D" uid="uid://6l4mkja2uk84" path="res://assets/tiles/Bushes.png" id="5_165qr"]
+[ext_resource type="Texture2D" uid="uid://nnakqhmn5u0f" path="res://assets/tiles/tree2_spring.png" id="6_s5fg3"]
+[ext_resource type="Texture2D" uid="uid://c0osngenmvcyj" path="res://assets/tiles/plantas.png" id="7_r16ot"]
+[ext_resource type="PackedScene" uid="uid://boydelu5s0pli" path="res://escenas/inventarioui.tscn" id="8_b75gh"]
+[ext_resource type="PackedScene" uid="uid://cis2mde65dc2" path="res://escenas/cajadialogo.tscn" id="9_h1rdf"]
+[ext_resource type="Texture2D" uid="uid://cr3mo2fqen0e6" path="res://assets/tiles/spring_outdoorsTileSheet2.png" id="10_nynqi"]
+[ext_resource type="Texture2D" uid="uid://bqps7rno67345" path="res://assets/tiles/spring_outdoorsTileSheet.png" id="11_i3jk1"]
+[ext_resource type="Texture2D" uid="uid://dmqvnbe8wvxj2" path="res://assets/objetos/mesa.png" id="12_vwmcf"]
+[ext_resource type="Texture2D" uid="uid://bljycc52m0hio" path="res://assets/tiles/spring_outdoorsTileSheet4.png" id="13_oihkr"]
+[ext_resource type="Texture2D" uid="uid://dmxt2w0xrjoyj" path="res://assets/tiles/spring_daisyextras.png" id="14_bwp7r"]
+[ext_resource type="Texture2D" uid="uid://bva62neeo74rl" path="res://assets/tiles/spring_town2.png" id="15_4efsk"]
+[ext_resource type="PackedScene" uid="uid://6w42qa16t3n7" path="res://escenas/char.tscn" id="16_u2qx3"]
+[ext_resource type="PackedScene" uid="uid://d1gqpppd7oni7" path="res://escenas/casa1.tscn" id="17_b64or"]
+[ext_resource type="PackedScene" uid="uid://bltxofkhr0eo7" path="res://escenas/shop.tscn" id="18_o7naa"]
+[ext_resource type="PackedScene" uid="uid://c6q5j6foed30s" path="res://escenas/casa2.tscn" id="19_2cloi"]
+[ext_resource type="PackedScene" uid="uid://eht80v84wjwl" path="res://escenas/casa3.tscn" id="20_8upjg"]
+[ext_resource type="PackedScene" uid="uid://bllie00nlxl5u" path="res://escenas/casa4.tscn" id="21_q5rpw"]
+[ext_resource type="PackedScene" uid="uid://cftddxhqqceos" path="res://escenas/casa5.tscn" id="22_f7ks4"]
+[ext_resource type="PackedScene" uid="uid://d0pbmeex2l2yu" path="res://escenas/casa6.tscn" id="23_app57"]
+[ext_resource type="PackedScene" uid="uid://c83utf0vj00b7" path="res://escenas/casa7.tscn" id="24_hb52p"]
+[ext_resource type="PackedScene" uid="uid://cce618xwmd22v" path="res://escenas/limiteder.tscn" id="25_ybmgx"]
+[ext_resource type="PackedScene" uid="uid://be72p8wdxa66l" path="res://escenas/limitear.tscn" id="26_w6cxl"]
+[ext_resource type="PackedScene" uid="uid://crhh1hs6qsrxq" path="res://escenas/limiteab.tscn" id="27_0g77q"]
+[ext_resource type="PackedScene" uid="uid://di47nbthfey2a" path="res://escenas/limiteizq.tscn" id="28_m7p6v"]
+[ext_resource type="PackedScene" uid="uid://x4jfn32yclgv" path="res://escenas/fuente.tscn" id="29_dl1h4"]
+[ext_resource type="PackedScene" uid="uid://dfidmc7tx2qpd" path="res://escenas/clock2.tscn" id="30_e3s63"]
+[ext_resource type="PackedScene" uid="uid://d21lcl25yvwrw" path="res://escenas/piedra.tscn" id="31_fp7rr"]
+[ext_resource type="Script" uid="uid://no607n1fv58c" path="res://scripts/piedra.gd" id="32_nmbvf"]
+[ext_resource type="PackedScene" uid="uid://dep647v8hk65g" path="res://escenas/well.tscn" id="33_0a7l2"]
+[ext_resource type="Script" uid="uid://jnmneqdstby0" path="res://scripts/cambio_escena.gd" id="34_hmpct"]
+[ext_resource type="PackedScene" uid="uid://dcovayo1r435e" path="res://escenas/arbol2.tscn" id="35_01hi8"]
+[ext_resource type="PackedScene" uid="uid://b6kdx6xnocrqr" path="res://escenas/arbol5.tscn" id="36_qdwby"]
+[ext_resource type="PackedScene" uid="uid://slf4v2lnkca" path="res://escenas/arbol1.tscn" id="37_jgpqu"]
+[ext_resource type="PackedScene" uid="uid://cnnwbkyfn13v8" path="res://escenas/arbusto2.tscn" id="38_5vhcq"]
+[ext_resource type="PackedScene" uid="uid://0pvnnbc661ed" path="res://escenas/arbusto4.tscn" id="39_63ccb"]
+[ext_resource type="PackedScene" uid="uid://563x1gxxsm67" path="res://escenas/npc.tscn" id="40_sjko0"]
+[ext_resource type="Texture2D" uid="uid://4lck2u81im2x" path="res://assets/char/girl2.png" id="41_4c3d1"]
+[ext_resource type="Script" uid="uid://du47wn6gexhp2" path="res://scripts/etapa_dialogo.gd" id="42_0pemx"]
+[ext_resource type="Texture2D" uid="uid://3pqc78pkmfrq" path="res://assets/char/lil.png" id="43_kaelf"]
+[ext_resource type="Texture2D" uid="uid://d2518k7oaank3" path="res://assets/char/luis.png" id="44_hhph8"]
+[ext_resource type="PackedScene" uid="uid://cqpcccerm6fnc" path="res://escenas/iman.tscn" id="45_h524j"]
+[ext_resource type="PackedScene" uid="uid://dg255ljk76dpm" path="res://escenas/balde.tscn" id="46_d154c"]
+[ext_resource type="PackedScene" uid="uid://dgl0ajmcl6lv4" path="res://escenas/llave_tienda.tscn" id="47_ygcvs"]
+[ext_resource type="Script" uid="uid://yhagg865deil" path="res://scripts/llave_tienda.gd" id="48_phk1q"]
+[ext_resource type="Script" uid="uid://b4gv3dpgxwinm" path="res://scripts/item_gate.gd" id="49_c5o3h"]
+[ext_resource type="PackedScene" uid="uid://pksn60u8qwyk" path="res://escenas/palo.tscn" id="50_froea"]
+[ext_resource type="PackedScene" uid="uid://ca26ve2dftnxq" path="res://escenas/pelota2.tscn" id="51_nh7t6"]
+[ext_resource type="AudioStream" uid="uid://cls0glqyj524" path="res://assets/sounds/door-knock1.mp3" id="52_ncy6v"]
+[ext_resource type="Script" uid="uid://c34akmfs76k8k" path="res://scripts/knock.gd" id="53_34hlt"]
+[ext_resource type="Script" uid="uid://3deoxe4fidr2" path="res://scripts/puerta_aislado.gd" id="54_soo7c"]
+[ext_resource type="PackedScene" uid="uid://bboasvaiiv84d" path="res://escenas/pilas.tscn" id="55_24wnt"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mus1x"]
-texture = ExtResource("3_pa1ld")
+texture = ExtResource("3_xshi2")
 texture_region_size = Vector2i(3, 3)
 0:0/size_in_atlas = Vector2i(5, 7)
 0:0/0 = 0
@@ -155,7 +155,7 @@ texture_region_size = Vector2i(3, 3)
 10:74/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q5vhl"]
-texture = ExtResource("4_fwr1j")
+texture = ExtResource("4_0liwk")
 texture_region_size = Vector2i(4, 4)
 1:0/0 = 0
 2:0/0 = 0
@@ -725,7 +725,7 @@ texture_region_size = Vector2i(4, 4)
 10:59/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_i71w0"]
-texture = ExtResource("5_3mvtv")
+texture = ExtResource("5_165qr")
 texture_region_size = Vector2i(4, 4)
 2:3/0 = 0
 3:3/0 = 0
@@ -2402,7 +2402,7 @@ texture_region_size = Vector2i(4, 4)
 31:87/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_frksk"]
-texture = ExtResource("6_4ormu")
+texture = ExtResource("6_s5fg3")
 texture_region_size = Vector2i(4, 4)
 3:0/0 = 0
 4:0/0 = 0
@@ -2893,7 +2893,7 @@ texture_region_size = Vector2i(4, 4)
 8:26/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_scuww"]
-texture = ExtResource("7_s1hp7")
+texture = ExtResource("7_r16ot")
 texture_region_size = Vector2i(4, 4)
 3:3/size_in_atlas = Vector2i(13, 5)
 3:3/0 = 0
@@ -2945,7 +2945,7 @@ sources/3 = SubResource("TileSetAtlasSource_frksk")
 sources/4 = SubResource("TileSetAtlasSource_scuww")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_aevmw"]
-texture = ExtResource("10_vqvqp")
+texture = ExtResource("10_nynqi")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -3711,7 +3711,7 @@ texture = ExtResource("10_vqvqp")
 3:69/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3tk5j"]
-texture = ExtResource("11_rvnp2")
+texture = ExtResource("11_i3jk1")
 22:3/0 = 0
 23:3/0 = 0
 24:3/0 = 0
@@ -4786,7 +4786,7 @@ texture = ExtResource("11_rvnp2")
 9:5/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fut3j"]
-texture = ExtResource("3_pa1ld")
+texture = ExtResource("3_xshi2")
 margins = Vector2i(0, 2)
 separation = Vector2i(0, 2)
 texture_region_size = Vector2i(16, 18)
@@ -4830,19 +4830,19 @@ texture_region_size = Vector2i(16, 18)
 2:11/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_371x8"]
-texture = ExtResource("11_rvnp2")
+texture = ExtResource("11_i3jk1")
 margins = Vector2i(30, 49)
 1:7/0 = 0
 0:5/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8xow8"]
-texture = ExtResource("11_rvnp2")
+texture = ExtResource("11_i3jk1")
 margins = Vector2i(9, 0)
 2:4/0 = 0
 18:22/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0666g"]
-texture = ExtResource("12_1h4ok")
+texture = ExtResource("12_vwmcf")
 margins = Vector2i(0, 1)
 texture_region_size = Vector2i(16, 19)
 0:0/0 = 0
@@ -4859,7 +4859,7 @@ texture_region_size = Vector2i(16, 19)
 2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_utwd3"]
-texture = ExtResource("13_cu11m")
+texture = ExtResource("13_oihkr")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -6640,7 +6640,7 @@ texture = ExtResource("13_cu11m")
 24:78/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_55slq"]
-texture = ExtResource("14_vwqsm")
+texture = ExtResource("14_bwp7r")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -7536,7 +7536,7 @@ texture = ExtResource("14_vwqsm")
 17:34/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wbheu"]
-texture = ExtResource("15_pecqb")
+texture = ExtResource("15_4efsk")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -9515,7 +9515,7 @@ texture = ExtResource("15_pecqb")
 31:71/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gyj1g"]
-texture = ExtResource("4_fwr1j")
+texture = ExtResource("4_0liwk")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -9580,9 +9580,6 @@ sources/10 = SubResource("TileSetAtlasSource_fut3j")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_11ymt"]
 size = Vector2(49, 90)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_euwp0"]
-size = Vector2(7, 47)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gdfiy"]
 size = Vector2(54.5, 24)
 
@@ -9590,7 +9587,7 @@ size = Vector2(54.5, 24)
 size = Vector2(35, 41.5)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_aevmw"]
-atlas = ExtResource("41_k25ol")
+atlas = ExtResource("41_4c3d1")
 region = Rect2(0, 0, 16, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_aevmw"]
@@ -9605,13 +9602,13 @@ animations = [{
 }]
 
 [sub_resource type="Resource" id="Resource_3tk5j"]
-script = ExtResource("42_6hie0")
+script = ExtResource("42_0pemx")
 flags_requeridos = Array[String](["emma_bienvenida"])
 texto = Array[String](["Buen día! Dormiste bien?"])
 metadata/_custom_type_script = "uid://du47wn6gexhp2"
 
 [sub_resource type="Resource" id="Resource_371x8"]
-script = ExtResource("42_6hie0")
+script = ExtResource("42_0pemx")
 texto = Array[String](["Buen día! Dormiste bien?", "Soy Emma, la de la pensión. Me alegra que estés acá.", "El pueblo es chico, pero hay mucho para descubrir."])
 flags_a_activar = Array[String](["emma_bienvenida"])
 objetivo_nuevo = "Conocer el pueblo"
@@ -9622,7 +9619,7 @@ metadata/_custom_type_script = "uid://du47wn6gexhp2"
 size = Vector2(26, 33.5)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3tk5j"]
-atlas = ExtResource("43_paqr2")
+atlas = ExtResource("43_kaelf")
 region = Rect2(32, 160, 16, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_371x8"]
@@ -9637,7 +9634,7 @@ animations = [{
 }]
 
 [sub_resource type="Resource" id="Resource_55slq"]
-script = ExtResource("42_6hie0")
+script = ExtResource("42_0pemx")
 texto = Array[String](["Estoy llenando mi balde!!"])
 metadata/_custom_type_script = "uid://du47wn6gexhp2"
 
@@ -9645,15 +9642,15 @@ metadata/_custom_type_script = "uid://du47wn6gexhp2"
 radius = 15.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_371x8"]
-atlas = ExtResource("44_yahbl")
+atlas = ExtResource("44_hhph8")
 region = Rect2(32, 0, 16, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8xow8"]
-atlas = ExtResource("44_yahbl")
+atlas = ExtResource("44_hhph8")
 region = Rect2(80, 0, 16, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_utwd3"]
-atlas = ExtResource("44_yahbl")
+atlas = ExtResource("44_hhph8")
 region = Rect2(32, 32, 16, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_wbheu"]
@@ -9684,13 +9681,13 @@ animations = [{
 }]
 
 [sub_resource type="Resource" id="Resource_aevmw"]
-script = ExtResource("42_6hie0")
+script = ExtResource("42_0pemx")
 flags_requeridos = Array[String](["tendero_reiniciado"])
 texto = Array[String](["...Un momento. No me habías ayudado con esto ya?"])
 metadata/_custom_type_script = "uid://du47wn6gexhp2"
 
 [sub_resource type="Resource" id="Resource_8xow8"]
-script = ExtResource("42_6hie0")
+script = ExtResource("42_0pemx")
 flags_requeridos = Array[String](["tendero_agradecido"])
 flags_prohibidos = Array[String](["tendero_reiniciado"])
 texto = Array[String](["Perdí la llave de la tienda y no pude abrir en todo el dia!!"])
@@ -9698,23 +9695,23 @@ flags_a_activar = Array[String](["tendero_reiniciado"])
 metadata/_custom_type_script = "uid://du47wn6gexhp2"
 
 [sub_resource type="Resource" id="Resource_utwd3"]
-script = ExtResource("42_6hie0")
+script = ExtResource("42_0pemx")
 items_requeridos = Array[String](["Llave de la tienda"])
 texto = Array[String](["Mi llave! Muchisimas gracias!!", "Perdona que no me presenté antes, estaba muy preocupado.", "Soy Luis, el dueño de la única tienda del pueblo.", "Es un gusto que hayas llegado!", "Mientras buscaba encontré esto, tal vez te sirva de algo...", "Tomalo como regalo de bienvenida JAJAJA"])
 flags_a_activar = Array[String](["tendero_agradecido"])
 item_a_dar = "Linterna"
-items_a_quitar = Array[String](["LLave de la tienda"])
+items_a_quitar = Array[String](["Llave de la tienda"])
 objetivo_nuevo = "Seguir explorando el pueblo"
 metadata/_custom_type_script = "uid://du47wn6gexhp2"
 
 [sub_resource type="Resource" id="Resource_wbheu"]
-script = ExtResource("42_6hie0")
+script = ExtResource("42_0pemx")
 flags_requeridos = Array[String](["luis_primer"])
 texto = Array[String](["Espero que no esté en la fuente..."])
 metadata/_custom_type_script = "uid://du47wn6gexhp2"
 
 [sub_resource type="Resource" id="Resource_0666g"]
-script = ExtResource("42_6hie0")
+script = ExtResource("42_0pemx")
 texto = Array[String](["Perdí la llave de la tienda y no pude abrir en todo el dia!!", "La estoy buscando...", "Pero estuve por todos lados... ", "Solo me falta revisar en estos arbustos y en la fuente", "Espero que no esté en la fuente..."])
 flags_a_activar = Array[String](["luis_primer"])
 objetivo_nuevo = "Ayudar al señor con su llave"
@@ -9741,10 +9738,10 @@ radius = 32.06244
 
 [node name="Node2D" type="Node2D" unique_id=508823795]
 y_sort_enabled = true
-script = ExtResource("1_kh320")
+script = ExtResource("1_u060p")
 
 [node name="evento" type="Node2D" parent="." unique_id=1541951459 node_paths=PackedStringArray("reloj")]
-script = ExtResource("2_qta50")
+script = ExtResource("2_q32ob")
 reloj = NodePath("../clock")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=16450008]
@@ -9752,9 +9749,9 @@ y_sort_enabled = true
 tile_map_data = PackedByteArray("AAChAGUAAAAFAAAAAAChAGgAAAAFAAAAAACKAGgAAAAFAAAAAACKAGUAAAAFAAAAAACKAGIAAAAFAAAAAAChAGIAAAAFAAAAAACeAG8AAAAFAAAAAACNAHAAAAAFAAAAAACaAG4AAAAFAAAAAACRAG4AAAAFAAAAAACVAG8AAAAAAAAAAACRAHEAAAAAAAAAAACaAHEAAAAAAAAAAACgAGUAAAAAAAAAAACgAGIAAAAAAAAAAACLAGcAAAAAAAAAAACLAGMAAAAAAAAAAACeAGoAAAAAAAAAAACPAGwAAAAAAAAAAACNAGsAAAAAAAAAAACdAGwAAAAAAAAAAACcAF0AAAAAAAAAAACPAF0AAAAAAAAAAACaAF0AAAAFAAAAAACSAF0AAAAFAAAAAACIAIIAAAAFAAAAAACKAIIAAAAAAAAAAACjAIIAAAAFAAAAABChAIIAAAAAAAAAABDDAHUAAAAKACIAAAC4AHUAAAAKACIAAAC4AHMAAAAKACIAAAC4AHIAAAAAACIAAADDAHMAAAAKACIAAADEAHIAAAAKACIAAADEAHEAAAAKACIAAAC3AHEAAAAKACIAAAC3AHMAAAAKACIAAADEAHQAAAAKACIAAAC6AHUAAAAKACIAAADBAHUAAAAKACIAAADDAHAAAAAAACIAAADCAG8AAAAAACIAAAC4AHAAAAAAACIAAAC5AG8AAAAAACIAAAC6AG4AAAAAACIAAADDAG8AAAAAACIAAADDAHEAAAAAACIAAADDAHQAAAAAACIAAADCAHUAAAAAACIAAAC3AHQAAAAAACIAAAC4AG8AAAAAACIAAADkAHgAAAAKABUAAAB8AEQAAwAAABgAAADVAHcAAwAAABgAAACZAEgAAwAAABgAAAD0AD0AAwAAABgAAAAGAVAAAwAAABgAAAA/AFIAAwAAABgAAAB3AHAAAwAAABgAAACHAKIAAwAAABgAAADyAK4AAwAAABgAAADcAKMAAwAAABgAAADeAHcABAADAA8AAAA=")
 tile_set = SubResource("TileSet_euwp0")
 
-[node name="InventarioUI" parent="." unique_id=138131067 instance=ExtResource("8_5lmwc")]
+[node name="InventarioUI" parent="." unique_id=138131067 instance=ExtResource("8_b75gh")]
 
-[node name="CajaDialogo" parent="." unique_id=1942879770 instance=ExtResource("9_oo57o")]
+[node name="CajaDialogo" parent="." unique_id=1942879770 instance=ExtResource("9_h1rdf")]
 
 [node name="TileMap" type="TileMap" parent="." unique_id=781093318]
 z_index = -1
@@ -9768,7 +9765,7 @@ layer_2/name = "Layer2"
 layer_2/z_index = 1
 layer_2/tile_data = PackedInt32Array(2031656, 196615, 25, 2097192, 196615, 26, 2031650, 196615, 25, 2097186, 196615, 26, 1966114, 65543, 22, 1966115, 131079, 23, 2031651, 131079, 24, 1966120, 7, 22, 1966119, 7, 23, 2031655, 7, 24, 2818082, 65543, 22, 2883618, 196615, 25, 2949154, 196615, 26, 2818083, 131079, 23, 2883619, 131079, 24, 2818087, 7, 23, 2883623, 7, 24, 2818088, 7, 22, 2883624, 196615, 25, 2949160, 196615, 26, 1900589, 1507334, 4, 1966125, 1507334, 5, 1179703, 1114118, 4)
 
-[node name="Jugador" parent="." unique_id=1001296720 instance=ExtResource("16_g6d3h")]
+[node name="Jugador" parent="." unique_id=1001296720 instance=ExtResource("16_u2qx3")]
 position = Vector2(603, 491)
 
 [node name="Camera2D" type="Camera2D" parent="Jugador" unique_id=1439599501]
@@ -9782,48 +9779,48 @@ limit_bottom = 833
 y_sort_enabled = true
 position = Vector2(401, 311)
 
-[node name="casa1" parent="casas" unique_id=1367605375 instance=ExtResource("17_nnid0")]
+[node name="casa1" parent="casas" unique_id=1367605375 instance=ExtResource("17_b64or")]
 position = Vector2(-63, 23)
 
-[node name="shop" parent="casas" unique_id=985143112 instance=ExtResource("18_pftcv")]
+[node name="shop" parent="casas" unique_id=985143112 instance=ExtResource("18_o7naa")]
 position = Vector2(527, 170)
 
-[node name="casa2" parent="casas" unique_id=908780360 instance=ExtResource("19_7f8j7")]
+[node name="casa2" parent="casas" unique_id=908780360 instance=ExtResource("19_2cloi")]
 position = Vector2(143, -22)
 
-[node name="casa3" parent="casas" unique_id=554228833 instance=ExtResource("20_o0s8y")]
+[node name="casa3" parent="casas" unique_id=554228833 instance=ExtResource("20_8upjg")]
 position = Vector2(254, -25)
 
-[node name="casa4" parent="casas" unique_id=1285820705 instance=ExtResource("21_ojst2")]
+[node name="casa4" parent="casas" unique_id=1285820705 instance=ExtResource("21_q5rpw")]
 position = Vector2(486, 13)
 
-[node name="casa5" parent="casas" unique_id=502402986 instance=ExtResource("22_ggbwm")]
+[node name="casa5" parent="casas" unique_id=502402986 instance=ExtResource("22_f7ks4")]
 position = Vector2(384, 405)
 
-[node name="casa6" parent="casas" unique_id=954306475 instance=ExtResource("23_64f7j")]
+[node name="casa6" parent="casas" unique_id=954306475 instance=ExtResource("23_app57")]
 position = Vector2(28, 415)
 
-[node name="casa7" parent="casas" unique_id=153141488 instance=ExtResource("24_xhxea")]
+[node name="casa7" parent="casas" unique_id=153141488 instance=ExtResource("24_hb52p")]
 visible = false
 position = Vector2(-137, 417)
 
-[node name="limiteder" parent="." unique_id=422581261 instance=ExtResource("25_wsstl")]
+[node name="limiteder" parent="." unique_id=422581261 instance=ExtResource("25_ybmgx")]
 position = Vector2(111, 340)
 
-[node name="limitear" parent="." unique_id=1088336968 instance=ExtResource("26_u5hk6")]
+[node name="limitear" parent="." unique_id=1088336968 instance=ExtResource("26_w6cxl")]
 position = Vector2(583, 176)
 
-[node name="limiteab" parent="." unique_id=1694450797 instance=ExtResource("27_lti20")]
+[node name="limiteab" parent="." unique_id=1694450797 instance=ExtResource("27_0g77q")]
 position = Vector2(488, 832)
 
-[node name="limiteizq" parent="." unique_id=992858510 instance=ExtResource("28_igijh")]
+[node name="limiteizq" parent="." unique_id=992858510 instance=ExtResource("28_m7p6v")]
 position = Vector2(1125, 383.5)
 
-[node name="fuente" parent="." unique_id=164496747 instance=ExtResource("29_anpbs")]
+[node name="fuente" parent="." unique_id=164496747 instance=ExtResource("29_dl1h4")]
 y_sort_enabled = true
 position = Vector2(599, 447)
 
-[node name="clock" parent="." unique_id=711309300 instance=ExtResource("30_an77h")]
+[node name="clock" parent="." unique_id=711309300 instance=ExtResource("30_e3s63")]
 position = Vector2(759, 475)
 
 [node name="Area2D" type="Area2D" parent="clock" unique_id=1942892463]
@@ -9833,24 +9830,15 @@ visible = false
 position = Vector2(0.5, -34)
 shape = SubResource("RectangleShape2D_11ymt")
 
-[node name="caminoDer" type="Area2D" parent="." unique_id=1318932974]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="caminoDer" unique_id=2003037035]
-position = Vector2(1121.5, 383)
-shape = SubResource("RectangleShape2D_euwp0")
-
-[node name="SpawnPuente" type="Marker2D" parent="." unique_id=238938303]
-position = Vector2(1096, 383)
-
 [node name="SpawnCasa1" type="Marker2D" parent="." unique_id=462775522]
 position = Vector2(360, 315)
 
-[node name="piedra" parent="." unique_id=906515916 instance=ExtResource("31_s1ct4")]
+[node name="piedra" parent="." unique_id=906515916 instance=ExtResource("31_fp7rr")]
 position = Vector2(600, 607)
 
 [node name="piedras" type="Area2D" parent="piedra" unique_id=199879029]
 position = Vector2(1, -11)
-script = ExtResource("32_xb6mg")
+script = ExtResource("32_nmbvf")
 nodo_piedras = NodePath("..")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="piedra/piedras" unique_id=530625549]
@@ -9858,14 +9846,14 @@ visible = false
 position = Vector2(0, -1)
 shape = SubResource("RectangleShape2D_gdfiy")
 
-[node name="well" parent="." unique_id=1511220395 instance=ExtResource("33_7emkw")]
+[node name="well" parent="." unique_id=1511220395 instance=ExtResource("33_0a7l2")]
 position = Vector2(264, 689)
 
 [node name="Puerta" type="Area2D" parent="." unique_id=867076279]
 position = Vector2(359, 315)
-script = ExtResource("34_482ye")
+script = ExtResource("34_hmpct")
 escena = "uid://bvbbaurx7ycy8"
-punto_spawn = "desde_afuera"
+punto_spawn = "desde_emma"
 pregunta = "Entrar a la pensión?"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Puerta" unique_id=1597990409]
@@ -9878,160 +9866,160 @@ y_sort_enabled = true
 position = Vector2(1182, 1378)
 rotation = 0.00083674805
 
-[node name="arbol32" parent="arboles" unique_id=771689425 instance=ExtResource("35_l1cmj")]
+[node name="arbol32" parent="arboles" unique_id=771689425 instance=ExtResource("35_01hi8")]
 position = Vector2(-1015.59125, -706.15045)
 rotation = -0.00083674805
 
-[node name="arbol46" parent="arboles" unique_id=413160772 instance=ExtResource("35_l1cmj")]
+[node name="arbol46" parent="arboles" unique_id=413160772 instance=ExtResource("35_01hi8")]
 position = Vector2(-977.54944, -656.18225)
 rotation = -0.00083674805
 
-[node name="arbol43" parent="arboles" unique_id=1539766302 instance=ExtResource("35_l1cmj")]
+[node name="arbol43" parent="arboles" unique_id=1539766302 instance=ExtResource("35_01hi8")]
 position = Vector2(-2182.3716, -2104.3394)
 rotation = -0.0016734961
 scale = Vector2(0.99999994, 0.99999994)
 
-[node name="arbol33" parent="arboles" unique_id=1389599894 instance=ExtResource("35_l1cmj")]
+[node name="arbol33" parent="arboles" unique_id=1389599894 instance=ExtResource("35_01hi8")]
 position = Vector2(-947.6323, -755.2074)
 rotation = -0.00083674805
 
-[node name="arbol3" parent="arboles" unique_id=1836088296 instance=ExtResource("35_l1cmj")]
+[node name="arbol3" parent="arboles" unique_id=1836088296 instance=ExtResource("35_01hi8")]
 position = Vector2(-1049.8867, -1059.122)
 rotation = -0.00083674805
 
-[node name="arbol7" parent="arboles" unique_id=1657845341 instance=ExtResource("35_l1cmj")]
+[node name="arbol7" parent="arboles" unique_id=1657845341 instance=ExtResource("35_01hi8")]
 position = Vector2(-943.91516, -1093.2106)
 rotation = -0.00083674805
 
-[node name="arbol23" parent="arboles" unique_id=1600750103 instance=ExtResource("35_l1cmj")]
+[node name="arbol23" parent="arboles" unique_id=1600750103 instance=ExtResource("35_01hi8")]
 position = Vector2(-483.96722, -1155.5955)
 rotation = -0.00083674805
 
-[node name="arbol6" parent="arboles" unique_id=111319739 instance=ExtResource("36_204t6")]
+[node name="arbol6" parent="arboles" unique_id=111319739 instance=ExtResource("36_qdwby")]
 position = Vector2(-452.90442, -1080.6215)
 rotation = -0.00083674805
 
-[node name="arbol8" parent="arboles" unique_id=154565316 instance=ExtResource("36_204t6")]
+[node name="arbol8" parent="arboles" unique_id=154565316 instance=ExtResource("36_qdwby")]
 position = Vector2(-409.87354, -1043.6575)
 rotation = -0.00083674805
 
-[node name="arbol31" parent="arboles" unique_id=80945053 instance=ExtResource("36_204t6")]
+[node name="arbol31" parent="arboles" unique_id=80945053 instance=ExtResource("36_qdwby")]
 position = Vector2(-1132.7318, -874.0525)
 rotation = -0.00083674805
 
-[node name="arbol36" parent="arboles" unique_id=103841946 instance=ExtResource("36_204t6")]
+[node name="arbol36" parent="arboles" unique_id=103841946 instance=ExtResource("36_qdwby")]
 position = Vector2(-1082.6215, -742.0944)
 rotation = -0.00083674805
 
-[node name="arbol37" parent="arboles" unique_id=403079247 instance=ExtResource("36_204t6")]
+[node name="arbol37" parent="arboles" unique_id=403079247 instance=ExtResource("36_qdwby")]
 position = Vector2(-1119.5852, -699.0635)
 rotation = -0.00083674805
 
-[node name="arbol38" parent="arboles" unique_id=1915705228 instance=ExtResource("36_204t6")]
+[node name="arbol38" parent="arboles" unique_id=1915705228 instance=ExtResource("36_qdwby")]
 position = Vector2(-1066.5476, -654.1078)
 rotation = -0.00083674805
 
-[node name="arbol9" parent="arboles" unique_id=1252618550 instance=ExtResource("36_204t6")]
+[node name="arbol9" parent="arboles" unique_id=1252618550 instance=ExtResource("36_qdwby")]
 position = Vector2(-144.93884, -1121.8792)
 rotation = -0.00083674805
 
-[node name="arbol10" parent="arboles" unique_id=1666299550 instance=ExtResource("36_204t6")]
+[node name="arbol10" parent="arboles" unique_id=1666299550 instance=ExtResource("36_qdwby")]
 position = Vector2(-179.8711, -1040.8499)
 rotation = -0.00083674805
 
-[node name="arbol20" parent="arboles" unique_id=1850355337 instance=ExtResource("36_204t6")]
+[node name="arbol20" parent="arboles" unique_id=1850355337 instance=ExtResource("36_qdwby")]
 position = Vector2(-117.72974, -871.90186)
 rotation = -0.00083674805
 
-[node name="arbol41" parent="arboles" unique_id=1215910454 instance=ExtResource("36_204t6")]
+[node name="arbol41" parent="arboles" unique_id=1215910454 instance=ExtResource("36_qdwby")]
 position = Vector2(-263.56396, -673.7797)
 rotation = -0.00083674805
 
-[node name="arbol42" parent="arboles" unique_id=997955527 instance=ExtResource("36_204t6")]
+[node name="arbol42" parent="arboles" unique_id=997955527 instance=ExtResource("36_qdwby")]
 position = Vector2(-213.62341, -744.82153)
 rotation = -0.00083674805
 
-[node name="arbol5" parent="arboles" unique_id=1763691493 instance=ExtResource("37_6f5b3")]
+[node name="arbol5" parent="arboles" unique_id=1763691493 instance=ExtResource("37_jgpqu")]
 position = Vector2(-863.55194, -659.27765)
 rotation = -0.00083674805
 
-[node name="arbol40" parent="arboles" unique_id=245236394 instance=ExtResource("37_6f5b3")]
+[node name="arbol40" parent="arboles" unique_id=245236394 instance=ExtResource("37_jgpqu")]
 position = Vector2(-1153.5526, -660.03503)
 rotation = -0.00083674805
 
-[node name="arbol11" parent="arboles" unique_id=1894687665 instance=ExtResource("37_6f5b3")]
+[node name="arbol11" parent="arboles" unique_id=1894687665 instance=ExtResource("37_jgpqu")]
 position = Vector2(-837.6239, -745.29944)
 rotation = -0.00083674805
 
-[node name="arbol12" parent="arboles" unique_id=762856469 instance=ExtResource("37_6f5b3")]
+[node name="arbol12" parent="arboles" unique_id=762856469 instance=ExtResource("37_jgpqu")]
 position = Vector2(-784.6147, -734.3438)
 rotation = -0.00083674805
 
-[node name="arbol13" parent="arboles" unique_id=1983827664 instance=ExtResource("37_6f5b3")]
+[node name="arbol13" parent="arboles" unique_id=1983827664 instance=ExtResource("37_jgpqu")]
 position = Vector2(-728.6407, -765.3906)
 rotation = -0.00083674805
 
-[node name="arbol14" parent="arboles" unique_id=935767663 instance=ExtResource("37_6f5b3")]
+[node name="arbol14" parent="arboles" unique_id=935767663 instance=ExtResource("37_jgpqu")]
 position = Vector2(-464.6349, -758.6115)
 rotation = -0.00083674805
 
-[node name="arbol15" parent="arboles" unique_id=1598431454 instance=ExtResource("37_6f5b3")]
+[node name="arbol15" parent="arboles" unique_id=1598431454 instance=ExtResource("37_jgpqu")]
 position = Vector2(-373.62494, -746.6876)
 rotation = -0.00083674805
 
-[node name="arbol16" parent="arboles" unique_id=96042721 instance=ExtResource("37_6f5b3")]
+[node name="arbol16" parent="arboles" unique_id=96042721 instance=ExtResource("37_jgpqu")]
 position = Vector2(-497.55798, -666.5839)
 rotation = -0.00083674805
 
-[node name="arbol17" parent="arboles" unique_id=840227339 instance=ExtResource("37_6f5b3")]
+[node name="arbol17" parent="arboles" unique_id=840227339 instance=ExtResource("37_jgpqu")]
 position = Vector2(-284.6391, -763.76215)
 rotation = -0.00083674805
 
-[node name="arbol18" parent="arboles" unique_id=278242020 instance=ExtResource("37_6f5b3")]
+[node name="arbol18" parent="arboles" unique_id=278242020 instance=ExtResource("37_jgpqu")]
 position = Vector2(-139.7137, -852.88336)
 rotation = -0.00083674805
 
-[node name="arbol19" parent="arboles" unique_id=31647058 instance=ExtResource("37_6f5b3")]
+[node name="arbol19" parent="arboles" unique_id=31647058 instance=ExtResource("37_jgpqu")]
 position = Vector2(-111.90028, -1075.9069)
 rotation = -0.00083674805
 
-[node name="arbol21" parent="arboles" unique_id=1179083733 instance=ExtResource("37_6f5b3")]
+[node name="arbol21" parent="arboles" unique_id=1179083733 instance=ExtResource("37_jgpqu")]
 position = Vector2(-396.94202, -1125.6683)
 rotation = -0.00083674805
 
-[node name="arbol22" parent="arboles" unique_id=1247026807 instance=ExtResource("37_6f5b3")]
+[node name="arbol22" parent="arboles" unique_id=1247026807 instance=ExtResource("37_jgpqu")]
 position = Vector2(-599.9737, -1163.4983)
 rotation = -0.00083674805
 
-[node name="arbol24" parent="arboles" unique_id=1597700684 instance=ExtResource("37_6f5b3")]
+[node name="arbol24" parent="arboles" unique_id=1597700684 instance=ExtResource("37_jgpqu")]
 position = Vector2(-1012.9443, -1128.1528)
 rotation = -0.00083674805
 
-[node name="arbol25" parent="arboles" unique_id=1024167764 instance=ExtResource("37_6f5b3")]
+[node name="arbol25" parent="arboles" unique_id=1024167764 instance=ExtResource("37_jgpqu")]
 position = Vector2(-740.87744, -1048.3805)
 rotation = -0.00083674805
 
-[node name="arbol30" parent="arboles" unique_id=1801288162 instance=ExtResource("37_6f5b3")]
+[node name="arbol30" parent="arboles" unique_id=1801288162 instance=ExtResource("37_jgpqu")]
 position = Vector2(-1091.7996, -955.0868)
 rotation = -0.00083674805
 
-[node name="arbol26" parent="arboles" unique_id=449345305 instance=ExtResource("37_6f5b3")]
+[node name="arbol26" parent="arboles" unique_id=449345305 instance=ExtResource("37_jgpqu")]
 position = Vector2(-783.9494, -1134.3445)
 rotation = -0.00083674805
 
-[node name="arbol27" parent="arboles" unique_id=1721081737 instance=ExtResource("37_6f5b3")]
+[node name="arbol27" parent="arboles" unique_id=1721081737 instance=ExtResource("37_jgpqu")]
 position = Vector2(-874.95856, -1145.2683)
 rotation = -0.00083674805
 
-[node name="arbol2" parent="arboles" unique_id=1460357870 instance=ExtResource("35_l1cmj")]
+[node name="arbol2" parent="arboles" unique_id=1460357870 instance=ExtResource("35_01hi8")]
 position = Vector2(-984.88403, -1056.1763)
 rotation = -0.00083674805
 
-[node name="arbol28" parent="arboles" unique_id=1509513372 instance=ExtResource("35_l1cmj")]
+[node name="arbol28" parent="arboles" unique_id=1509513372 instance=ExtResource("35_01hi8")]
 position = Vector2(-724.8013, -957.3939)
 rotation = -0.00083674805
 
-[node name="arbol29" parent="arboles" unique_id=1769380290 instance=ExtResource("35_l1cmj")]
+[node name="arbol29" parent="arboles" unique_id=1769380290 instance=ExtResource("35_01hi8")]
 position = Vector2(-1105.7108, -849.0751)
 rotation = -0.00083674805
 
@@ -10039,64 +10027,64 @@ rotation = -0.00083674805
 y_sort_enabled = true
 position = Vector2(533, 448)
 
-[node name="arbusto2" parent="arbustos" unique_id=1027585266 instance=ExtResource("38_6jcbq")]
+[node name="arbusto2" parent="arbustos" unique_id=1027585266 instance=ExtResource("38_5vhcq")]
 position = Vector2(322, 291)
 
-[node name="arbusto11" parent="arbustos" unique_id=897099667 instance=ExtResource("38_6jcbq")]
+[node name="arbusto11" parent="arbustos" unique_id=897099667 instance=ExtResource("38_5vhcq")]
 position = Vector2(485, 47)
 
-[node name="arbusto3" parent="arbustos" unique_id=1390208520 instance=ExtResource("38_6jcbq")]
+[node name="arbusto3" parent="arbustos" unique_id=1390208520 instance=ExtResource("38_5vhcq")]
 position = Vector2(128, 176)
 
-[node name="arbusto8" parent="arbustos" unique_id=1490595751 instance=ExtResource("38_6jcbq")]
+[node name="arbusto8" parent="arbustos" unique_id=1490595751 instance=ExtResource("38_5vhcq")]
 position = Vector2(3, 176)
 
-[node name="arbusto6" parent="arbustos" unique_id=1990932414 instance=ExtResource("39_poqc8")]
+[node name="arbusto6" parent="arbustos" unique_id=1990932414 instance=ExtResource("39_63ccb")]
 position = Vector2(108, -53)
 
-[node name="arbusto7" parent="arbustos" unique_id=1023483944 instance=ExtResource("39_poqc8")]
+[node name="arbusto7" parent="arbustos" unique_id=1023483944 instance=ExtResource("39_63ccb")]
 position = Vector2(26, -54)
 
-[node name="arbusto5" parent="arbustos" unique_id=1639675197 instance=ExtResource("39_poqc8")]
+[node name="arbusto5" parent="arbustos" unique_id=1639675197 instance=ExtResource("39_63ccb")]
 position = Vector2(108, 0)
 
-[node name="arbusto4" parent="arbustos" unique_id=60293666 instance=ExtResource("39_poqc8")]
+[node name="arbusto4" parent="arbustos" unique_id=60293666 instance=ExtResource("39_63ccb")]
 position = Vector2(30, 0)
 
-[node name="arbusto9" parent="arbustos" unique_id=639592095 instance=ExtResource("39_poqc8")]
+[node name="arbusto9" parent="arbustos" unique_id=639592095 instance=ExtResource("39_63ccb")]
 position = Vector2(441, 45)
 
-[node name="arbusto10" parent="arbustos" unique_id=1609190455 instance=ExtResource("39_poqc8")]
+[node name="arbusto10" parent="arbustos" unique_id=1609190455 instance=ExtResource("39_63ccb")]
 position = Vector2(463, 45)
 
 [node name="NPCs" type="Node2D" parent="." unique_id=630333414]
 y_sort_enabled = true
 
-[node name="Emma" parent="NPCs" unique_id=563777500 instance=ExtResource("40_a2btc")]
+[node name="Emma" parent="NPCs" unique_id=563777500 instance=ExtResource("40_sjko0")]
 position = Vector2(401, 325)
 animaciones_npc = SubResource("SpriteFrames_aevmw")
-etapas = Array[ExtResource("42_6hie0")]([SubResource("Resource_3tk5j"), SubResource("Resource_371x8")])
+etapas = Array[ExtResource("42_0pemx")]([SubResource("Resource_3tk5j"), SubResource("Resource_371x8")])
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="NPCs/Emma" unique_id=407732675]
 visible = false
 position = Vector2(-1, -15.25)
 shape = SubResource("RectangleShape2D_3oava")
 
-[node name="Vicky" parent="NPCs" unique_id=518276632 instance=ExtResource("40_a2btc")]
+[node name="Vicky" parent="NPCs" unique_id=518276632 instance=ExtResource("40_sjko0")]
 position = Vector2(231, 486)
 animaciones_npc = SubResource("SpriteFrames_371x8")
-etapas = Array[ExtResource("42_6hie0")]([SubResource("Resource_55slq")])
+etapas = Array[ExtResource("42_0pemx")]([SubResource("Resource_55slq")])
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="NPCs/Vicky" unique_id=1070277936]
 visible = false
 position = Vector2(0, -11)
 shape = SubResource("CircleShape2D_euwp0")
 
-[node name="Luis" parent="NPCs" unique_id=2078079991 instance=ExtResource("40_a2btc")]
+[node name="Luis" parent="NPCs" unique_id=2078079991 instance=ExtResource("40_sjko0")]
 y_sort_enabled = true
 position = Vector2(959, 498)
 animaciones_npc = SubResource("SpriteFrames_wbheu")
-etapas = Array[ExtResource("42_6hie0")]([SubResource("Resource_aevmw"), SubResource("Resource_8xow8"), SubResource("Resource_utwd3"), SubResource("Resource_wbheu"), SubResource("Resource_0666g")])
+etapas = Array[ExtResource("42_0pemx")]([SubResource("Resource_aevmw"), SubResource("Resource_8xow8"), SubResource("Resource_utwd3"), SubResource("Resource_wbheu"), SubResource("Resource_0666g")])
 anim_levantarse = "move"
 anim_hablando = "front"
 
@@ -10105,7 +10093,7 @@ visible = false
 position = Vector2(0, -9)
 shape = SubResource("CircleShape2D_7dqve")
 
-[node name="iman" parent="." unique_id=125142757 instance=ExtResource("45_6agn7")]
+[node name="iman" parent="." unique_id=125142757 instance=ExtResource("45_h524j")]
 position = Vector2(435.00003, 484.00003)
 rotation = -0.9180432
 scale = Vector2(0.2, 0.2)
@@ -10116,24 +10104,24 @@ visible = false
 position = Vector2(22.879234, 36.02468)
 shape = SubResource("CircleShape2D_tq4ei")
 
-[node name="balde" parent="." unique_id=51487655 instance=ExtResource("46_orfor")]
+[node name="balde" parent="." unique_id=51487655 instance=ExtResource("46_d154c")]
 position = Vector2(237, 477)
 scale = Vector2(0.5, 0.5)
 
-[node name="Llave tienda" parent="." unique_id=2072226499 instance=ExtResource("47_7nvps")]
+[node name="Llave tienda" parent="." unique_id=2072226499 instance=ExtResource("47_ygcvs")]
 y_sort_enabled = true
 position = Vector2(600.00006, 396.00003)
 rotation = 0.9180432
 scale = Vector2(0.5, 0.5)
 skew = 0.10646509
-script = ExtResource("48_07s31")
+script = ExtResource("48_phk1q")
 
 [node name="fuenteGate" type="Area2D" parent="." unique_id=109950106]
 position = Vector2(586.4179, 411.71545)
 rotation = 0.9180432
 scale = Vector2(0.5, 0.5)
 skew = 0.10646498
-script = ExtResource("49_jamxd")
+script = ExtResource("49_c5o3h")
 item_requerido = "Palo"
 consumir_item = false
 flag = "fuente_pescada"
@@ -10147,7 +10135,7 @@ visible = false
 position = Vector2(16.400356, -20.133217)
 shape = SubResource("CircleShape2D_o2op0")
 
-[node name="Palo" parent="." unique_id=691191485 instance=ExtResource("50_hfk3k")]
+[node name="Palo" parent="." unique_id=691191485 instance=ExtResource("50_froea")]
 position = Vector2(304, 305)
 rotation = 0.55850536
 
@@ -10156,23 +10144,23 @@ visible = false
 position = Vector2(1, 12)
 shape = SubResource("CircleShape2D_3oava")
 
-[node name="Pelota" parent="." unique_id=126264978 instance=ExtResource("51_8c6eg")]
+[node name="Pelota" parent="." unique_id=126264978 instance=ExtResource("51_nh7t6")]
 position = Vector2(786, 460.99997)
 scale = Vector2(0.7, 0.7)
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=431841085]
 position = Vector2(446, 691)
-stream = ExtResource("52_hsr8l")
+stream = ExtResource("52_ncy6v")
 volume_db = -12.496
 pitch_scale = 0.86
 max_distance = 736.0
-script = ExtResource("53_jdkq3")
+script = ExtResource("53_34hlt")
 primer_golpe = 3.0
 flag_detener = "puerta_aislado_abierta"
 
 [node name="PuertaAislado" type="Area2D" parent="." unique_id=2134483750]
 position = Vector2(447, 689)
-script = ExtResource("54_3rhct")
+script = ExtResource("54_soo7c")
 voz = Array[String](["...Hay alguien ahí? Shh. No hables.", "Me escuchan cuando hablo. Pero los golpes no los comprende.", "Escuchá. Siempre es el mismo ritmo."])
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PuertaAislado" unique_id=1177908943]
@@ -10183,7 +10171,7 @@ shape = SubResource("RectangleShape2D_7dqve")
 [node name="SpawnAislado" type="Marker2D" parent="." unique_id=1897590209]
 position = Vector2(447, 704)
 
-[node name="pilas" parent="." unique_id=1067355864 instance=ExtResource("55_g28h1")]
+[node name="pilas" parent="." unique_id=1067355864 instance=ExtResource("55_24wnt")]
 position = Vector2(641, 719)
 scale = Vector2(0.6, 0.6)
 nombre_item = "Pilas"
@@ -10192,5 +10180,3 @@ nombre_item = "Pilas"
 visible = false
 position = Vector2(2, 26)
 shape = SubResource("CircleShape2D_iqxnj")
-
-[connection signal="body_entered" from="caminoDer" to="Jugador" method="_on_camino_der_body_entered"]

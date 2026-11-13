@@ -44,7 +44,7 @@ func _interactuar() -> void:
 	# 4) ya abierta: pasar
 	if GameManager.flags.get(flag_abierta, false):
 		Global.punto_spawn = punto_spawn
-		get_tree().call_deferred("change_scene_to_file", escena)
+		Transicion.ir_a(escena)
 		return
 	# 1) antes de oír los golpes, la puerta no responde
 	if flag_requerido != "" and not GameManager.flags.get(flag_requerido, false):

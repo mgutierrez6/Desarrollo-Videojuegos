@@ -64,11 +64,3 @@ func _unhandled_input(event: InputEvent) -> void:
 				get_viewport().set_input_as_handled() # Consume la tecla E para que no se duplique
 				objetivo.interactuar()
 				break
-
-func _on_camino_der_body_entered(_body: Node2D) -> void:
-	Global.punto_spawn = "desde_main"
-	get_tree().change_scene_to_file("res://escenas/puente_bosque.tscn")
-
-func _on_camino_izq_puente_body_entered(_body: Node2D) -> void:
-	Global.punto_spawn = "desde_puente"
-	get_tree().change_scene_to_file("res://escenas/juego.scn")

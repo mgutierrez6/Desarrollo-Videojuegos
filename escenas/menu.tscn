@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://c3s3fqyha7kqn"]
+
+[ext_resource type="Script" uid="uid://doxurfp3wc1s8" path="res://scripts/main.gd" id="1_vdanu"]
+[ext_resource type="FontFile" uid="uid://blkal1k8kifcs" path="res://assets/ui/BoldPixels.ttf" id="2_d7r87"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_2owot"]
+font = ExtResource("2_d7r87")
+font_size = 120
+
+[sub_resource type="LabelSettings" id="LabelSettings_d7r87"]
+font = ExtResource("2_d7r87")
+font_size = 45
+
+[sub_resource type="LabelSettings" id="LabelSettings_vdanu"]
+font = ExtResource("2_d7r87")
+font_size = 45
+
+[node name="Control" type="Control" unique_id=270327188]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vdanu")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=878427899]
+layout_mode = 0
+offset_right = 1160.0
+offset_bottom = 648.0
+color = Color(0, 0, 0, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=57494247]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -394.0
+offset_top = -97.0
+offset_right = 394.0
+offset_bottom = 97.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Titulo" type="Label" parent="VBoxContainer" unique_id=289971583]
+unique_name_in_owner = true
+layout_mode = 2
+text = "SIN REGISTRO"
+label_settings = SubResource("LabelSettings_2owot")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=1234115461]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+alignment = 1
+
+[node name="Iniciar" type="Label" parent="VBoxContainer/HBoxContainer" unique_id=809172297]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+text = "Iniciar"
+label_settings = SubResource("LabelSettings_d7r87")
+
+[node name="Salir" type="Label" parent="VBoxContainer/HBoxContainer" unique_id=981583137]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+text = "Salir"
+label_settings = SubResource("LabelSettings_vdanu")
+horizontal_alignment = 1
+vertical_alignment = 1

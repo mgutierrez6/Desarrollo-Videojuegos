@@ -18,7 +18,7 @@ func interactuar() -> void:
 			_usando = false
 			return
 	Global.punto_spawn = punto_spawn
-	get_tree().call_deferred("change_scene_to_file", escena)
+	Transicion.ir_a(escena)
 	
 func hay_algo_para_hacer() -> bool:
 	return true

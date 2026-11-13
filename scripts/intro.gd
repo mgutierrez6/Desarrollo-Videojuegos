@@ -67,8 +67,8 @@ func _secuencia() -> void:
 	await get_tree().create_timer(1.0).timeout
 	Global.punto_spawn = "desde_casa1"
 	GameManager.set_objetivo("Averiguar dónde estás")
-	get_tree().change_scene_to_file("res://escenas/juego.scn")
-
+	Transicion.ir_a("res://escenas/juego.scn")
+	
 # Una línea con fundido de entrada y salida; F salta la espera
 func _decir(texto: String, pausa: float = -1.0) -> void:
 	_label.text = texto

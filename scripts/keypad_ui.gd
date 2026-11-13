@@ -1,8 +1,4 @@
 extends CanvasLayer
-# Keypad con la misma estética que la caja de diálogo (dialogo.png + BoldPixels).
-# Se usa igual que antes:  var ok = await KeypadUi.abrir("1234")
-# Controles: mouse, números del teclado, flechas + F / Enter, Retroceso para borrar, Esc para salir.
-
 signal _terminado(ok: bool)
 
 const TEXTURA := preload("res://assets/ui/dialogo.png")

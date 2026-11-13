@@ -13,11 +13,6 @@ var datos_items = {
 		"textura": preload("res://assets/recolectables/pelota2.png"),
 		"descripcion": "Pelota azul."
 	},
-	"Palanca": {
-		"nombre": "Palanca",
-		"textura": preload("res://assets/recolectables/palanca2.png"),
-		"descripcion": "Un palo modificado para ser palanca."
-	},
 	"Llave": {
 		"nombre": "Llave",
 		"textura": preload("res://assets/recolectables/llaveChiqui.png"),
@@ -48,15 +43,15 @@ var datos_items = {
 		"textura": preload("res://assets/recolectables/paloiman.png"),
 		"descripcion": "Un palo con un imán pegado. Sirve para alcanzar metales."
 	},
-		"Linterna": {
-		"nombre": "Linterna",
-		"textura": preload("res://assets/recolectables/linterna.png"),
-		"descripcion": "Le hacen falta pilas para funcionar."
+	"Linterna": {
+	"nombre": "Linterna",
+	"textura": preload("res://assets/recolectables/linterna.png"),
+	"descripcion": "Le hacen falta pilas para funcionar."
 	},
-		"LinternaPrendida": {
-		"nombre": "Linterna con pilas",
-		"textura": preload("res://assets/recolectables/linternaPrendida.png"),
-		"descripcion": "Ilumina lugares oscuros."
+	"LinternaPrendida": {
+	"nombre": "Linterna con pilas",
+	"textura": preload("res://assets/recolectables/linternaPrendida.png"),
+	"descripcion": "Ilumina lugares oscuros."
 	},
 	"Balde": {
 		"nombre": "Balde",
