@@ -17,6 +17,8 @@ const TEXTO_CUENTA := {
 	"aislado": "No te vayas... %d",
 }
 
+const SONIDO_GOLPE := preload("res://assets/sounds/knock-fuerte.mp3")
+
 const TINTE_NPC := {
 	"sistema": Color(0.25, 0.5, 0.6, 0.55),
 	"aislado": Color(0.5, 0.3, 0.6, 0.55),
@@ -39,6 +41,9 @@ var _x0 := 0.0
 var _vel := 0.0
 var _pulso_en := 0.0
 var _ultimo := -1
+var _hum: AudioStreamPlayer
+func voz() -> SistemaVoz:
+	return SistemaVoz.activar(get_tree())
 
 func _ready() -> void:
 	if not GameManager.flags.get("caja_abierta", false) or GameManager.flags.get("evento_terminado", false):
@@ -72,20 +77,19 @@ func _introduccion() -> void:
 		luis.set("_reposo", "buscando")
 		luis.call("_reproducir", "buscando")
 
-	c.iniciar_dialogo(["Contacto con el aislado: registrado.", "Variable externa detectada."], "sistema")
-	await c.dialogo_terminado
+	await voz().decir(["Contacto con el aislado: registrado.",
+			"Usuario detectado: %s." % SistemaVoz.usuario()])
 	c.iniciar_dialogo(["No le hagas caso."], "aislado")
 	await c.dialogo_terminado
-	c.iniciar_dialogo(["Puedo corregir esto. Solo necesito que me ayudes."], "sistema")
-	await c.dialogo_terminado
-
-	var i: int = await c.elegir("¿A quién escuchás?", ["Al aislado", "Al Sistema"])
-	var con_sistema := (i == 1)
+	var r: int = await voz().preguntar("SISTEMA",
+			"Puedo corregir esto. Solo necesito que me ayudes.\n\n¿Me ayudás, %s?" % SistemaVoz.usuario(),
+			["Sí", "No"])
+	var con_sistema := (r == 0)
 	GameManager.flags["confianza_sistema"] = con_sistema
 	GameManager.flags["confianza_aislado"] = not con_sistema
 	_guia = "sistema" if con_sistema else "aislado"
 	if con_sistema:
-		c.iniciar_dialogo(["Bien. Al reloj de la plaza. Ahora."], "sistema")
+		await voz().decir(["Bien. Al reloj de la plaza. Ahora."])
 	else:
 		c.iniciar_dialogo(["Al reloj de la plaza. Rápido. No te frenes."], "aislado")
 	await c.dialogo_terminado
@@ -123,14 +127,15 @@ func _process(delta: float) -> void:
 	GameManager.flags["evento_t"] = _t
 	var borde := _x0 + _vel * _t
 	_ola.set("borde_x", borde)
-	var progreso := clampf(_t / segundos, 0.0, 1.0)
-	_mod.color = Color.WHITE.lerp(Color(0.55, 0.5, 0.7), progreso)
-	
-	if progreso >= 0.5 and not _pista_dada:
+	var dist := _jugador.global_position.x - borde                    # cuánto falta para que te alcance
+	var cercania := 1.0 - clampf(dist / distancia_inicial, 0.0, 1.0)  # 0 lejos, 1 encima
+	_mod.color = Color.WHITE.lerp(Color(0.55, 0.5, 0.7), cercania)
+
+	if _t / segundos >= 0.5 and not _pista_dada:
 		_pista_dada = true
 		GameManager.set_objetivo(PISTA[_guia], _guia)
-	
-	var restante := int(ceil(segundos - _t))
+
+	var restante := int(ceil(maxf(dist, 0.0) / _vel))
 	if restante != _ultimo:
 		_ultimo = restante
 		GameManager.set_objetivo(TEXTO_CUENTA[_perseguidor] % restante, _perseguidor)
@@ -138,29 +143,46 @@ func _process(delta: float) -> void:
 	for n in _npcs:
 		if is_instance_valid(n) and not _tenidos.has(n) and n.global_position.x < borde:
 			_tenidos[n] = true
-			create_tween().tween_property(n, "modulate", TINTE_NPC[_perseguidor], 0.4)
+			if _perseguidor == "sistema":
+				create_tween().tween_property(n, "modulate:a", 0.0, 0.6)   # se borran
+			else:
+				create_tween().tween_property(n, "modulate", TINTE_NPC["aislado"], 0.4)  # se congelan
+
+	if _perseguidor == "sistema":
+		GlitchFx.activar(get_tree()).fuerza(cercania * 0.5)
+		if _hum == null:
+			_hum = AudioStreamPlayer.new()
+			_hum.stream = load("res://assets/sounds/sistema/sys_hum.wav")
+			add_child(_hum)
+			_hum.play()
+			_hum.finished.connect(_hum.play)
+		_hum.volume_db = lerpf(-30.0, -4.0, cercania)
 
 	_pulso_en -= delta
 	if _pulso_en <= 0.0:
-		_pulso()
-		_pulso_en = lerpf(1.3, 0.35, progreso)
+		_pulso(cercania)
+		_pulso_en = lerpf(1.3, 0.35, cercania)
 
 	if GameManager.flags.get("reloj_resuelto", false):
 		_terminar(true)
-	elif _jugador.global_position.x <= borde or _t >= segundos:
+	elif dist <= 0.0:
 		_terminar(false)
 
-func _pulso() -> void:
-	if sonido_pulso:
+func _pulso(cercania: float) -> void:
+	var aislado := _perseguidor == "aislado"
+	var audio: AudioStream = SONIDO_GOLPE if aislado else sonido_pulso
+	if audio:
 		var p := AudioStreamPlayer.new()
-		p.stream = sonido_pulso
+		p.stream = audio
+		p.volume_db = lerpf(-24.0, 0.0, cercania)
 		add_child(p)
 		p.play()
 		p.finished.connect(p.queue_free)
 	var cam := get_viewport().get_camera_2d()
 	if cam:
+		var f := lerpf(1.5, 7.0, cercania) if aislado else lerpf(1.0, 3.0, cercania)
 		var t := create_tween()
-		t.tween_property(cam, "offset", Vector2(randf_range(-2.0, 2.0), randf_range(-2.0, 2.0)), 0.04)
+		t.tween_property(cam, "offset", Vector2(randf_range(-f, f), randf_range(-f, f)), 0.04)
 		t.tween_property(cam, "offset", Vector2.ZERO, 0.08)
 
 func _terminar(resuelto: bool) -> void:
@@ -175,15 +197,11 @@ func _terminar(resuelto: bool) -> void:
 		var linea := "Rompelo. Así nadie vuelve a repetir el día." if rompe else "Dejalo detenido. Que puedan despertar."
 		c.iniciar_dialogo([linea], "aislado")
 		await c.dialogo_terminado
-		c.iniciar_dialogo(["Reiniciá. Es lo único que los mantiene a salvo."], "sistema")
-		await c.dialogo_terminado
-		var i: int = await c.elegir("El panel espera una orden.",
-				["Reiniciar el reloj", "Romperlo" if rompe else "Dejarlo detenido"], "sistema")
+		await voz().decir(["Reiniciá. Es lo único que los mantiene a salvo."])
+		var i: int = await voz().preguntar("SISTEMA", "El panel espera una orden.",
+				["Reiniciar el reloj", "Romperlo" if rompe else "Dejarlo detenido"])
 		if i == 1 and rompe:
-			GlitchFx.activar(get_tree()).fuerza(0.5, 3.0)
-			c.iniciar_dialogo(["Advertencia: la ruptura es irreversible.",
-					"Sin el reinicio, no puedo garantizar su seguridad."], "sistema")
-			await c.dialogo_terminado
+			await voz().preguntar("SISTEMA", "Advertencia: la ruptura es irreversible.\nSin el reinicio, no puedo garantizar su seguridad.", ["Continuar"])
 			GameManager.flags["final_roto"] = true
 		elif i == 1:
 			GameManager.flags["final_1"] = true

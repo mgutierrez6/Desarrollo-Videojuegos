@@ -3,6 +3,7 @@ extends Node
 var punto_spawn: String = "default"
 var caja_dialogo: CanvasLayer = null
 var inventario_ui: CanvasLayer = null
+var sistema_hablando := false
 
 # true si hay alguna pantalla abierta que tenga que frenar al jugador
 func jugador_bloqueado() -> bool:
@@ -11,5 +12,7 @@ func jugador_bloqueado() -> bool:
 	if is_instance_valid(inventario_ui) and inventario_ui.abierto:
 		return true
 	if InspeccionUI.abierto or KeypadUi.abierto:
+		return true
+	if sistema_hablando:
 		return true
 	return false

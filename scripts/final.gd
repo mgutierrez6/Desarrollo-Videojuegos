@@ -148,13 +148,13 @@ func _final_tiempo_sistema() -> void:
 	await _decir("Ah. Llegaste.", 3.0, COLOR_AISLADO)
 
 func _final_tiempo_aislado() -> void:
-	await _decir("El reloj se detuvo con vos adentro.")
-	await _decir("Alguien tenía que quedarse abajo.")
-	await _decir("Ahora sos vos.")
+	await _decir("Los golpes pararon.")
+	await _decir("El reloj quedó en pausa. Nadie lo reanudó.")
+	await _decir("No hubo reinicio. Tampoco hubo mañana.")
+	await _decir("Luis sigue buscando la llave.")
 	if GameManager.flags.get("intro_quedarse", false):
 		await _decir("Te dije que todavía no. Ahora sí.", -1.0, COLOR_AISLADO)
-	await _decir("Alguien sube por la escalera que estaba cerrada.")
-	await _decir("Abajo, alguien golpea: tres, uno, cuatro.")
+	await _decir("Gracias por quedarte.", -1.0, COLOR_AISLADO)
 
 func _esperar(segundos: float) -> void:
 	_salto = false
