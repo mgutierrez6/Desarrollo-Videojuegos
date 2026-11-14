@@ -4733,7 +4733,13 @@ size = Vector2(22.70964, 36.25582)
 size = Vector2(46.427532, 81.15187)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o2op0"]
-size = Vector2(42.14766, 28.76969)
+size = Vector2(42.14766, 37.80158)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iqxnj"]
+size = Vector2(16.046059, 15.408386)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tq4ei"]
+size = Vector2(15.27409, 14.045456)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_txsnm"]
 size = Vector2(28.72702, 37.98953)
@@ -4803,7 +4809,6 @@ size = Vector2(70, 97.50002)
 [node name="CasaAislado" type="Node2D" unique_id=1945337766]
 y_sort_enabled = true
 script = ExtResource("1_m4ves")
-probar_finales = true
 
 [node name="Layer0" type="TileMapLayer" parent="." unique_id=857448155]
 use_parent_material = true
@@ -4858,6 +4863,7 @@ position = Vector2(0.58236694, 53.20935)
 shape = SubResource("RectangleShape2D_7dqve")
 
 [node name="libroRojo" parent="." unique_id=436740979 instance=ExtResource("20_dtp2u")]
+y_sort_enabled = true
 position = Vector2(369.69098, 134.07709)
 rotation = 3.6704273
 scale = Vector2(0.5, 0.5)
@@ -4874,7 +4880,16 @@ rotation = 0.8988447
 scale = Vector2(0.99999946, 0.9999994)
 shape = SubResource("RectangleShape2D_o2op0")
 
+[node name="StaticBody2D2" type="StaticBody2D" parent="libroRojo" unique_id=405375708]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="libroRojo/StaticBody2D2" unique_id=375140804]
+visible = false
+position = Vector2(0.22058105, 18.153427)
+scale = Vector2(0.9999994, 0.9999999)
+shape = SubResource("RectangleShape2D_iqxnj")
+
 [node name="LibroVerde" parent="." unique_id=1080728416 instance=ExtResource("20_dtp2u")]
+y_sort_enabled = true
 position = Vector2(33.00003, 123)
 rotation = 3.6704273
 scale = Vector2(0.5, 0.5)
@@ -4891,8 +4906,17 @@ rotation = 0.89884496
 scale = Vector2(0.99999917, 0.9999993)
 shape = SubResource("RectangleShape2D_o2op0")
 
+[node name="StaticBody2D2" type="StaticBody2D" parent="LibroVerde" unique_id=305473346]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LibroVerde/StaticBody2D2" unique_id=68889269]
+visible = false
+position = Vector2(0.508667, 18.778534)
+scale = Vector2(0.9999994, 0.9999999)
+shape = SubResource("RectangleShape2D_tq4ei")
+
 [node name="libroAzul" parent="." unique_id=1313202468 instance=ExtResource("20_dtp2u")]
-position = Vector2(177.00002, 93.999985)
+y_sort_enabled = true
+position = Vector2(128.99998, 158)
 rotation = 3.6704273
 scale = Vector2(0.5, 0.5)
 skew = 0.24783675
@@ -4903,10 +4927,19 @@ flag_visto = "libro_azul"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="libroAzul" unique_id=782254301]
 visible = false
-position = Vector2(2.790165, 14.850672)
-rotation = 0.8988447
-scale = Vector2(0.99999946, 0.9999994)
+position = Vector2(-0.7440491, 17.661942)
+rotation = 0.89884484
+scale = Vector2(0.9999994, 0.9999993)
 shape = SubResource("RectangleShape2D_o2op0")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="libroAzul" unique_id=725875293]
+position = Vector2(-5.9367414, 9.807564)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="libroAzul/StaticBody2D2" unique_id=1667378679]
+visible = false
+position = Vector2(6.1145935, 8.503464)
+scale = Vector2(0.9999993, 0.9999999)
+shape = SubResource("RectangleShape2D_tq4ei")
 
 [node name="Agujero" type="Area2D" parent="." unique_id=597849427]
 position = Vector2(232.84213, 112.673706)
@@ -4955,7 +4988,6 @@ energy = 0.25
 texture = SubResource("GradientTexture1D_m4ves")
 
 [node name="ventana2" type="Node2D" parent="." unique_id=508781639]
-visible = false
 position = Vector2(80, 0)
 
 [node name="luz_ventana" type="PointLight2D" parent="ventana2" unique_id=1532438742]
@@ -5024,6 +5056,7 @@ scale = Vector2(0.99999994, 0.99999994)
 script = ExtResource("23_e6vfx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Caja/caja" unique_id=1917826995]
+visible = false
 position = Vector2(0, 8.75)
 scale = Vector2(0.99999994, 0.99999994)
 shape = SubResource("RectangleShape2D_3oava")
