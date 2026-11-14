@@ -32,6 +32,7 @@ func _ready() -> void:
 	_luz.texture_scale = maxf(escala_apagada, 0.01)
 	_luz.energy = energia_apagada
 	jugador.add_child(_luz)
+	GameManager.inventario_cambiado.connect(_al_cambiar_inventario)
 		
 	if not GameManager.tiene_item(item_linterna):
 		if not GameManager.flags.get("pensado_oscuro", false):
@@ -40,13 +41,15 @@ func _ready() -> void:
 			if Global.caja_dialogo:
 				Global.caja_dialogo.iniciar_dialogo(["Está muy oscuro. Necesito una luz."])
 			GameManager.set_objetivo("Conseguir luz para la casa")
-	else:
-		Consejos.mostrar("tip_linterna", "Elegí la linterna en el inventario (E) y cerrá con E para encenderla.")
+
+func _al_cambiar_inventario() -> void:
+	if GameManager.tiene_item(item_linterna) and GameManager.objetivo_actual == "Conseguir luz para la casa":
+		GameManager.set_objetivo("Explorar la casa")
 
 func _process(delta: float) -> void:
 	if _luz == null:
 		return
-	var con_linterna: bool = GameManager.item_seleccionado == item_linterna
+	var con_linterna: bool = GameManager.tiene_item(item_linterna)
 	var escala := escala_encendida if con_linterna else escala_apagada
 	var energia := energia_encendida if con_linterna else energia_apagada
 	_luz.texture_scale = maxf(lerpf(_luz.texture_scale, escala, 8.0 * delta), 0.01)

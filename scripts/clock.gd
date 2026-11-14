@@ -56,6 +56,9 @@ func _interactuar() -> void:
 			await _decir(["El reloj está detenido.", "En la base hay un panel con teclado."])
 		else:
 			await _decir(["El reloj está detenido.", "Marca las 04:#6.", "En la base hay un panel con teclado."])
+		# sigue directo al teclado: con la cuenta regresiva no hay que volver a apretar F
+	# si la ola te alcanzó mientras leías, no abrir el teclado encima del cierre del evento
+	if GameManager.flags.get("evento_terminado", false):
 		return
 	var ok = await KeypadUi.abrir(_codigo())
 	if ok:

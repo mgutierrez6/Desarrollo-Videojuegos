@@ -18,6 +18,10 @@ var _display: Label
 var _mensaje: Label
 var _botones: Array[Button] = []
 
+func cerrar() -> void:
+	if abierto:
+		_terminado.emit(false)
+
 func _ready() -> void:
 	layer = 10
 	visible = false

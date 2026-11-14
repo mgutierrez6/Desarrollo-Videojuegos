@@ -55,8 +55,8 @@ func _ready() -> void:
 		push_error("EventoSistema: no encuentro al jugador o al reloj.")
 		return
 	if GameManager.flags.get("evento_iniciado", false):
-		# volviste a la plaza a mitad del evento: se retoma la persecución
 		_guia = "sistema" if GameManager.flags.get("confianza_sistema", false) else "aislado"
+		await get_tree().process_frame
 		_empezar()
 		return
 	GameManager.flags["evento_iniciado"] = true
@@ -74,7 +74,14 @@ func _introduccion() -> void:
 
 	await voz().decir(["Contacto con el aislado: registrado.",
 			"Usuario detectado: %s." % SistemaVoz.usuario()])
-	c.iniciar_dialogo(["No le hagas caso."], "aislado")
+	
+	var eleccion := GameManager.eleccion_aislado()
+	var antes: Array = ["No le hagas caso."]
+	if eleccion == 0:
+		antes = ["No le hagas caso.", "Me dijiste que me creías. Sostenelo."]
+	elif eleccion == 1:
+		antes = ["Ya sé que no me creés.", "Pero a él tampoco le creas."]
+	c.iniciar_dialogo(antes, "aislado")
 	await c.dialogo_terminado
 	var r: int = await voz().preguntar("SISTEMA",
 			"Puedo corregir esto. Solo necesito que me ayudes.\n\n¿Me ayudás, %s?" % SistemaVoz.usuario(),
@@ -83,11 +90,17 @@ func _introduccion() -> void:
 	GameManager.flags["confianza_sistema"] = con_sistema
 	GameManager.flags["confianza_aislado"] = not con_sistema
 	_guia = "sistema" if con_sistema else "aislado"
+
 	if con_sistema:
+		if eleccion == 0:
+			c.iniciar_dialogo(["...Me dijiste que me creías."], "aislado")
+			await c.dialogo_terminado
 		await voz().decir(["Bien. Al reloj de la plaza. Ahora."])
 	else:
+		if eleccion == 1:
+			c.iniciar_dialogo(["...Al final me creíste."], "aislado")
+			await c.dialogo_terminado
 		c.iniciar_dialogo(["Al reloj de la plaza. Rápido. No te frenes."], "aislado")
-		await c.dialogo_terminado
 
 func _empezar() -> void:
 	_perseguidor = "aislado" if _guia == "sistema" else "sistema"
@@ -183,6 +196,14 @@ func _pulso(cercania: float) -> void:
 func _terminar(resuelto: bool) -> void:
 	_activo = false
 	GameManager.flags["evento_terminado"] = true
+	# si te alcanzó con el teclado o una inspección abierta, se cierran (si no, quedan encima del final)
+	KeypadUi.cerrar()
+	if InspeccionUI.abierto:
+		InspeccionUI.cerrar()
+	if is_instance_valid(Global.inventario_ui) and Global.inventario_ui.abierto:
+		Global.inventario_ui.panel.visible = false
+		Global.inventario_ui.panel_desc.visible = false
+	await get_tree().process_frame
 	GameManager.quitar_objetivo("sistema")
 	GameManager.quitar_objetivo("aislado")
 	await GameManager.quitar_objetivo("pueblo")

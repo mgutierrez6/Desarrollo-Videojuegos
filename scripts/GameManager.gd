@@ -115,6 +115,12 @@ func set_objetivo(texto: String, fuente: String = "pueblo") -> void:
 func quitar_objetivo(fuente: String) -> void:
 	set_objetivo("", fuente)
 
+func eleccion_aislado() -> int:
+	for i in 3:
+		if flags.get("aislado_eleccion_%d" % i, false):
+			return i
+	return -1
+
 func agregar_item(item_nombre: String):
 	if not item_nombre in inventario:
 		inventario.append(item_nombre)

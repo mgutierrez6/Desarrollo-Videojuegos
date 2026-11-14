@@ -227,6 +227,8 @@ func _final_detenido() -> void:
 	if GameManager.flags.get("confianza_aislado", false):
 		await _decir("Gracias. Confiaste en mí.", -1.0, COLOR_AISLADO)
 		await _decir("No sé qué va a pasar ahora, pero soy libre.", -1.0, COLOR_AISLADO)
+		if GameManager.eleccion_aislado() == 1:
+			await _decir("Al principio desconfiabas. Tendrías que haberte hecho caso.", -1.0, COLOR_AISLADO, 0.15)
 		await _decir("Qué ingenuo fuiste.", 3.0, COLOR_AISLADO)
 	else:
 		await _decir("No me creías. Igual lo dejaste detenido.", -1.0, COLOR_AISLADO)
@@ -239,6 +241,8 @@ func _final_reinicio() -> void:
 	await _decir("Luis perdió la llave de la despensa.")
 	await _decir("Nadie recordó nada.")
 	await _decir("Nadie, menos vos.")
+	if GameManager.eleccion_aislado() == 0:
+		await _decir("Me dijiste que me creías.", 3.0, COLOR_AISLADO, 0.2)
 	if GameManager.flags.get("confianza_aislado", false):
 		await _decir("Abajo, alguien golpea: tres, uno, cuatro. Nadie baja.")
 
@@ -258,6 +262,8 @@ func _final_tiempo_aislado() -> void:
 	await _decir("Luis sigue buscando la llave.")
 	if GameManager.flags.get("intro_quedarse", false):
 		await _decir("Te dije que todavía no. Ahora sí.", -1.0, COLOR_AISLADO)
+	if GameManager.eleccion_aislado() == 0:
+		await _decir("Me creíste desde el principio.", -1.0, COLOR_AISLADO)
 	await _decir("Gracias por quedarte.", -1.0, COLOR_AISLADO)
 
 
