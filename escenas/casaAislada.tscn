@@ -4798,11 +4798,12 @@ size = Vector2(21, 21)
 size = Vector2(68.75, 61.25)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3oava"]
-size = Vector2(70, 80)
+size = Vector2(70, 97.50002)
 
 [node name="CasaAislado" type="Node2D" unique_id=1945337766]
 y_sort_enabled = true
 script = ExtResource("1_m4ves")
+probar_finales = true
 
 [node name="Layer0" type="TileMapLayer" parent="." unique_id=857448155]
 use_parent_material = true
@@ -5023,6 +5024,6 @@ scale = Vector2(0.99999994, 0.99999994)
 script = ExtResource("23_e6vfx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Caja/caja" unique_id=1917826995]
-visible = false
+position = Vector2(0, 8.75)
 scale = Vector2(0.99999994, 0.99999994)
 shape = SubResource("RectangleShape2D_3oava")

@@ -94,7 +94,7 @@ func pedir_pista() -> void:
 		_decir(pista, 6.0)
 
 func _unhandled_input(event: InputEvent) -> void:
-	if event is InputEventKey and event.pressed and not event.echo and event.keycode == KEY_H:
+	if event.is_action_pressed("pista"):
 		pedir_pista()
 
 func _on_inventario() -> void:
@@ -114,7 +114,7 @@ func _process(delta: float) -> void:
 	# el "?" solo se muestra si hay una pista para dar (no en el menú, la intro ni el final)
 	_boton.visible = _pista_actual() != ""
 	if _boton.visible:
-		mostrar("boton_pista", "¿Trabado? Tocá el ? de arriba para una pista.")
+		mostrar("boton_pista", "¿Trabado? Apretá H o tocá el ? de arriba para una pista.")
 	# "progreso" = cambia el inventario, los flags o algún objetivo (moverse no cuenta)
 	var firma := str(GameManager.inventario.size()) + "|" + str(GameManager.flags.size()) + "|" + str(GameManager.objetivos)
 	if firma != _firma:

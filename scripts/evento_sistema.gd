@@ -43,7 +43,6 @@ var _vel := 0.0
 var _pulso_en := 0.0
 var _ultimo := -1
 var _hum: AudioStreamPlayer
-var _musica: AudioStreamPlayer
 func voz() -> SistemaVoz:
 	return SistemaVoz.activar(get_tree())
 
