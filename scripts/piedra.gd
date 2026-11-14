@@ -9,6 +9,7 @@ extends Area2D
 @export var nodo_piedras: NodePath
 @export var flag_contador := "piedras_investigadas"
 @export var flag_abierta := "piedras_abiertas"
+@export var audio: NodePath
 
 var _usando := false
 
@@ -37,6 +38,12 @@ func _ceder() -> void:
 		t.tween_property(cam, "offset", Vector2.ZERO, 0.05)
 		await t.finished
 	GameManager.flags[flag_abierta] = true
+	var sonido := get_node_or_null(audio)
+	if sonido:
+		sonido.play()
 	var p := get_node_or_null(nodo_piedras)
 	if p:
+		var fade := create_tween()
+		fade.tween_property(p, "modulate:a", 0.0, 0.6)
+		await fade.finished
 		p.queue_free()

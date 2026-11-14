@@ -27,6 +27,7 @@ const PISTA := {
 	"sistema": "Mirá las agujas del reloj",
 	"aislado": "Lo que abrió la puerta, y después la caja",
 }
+
 var _pista_dada := false
 var _ola: Node2D
 var _mod: CanvasModulate
@@ -42,6 +43,7 @@ var _vel := 0.0
 var _pulso_en := 0.0
 var _ultimo := -1
 var _hum: AudioStreamPlayer
+var _musica: AudioStreamPlayer
 func voz() -> SistemaVoz:
 	return SistemaVoz.activar(get_tree())
 
@@ -101,6 +103,7 @@ func _introduccion() -> void:
 			c.iniciar_dialogo(["...Al final me creíste."], "aislado")
 			await c.dialogo_terminado
 		c.iniciar_dialogo(["Al reloj de la plaza. Rápido. No te frenes."], "aislado")
+		await c.dialogo_terminado
 
 func _empezar() -> void:
 	_perseguidor = "aislado" if _guia == "sistema" else "sistema"

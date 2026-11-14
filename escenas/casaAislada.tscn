@@ -4791,6 +4791,12 @@ flag_eleccion = "aislado_eleccion"
 marca_pendiente = true
 metadata/_custom_type_script = "uid://du47wn6gexhp2"
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_11ymt"]
+size = Vector2(21, 21)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_euwp0"]
+size = Vector2(68.75, 61.25)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3oava"]
 size = Vector2(70, 80)
 
@@ -4988,14 +4994,29 @@ texture = SubResource("GradientTexture1D_ju58c")
 position = Vector2(296, 101)
 
 [node name="Aislado" parent="." unique_id=563777500 instance=ExtResource("20_s7sfm")]
+y_sort_enabled = true
 position = Vector2(106, 92)
 animaciones_npc = SubResource("SpriteFrames_e6vfx")
 etapas = Array[ExtResource("23_t2mty")]([SubResource("Resource_gg3j0"), SubResource("Resource_noeed"), SubResource("Resource_qfucr")])
 
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Aislado" unique_id=235629752]
+visible = false
+position = Vector2(0, -9)
+shape = SubResource("RectangleShape2D_11ymt")
+
 [node name="Caja" type="Sprite2D" parent="." unique_id=1893877775]
+y_sort_enabled = true
 position = Vector2(28, 64)
 scale = Vector2(0.4, 0.4)
 texture = ExtResource("9_xf5wp")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Caja" unique_id=1501700290]
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Caja/StaticBody2D" unique_id=1310005954]
+visible = false
+position = Vector2(0.625, 5.625)
+shape = SubResource("RectangleShape2D_euwp0")
 
 [node name="caja" type="Area2D" parent="Caja" unique_id=1333047918]
 scale = Vector2(0.99999994, 0.99999994)
