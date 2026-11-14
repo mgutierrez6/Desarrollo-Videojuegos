@@ -4733,13 +4733,13 @@ size = Vector2(22.70964, 36.25582)
 size = Vector2(46.427532, 81.15187)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o2op0"]
-size = Vector2(42.14766, 37.80158)
+size = Vector2(47.627983, 38.029755)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iqxnj"]
 size = Vector2(16.046059, 15.408386)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tq4ei"]
-size = Vector2(15.27409, 14.045456)
+size = Vector2(21.007101, 21.610191)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_txsnm"]
 size = Vector2(28.72702, 37.98953)
@@ -4916,7 +4916,7 @@ shape = SubResource("RectangleShape2D_tq4ei")
 
 [node name="libroAzul" parent="." unique_id=1313202468 instance=ExtResource("20_dtp2u")]
 y_sort_enabled = true
-position = Vector2(128.99998, 158)
+position = Vector2(177, 98)
 rotation = 3.6704273
 scale = Vector2(0.5, 0.5)
 skew = 0.24783675
@@ -4927,9 +4927,9 @@ flag_visto = "libro_azul"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="libroAzul" unique_id=782254301]
 visible = false
-position = Vector2(-0.7440491, 17.661942)
+position = Vector2(-2.5391235, 15.588516)
 rotation = 0.89884484
-scale = Vector2(0.9999994, 0.9999993)
+scale = Vector2(0.99999934, 0.9999993)
 shape = SubResource("RectangleShape2D_o2op0")
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="libroAzul" unique_id=725875293]
@@ -4937,8 +4937,8 @@ position = Vector2(-5.9367414, 9.807564)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="libroAzul/StaticBody2D2" unique_id=1667378679]
 visible = false
-position = Vector2(6.1145935, 8.503464)
-scale = Vector2(0.9999993, 0.9999999)
+position = Vector2(3.2480774, 4.721115)
+scale = Vector2(0.9999993, 0.9999998)
 shape = SubResource("RectangleShape2D_tq4ei")
 
 [node name="Agujero" type="Area2D" parent="." unique_id=597849427]
